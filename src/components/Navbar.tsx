@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logoWhite from "@/assets/logo-white.png";
 
 const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%20I%27m%20interested%20in%20your%20products";
 
@@ -17,8 +18,8 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-primary-foreground/10">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
-        <a href="#" className="font-heading text-xl font-bold text-primary-foreground tracking-tight">
-          Mono Charcoal
+        <a href="#" className="flex items-center">
+          <img src={logoWhite} alt="Mono Charcoal" className="h-10" />
         </a>
 
         {/* Desktop nav */}
