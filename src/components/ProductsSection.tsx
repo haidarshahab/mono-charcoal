@@ -50,10 +50,9 @@ const ProductsSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {products.map((product) => (
-            <Card key={product.name} className="border border-border bg-background overflow-hidden group hover:shadow-lg transition-shadow duration-300">
-              {/* Product image placeholder */}
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                <Flame size={48} className="text-primary/30" />
+            <Card key={product.name} className="border border-border bg-[#F8F7F4] overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+              <div className="h-48 overflow-hidden">
+                <img src={product.image} alt={product.name} loading="lazy" width={800} height={600} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
               <CardHeader>
                 <CardTitle className="font-heading text-xl">{product.name}</CardTitle>
