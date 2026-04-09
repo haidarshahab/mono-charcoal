@@ -2,12 +2,15 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Flame, Wind, Sparkles } from "lucide-react";
+import shishaImg from "@/assets/shisha-charcoal.jpg";
+import bbqImg from "@/assets/bbq-charcoal.jpg";
 
 const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%20I%27m%20interested%20in%20your%20products";
 
 const products = [
   {
     name: "Shisha Charcoal",
+    image: shishaImg,
     description: "Premium cube and flat-shaped briquettes designed for hookah use. Clean burn, minimal ash, and long-lasting heat.",
     specs: [
       { icon: Flame, label: "Burn Time", value: "90+ minutes" },
@@ -17,6 +20,7 @@ const products = [
   },
   {
     name: "BBQ Charcoal",
+    image: bbqImg,
     description: "High-heat hexagonal and pillow briquettes perfect for grilling. Consistent temperature and easy to light.",
     specs: [
       { icon: Flame, label: "Burn Time", value: "120+ minutes" },
