@@ -1,4 +1,5 @@
 import { MessageCircle, Mail } from "lucide-react";
+import logoWhite from "@/assets/logo-white.png";
 
 const Footer = () => {
   return (
@@ -7,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="font-heading text-lg font-bold text-background mb-3">Mono Charcoal</h3>
+            <img src={logoWhite} alt="Mono Charcoal" className="h-12 mb-3" />
             <p className="text-background/60 text-sm font-body leading-relaxed">
               Indonesia's finest coconut charcoal factory. Premium shisha and BBQ briquettes for global export.
             </p>
