@@ -35,8 +35,7 @@ const HeroSection = () => {
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-heading text-base gap-2"
+              className="border-2 border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 font-heading text-base gap-2"
             >
               <a href="mailto:haidar@monocoal.com">
                 <Mail size={20} />
