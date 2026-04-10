@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const stats = [
   { value: 10, suffix: "+", label: "Years Experience" },
-  { value: 500, suffix: "+", label: "Tons Exported" },
+  { value: 1000, suffix: "+", label: "Tons Exported" },
   { value: 30, suffix: "+", label: "Countries Served" },
 ];
 
@@ -48,10 +48,10 @@ const AboutSection = () => {
             About Us
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Indonesia's Finest Coconut Charcoal Factory
+            Indonesia's Finest Coconut Charcoal Factory for Shisha and Barbecue
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed font-body">
-            Mono Charcoal is a leading manufacturer and exporter of premium coconut shell charcoal briquettes. Based in Indonesia, we combine traditional craftsmanship with modern production techniques to deliver the highest quality charcoal for shisha and barbecue use worldwide.
+            PT Mono Milik Nusantara (Mono Charcoal) is a leading manufacturer and exporter of premium coconut shell charcoal briquettes. Based in Indonesia, we combine traditional craftsmanship with modern production techniques to deliver the highest quality charcoal for shisha and barbecue use worldwide.
           </p>
         </div>
 
