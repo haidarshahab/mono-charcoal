@@ -6,9 +6,18 @@ const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center bg-primary overflow-hidden">
-      {/* Decorative gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-[hsl(155,37%,12%)] opacity-90" />
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/5 to-transparent" />
+      {/* Background YouTube video */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <iframe
+          src="https://www.youtube.com/embed/XSiE4uprEvg?autoplay=1&mute=1&loop=1&playlist=XSiE4uprEvg&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1"
+          title="Background video"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] h-[180%] min-w-full min-h-full opacity-30"
+          style={{ border: 'none', aspectRatio: '16/9' }}
+          allow="autoplay; encrypted-media"
+        />
+      </div>
+      {/* Dark green overlay */}
+      <div className="absolute inset-0 bg-primary/70" />
 
       <div className="container relative mx-auto px-4 lg:px-8 pt-24 pb-16">
         <div className="max-w-3xl">
