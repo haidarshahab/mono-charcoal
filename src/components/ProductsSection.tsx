@@ -11,17 +11,17 @@ const products = [
   {
     name: "Shisha Charcoal",
     image: shishaImg,
-    description: "Premium cube and flat-shaped briquettes designed for hookah use. Clean burn, minimal ash, and long-lasting heat.",
+    description: "The coconut charcoal we manufacture will get you shisha lounges and wholesalers that will do repeat orders. 100% Good Coconut. We are able to manufacture any size you want.",
     specs: [
-      { icon: Flame, label: "Burn Time", value: "90+ minutes" },
-      { icon: Sparkles, label: "Ash Content", value: "< 3%" },
+      { icon: Flame, label: "Burn Time", value: "120+ minutes" },
+      { icon: Sparkles, label: "Ash Content", value: "< 1.9%" },
       { icon: Wind, label: "No Odor", value: "Tasteless" },
     ],
   },
   {
     name: "BBQ Charcoal",
     image: bbqImg,
-    description: "High-heat hexagonal and pillow briquettes perfect for grilling. Consistent temperature and easy to light.",
+    description: "High-heat hexagonal and pillow briquettes perfect for grilling. Consistent temperature and easy to light. 100% perfect grill.",
     specs: [
       { icon: Flame, label: "Burn Time", value: "120+ minutes" },
       { icon: Sparkles, label: "Ash Content", value: "< 5%" },
@@ -44,7 +44,7 @@ const ProductsSection = () => {
             Our Products
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-            Premium Charcoal for Every Need
+            Premium Charcoal for Every Need. Made with love and passions.
           </h2>
         </div>
 
@@ -74,7 +74,7 @@ const ProductsSection = () => {
                 >
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle size={18} />
-                    Order via WhatsApp
+                    Get Free Sample
                   </a>
                 </Button>
               </CardContent>
