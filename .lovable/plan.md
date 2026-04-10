@@ -1,59 +1,41 @@
 
-# Mono Charcoal — One-Page Landing Page
 
-## Design System
-- **Colors**: Primary green `#1D3F30`, accent orange `#D35623`, light bg `#EDEDED`, dark text `#3C3C3C`
-- **Typography**: Space Grotesk (headings), DM Sans (body)
-- **Layout**: Full-width stacked sections with generous whitespace
-- **Style**: Clean, premium, modern — inspired by Cofactr's bold hero and UnboundX's crisp layout
-- **Animations**: Fade-in-on-scroll for each section, smooth scroll navigation
+# Refine "Why Mono Charcoal" Section
 
-## Sections (single page, top to bottom)
+## Narrative Direction
 
-### 1. Sticky Navigation Bar
-- Logo "Mono Charcoal" on left
-- Nav links: About · Products · Blog · Contact (smooth-scroll anchors)
-- "Get in Touch" CTA button (orange) linking to WhatsApp
+The current section is generic "feature blocks." The new angle: **Indonesia has hundreds of charcoal manufacturers, but most lack professional management** — leading to production delays, missing documents, shipping chaos, and inconsistent quality. Mono Charcoal is the exception.
 
-### 2. Hero Section
-- Full-width dark green background with large bold headline: *"The Best Coconut Charcoal from Indonesia"*
-- Subheadline about premium quality, sustainability, global export
-- Two CTA buttons: "Chat on WhatsApp" + "Send Email"
-- Decorative charcoal/coconut imagery or gradient overlay
+### Proposed structure (two-part layout):
 
-### 3. About Section
-- Company story — Indonesia's finest coconut charcoal factory
-- Key stats row: years of experience, tons exported, countries served (animated counters)
-- Trust badges / certifications area
+**Part 1 — The Problem (left column or top)**
+A bold, editorial-style statement addressing the pain:
+> *"Indonesia produces the world's best coconut charcoal. But finding a manufacturer you can actually rely on? That's the hard part."*
 
-### 4. Products Section
-- Two product cards side-by-side: **Shisha Charcoal** & **BBQ Charcoal**
-- Each card: product image placeholder, key specs (burn time, ash content, heat value), and a WhatsApp CTA
-- Clean card design on light background
+Brief paragraph listing real frustrations importers face: extreme delays, incomplete export documents, shipping problems, inconsistent product quality.
 
-### 5. Why Choose Us
-- 4 feature blocks: Premium Quality, Sustainable Sourcing, Global Export, Custom Packaging
-- Icon + title + short description for each
+**Part 2 — The Solution (right column or bottom)**
+Four feature blocks reframed as direct answers to those pain points:
 
-### 6. Blog Section
-- 3 blog post cards with placeholder titles, dates, and excerpts
-- "Read More" links (can be wired up later)
+| Pain Point | Mono's Answer |
+|---|---|
+| Production delays | **On-Time Production** — Structured workflow, real deadlines, no excuses |
+| Incomplete documents | **Full Documentation** — Packing lists, COA, fumigation certs — always ready |
+| Shipping problems | **Managed Logistics** — We handle freight, customs, and tracking end-to-end |
+| Inconsistent quality | **Consistent Quality** — Lab-tested every batch, same specs every shipment |
 
-### 7. Contact / CTA Section
-- Bold closing CTA: "Ready to Order?"
-- WhatsApp button (+62881024922133) and Email button (haidar@monocoal.com)
-- Simple contact form (name, email, message) for lead capture
+### Modern design approach (not old-style icon grids):
 
-### 8. Footer
-- Logo, quick links, social media placeholders, copyright
-- WhatsApp & email repeated
+- **Split layout**: Left side = large editorial text with the problem statement on a dark green (`#1D3F30`) background. Right side = the 4 solution cards stacked vertically with staggered fade-in.
+- **Cards**: No borders, no rounded boxes. Instead — bold numbers or thin accent lines as dividers. Minimal, editorial feel like Cofactr.
+- **Typography**: Large display heading (48px+), problem text in a lighter weight, solution titles in bold with orange accent marks.
+- **Subtle detail**: A thin orange vertical line or dot separating problem → solution visually.
 
-### 9. Floating WhatsApp Button
-- Fixed bottom-right green WhatsApp icon, always visible, links to chat
+### Technical changes:
+- Rewrite `src/components/WhyChooseUsSection.tsx` entirely
+- Update icons: `Clock`, `FileCheck`, `Ship`, `FlaskConical` (from lucide-react)
+- Use asymmetric grid: `lg:grid-cols-[1fr_1fr]` with left dark panel, right light panel
+- Each solution card uses staggered scroll animation delays
 
-## Technical
-- Single `Index.tsx` page with component sections
-- Google Fonts: Space Grotesk + DM Sans
-- Scroll-triggered fade-in animations via Intersection Observer
-- Fully responsive (mobile-first)
-- All WhatsApp links use `https://wa.me/62881024922133`
+This creates a storytelling section rather than a generic feature list — modern, human, and directly addressing buyer anxiety.
+
