@@ -11,7 +11,7 @@ const products = [
   {
     name: "Shisha Charcoal",
     image: shishaImg,
-    description: "The coconut charcoal we manufacture will get you shisha lounges and wholesalers that will do repeat orders. 100% Good Coconut. We are able to manufacture any size you want.",
+    description: "The coconut charcoal we manufacture will get your shisha lounges and wholesalers that will do repeat orders. 100% Good Coconut. We are able to manufacture any size you want.",
     specs: [
       { icon: Flame, label: "Burn Time", value: "120+ minutes" },
       { icon: Sparkles, label: "Ash Content", value: "< 1.9%" },
