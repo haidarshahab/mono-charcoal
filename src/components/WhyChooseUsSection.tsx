@@ -1,5 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Clock, FileCheck, Ship, FlaskConical } from "lucide-react";
+import { Clock, FileCheck, Ship, FlaskConical, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const solutions = [
   {
