@@ -1,41 +1,43 @@
 
 
-# Refine "Why Mono Charcoal" Section
+# Admin Blog System with Simple Password Gate
 
-## Narrative Direction
+## Overview
+Add a password-protected admin page at `/admin` where you can write and publish blog posts. Blog data will be stored in localStorage (no database needed). The public blog section will read from this same store, falling back to the current hardcoded posts.
 
-The current section is generic "feature blocks." The new angle: **Indonesia has hundreds of charcoal manufacturers, but most lack professional management** — leading to production delays, missing documents, shipping chaos, and inconsistent quality. Mono Charcoal is the exception.
+## What gets built
 
-### Proposed structure (two-part layout):
+### 1. Admin login gate (`/admin`)
+- Simple password input screen styled with the Mono brand
+- Password stored as a constant (you can change it anytime in the code)
+- Session kept in `sessionStorage` so refreshing stays logged in
 
-**Part 1 — The Problem (left column or top)**
-A bold, editorial-style statement addressing the pain:
-> *"Indonesia produces the world's best coconut charcoal. But finding a manufacturer you can actually rely on? That's the hard part."*
+### 2. Blog post editor (`/admin` after login)
+- List of all posts with edit/delete actions
+- "New Post" form with: title, excerpt, cover image URL (optional), and a rich body textarea (Markdown-friendly)
+- Publish/unpublish toggle and date picker
+- Clean, minimal admin UI using existing shadcn components (Card, Button, Input, Textarea)
 
-Brief paragraph listing real frustrations importers face: extreme delays, incomplete export documents, shipping problems, inconsistent product quality.
+### 3. Blog post storage
+- All posts saved to `localStorage` under a `mono-blog-posts` key
+- Each post: `{ id, title, excerpt, body, date, published, coverImage }`
+- Seed with the 3 existing hardcoded posts on first load
 
-**Part 2 — The Solution (right column or bottom)**
-Four feature blocks reframed as direct answers to those pain points:
+### 4. Public blog updates
+- `BlogSection.tsx` reads from localStorage instead of the hardcoded array, showing only `published` posts
+- Add a `/blog/:id` route for full post pages with the body content rendered
 
-| Pain Point | Mono's Answer |
-|---|---|
-| Production delays | **On-Time Production** — Structured workflow, real deadlines, no excuses |
-| Incomplete documents | **Full Documentation** — Packing lists, COA, fumigation certs — always ready |
-| Shipping problems | **Managed Logistics** — We handle freight, customs, and tracking end-to-end |
-| Inconsistent quality | **Consistent Quality** — Lab-tested every batch, same specs every shipment |
+### 5. Routing
+- `/admin` — password gate + post manager
+- `/blog/:id` — individual blog post page
 
-### Modern design approach (not old-style icon grids):
+## Technical details
+- New files: `src/pages/Admin.tsx`, `src/pages/BlogPost.tsx`, `src/lib/blog-storage.ts`
+- Modified: `src/App.tsx` (routes), `src/components/BlogSection.tsx` (read from storage)
+- No database or Supabase needed — purely client-side with localStorage
+- Admin password defined as a constant in `Admin.tsx`
 
-- **Split layout**: Left side = large editorial text with the problem statement on a dark green (`#1D3F30`) background. Right side = the 4 solution cards stacked vertically with staggered fade-in.
-- **Cards**: No borders, no rounded boxes. Instead — bold numbers or thin accent lines as dividers. Minimal, editorial feel like Cofactr.
-- **Typography**: Large display heading (48px+), problem text in a lighter weight, solution titles in bold with orange accent marks.
-- **Subtle detail**: A thin orange vertical line or dot separating problem → solution visually.
-
-### Technical changes:
-- Rewrite `src/components/WhyChooseUsSection.tsx` entirely
-- Update icons: `Clock`, `FileCheck`, `Ship`, `FlaskConical` (from lucide-react)
-- Use asymmetric grid: `lg:grid-cols-[1fr_1fr]` with left dark panel, right light panel
-- Each solution card uses staggered scroll animation delays
-
-This creates a storytelling section rather than a generic feature list — modern, human, and directly addressing buyer anxiety.
+## Limitations
+- localStorage is per-browser — posts written on one device won't appear on another
+- If you later want multi-device sync, we can migrate to Supabase with minimal changes
 
