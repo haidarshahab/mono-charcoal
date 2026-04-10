@@ -1,5 +1,6 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Clock, FileCheck, Ship, FlaskConical } from "lucide-react";
+import { Clock, FileCheck, Ship, FlaskConical, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const solutions = [
   {
@@ -81,6 +82,16 @@ const WhyChooseUsSection = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Company Profile CTA */}
+        <div className={`flex justify-center py-12 bg-[#F8F7F4] lg:bg-background transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: "900ms" }}>
+          <Button asChild variant="outline" className="gap-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 text-base font-heading">
+            <a href="/mono-charcoal-company-profile.pdf" download>
+              <Download size={18} />
+              Download Company Profile
+            </a>
+          </Button>
         </div>
       </div>
     </section>
