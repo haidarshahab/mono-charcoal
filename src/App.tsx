@@ -16,6 +16,13 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
+import AdminLayout from "./components/AdminLayout";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminArticles from "./pages/AdminArticles";
+import AdminArticleEdit from "./pages/AdminArticleEdit";
+import AdminContacts from "./pages/AdminContacts";
+import AdminSubscribers from "./pages/AdminSubscribers";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +44,15 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
+        </Route>
+        <Route path="/admin" element={<Admin />} />
+        <Route element={<AdminLayout />}>
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/articles" element={<AdminArticles />} />
+          <Route path="/admin/articles/new" element={<AdminArticleEdit />} />
+          <Route path="/admin/articles/:id" element={<AdminArticleEdit />} />
+          <Route path="/admin/contacts" element={<AdminContacts />} />
+          <Route path="/admin/subscribers" element={<AdminSubscribers />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

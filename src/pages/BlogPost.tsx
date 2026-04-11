@@ -1,17 +1,50 @@
+import { useEffect, useState } from "react";
 import SEO from "@/components/SEO";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Clock, Calendar, Share2, MessageCircle } from "lucide-react";
-import { articles, getArticleBySlug, getRelatedArticles } from "@/data/articles";
+import { ArrowLeft, Clock, Calendar, Share2, MessageCircle, Loader2 } from "lucide-react";
+import { getArticleBySlug, getArticles, Article } from "@/lib/supabase";
 
 const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%20I%27m%20interested%20in%20your%20blog%20content";
 
 const BlogPost = () => {
   const { slug } = useParams();
   const ref = useScrollReveal();
-  
-  const article = slug ? getArticleBySlug(slug) : undefined;
-  const relatedArticles = slug ? getRelatedArticles(slug, 2) : [];
+  const [article, setArticle] = useState<Article | null>(null);
+  const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadArticle = async () => {
+      setLoading(true);
+      try {
+        if (slug) {
+          const data = await getArticleBySlug(slug);
+          setArticle(data || null);
+          
+          // Load related articles
+          const allArticles = await getArticles(true);
+          const related = allArticles
+            .filter(a => a.slug !== slug)
+            .slice(0, 2);
+          setRelatedArticles(related);
+        }
+      } catch (error) {
+        console.error("Failed to load article:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    loadArticle();
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-amber-500" />
+      </div>
+    );
+  }
 
   if (!article) {
     return (
@@ -30,14 +63,19 @@ const BlogPost = () => {
     );
   }
 
-  const contentSections = article.content.split('\n\n').filter(section => section.trim());
+  const contentSections = (article.content || "").split('\n\n').filter(section => section.trim());
+
+  const formatDate = (dateStr: string | null) => {
+    if (!dateStr) return "";
+    return new Date(dateStr).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  };
 
   return (
     <>
       <SEO 
         title={article.title} 
-        description={article.excerpt}
-        keywords={article.keywords}
+        description={article.excerpt || undefined}
+        keywords={article.keywords || undefined}
       />
       <div ref={ref}>
         <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-12 lg:py-20">
@@ -47,9 +85,9 @@ const BlogPost = () => {
             </Link>
             <div className="max-w-3xl">
               <div className="flex items-center gap-4 text-sm text-slate-400 mb-4">
-                <span className="bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full">{article.category}</span>
-                <span className="flex items-center gap-1"><Calendar className="w-4 h-4" />{new Date(article.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
-                <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{article.readTime}</span>
+                <span className="bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full">{article.category || "Article"}</span>
+                <span className="flex items-center gap-1"><Calendar className="w-4 h-4" />{formatDate(article.date)}</span>
+                <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{article.read_time || "5 min read"}</span>
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">{article.title}</h1>
               <p className="text-xl text-slate-300">{article.excerpt}</p>
@@ -65,7 +103,7 @@ const BlogPost = () => {
         <section className="py-12 bg-slate-50">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap gap-2">
-              {article.keywords.map((keyword, index) => (
+              {article.keywords?.map((keyword, index) => (
                 <span key={index} className="bg-white text-slate-600 px-3 py-1 rounded-full text-sm border border-slate-200">#{keyword}</span>
               ))}
             </div>
@@ -185,11 +223,11 @@ const BlogPost = () => {
               <h2 className="text-2xl font-bold text-slate-900 mb-8">Related Articles</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 {relatedArticles.map((related) => (
-                  <article key={related.slug} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                  <article key={related.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
                     <div className="p-6">
                       <div className="flex items-center gap-4 text-sm text-slate-500 mb-3">
-                        <span>{related.category}</span>
-                        <span>{related.readTime}</span>
+                        <span>{related.category || "Article"}</span>
+                        <span>{related.read_time || "5 min read"}</span>
                       </div>
                       <h3 className="text-xl font-bold text-slate-900 mb-3 hover:text-amber-600 transition-colors">{related.title}</h3>
                       <p className="text-slate-600 text-sm mb-4 line-clamp-2">{related.excerpt}</p>
