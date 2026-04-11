@@ -104,10 +104,16 @@ export const addSubscriber = async (email: string): Promise<Subscriber> => {
     body: JSON.stringify({ email }),
   });
   if (!res.ok) {
-    const error = await res.json();
-    throw new Error(error.message || 'Failed to subscribe');
+    const errorText = await res.text();
+    try {
+      const error = JSON.parse(errorText);
+      throw new Error(error.message || 'Failed to subscribe');
+    } catch {
+      throw new Error(errorText || 'Failed to subscribe');
+    }
   }
-  return res.json();
+  const text = await res.text();
+  return text ? JSON.parse(text) : { success: true };
 };
 
 // Contacts
@@ -125,10 +131,16 @@ export const addContact = async (contact: Partial<Contact>): Promise<Contact> =>
     body: JSON.stringify(contact),
   });
   if (!res.ok) {
-    const error = await res.json();
-    throw new Error(error.message || 'Failed to add contact');
+    const errorText = await res.text();
+    try {
+      const error = JSON.parse(errorText);
+      throw new Error(error.message || 'Failed to add contact');
+    } catch {
+      throw new Error(errorText || 'Failed to add contact');
+    }
   }
-  return res.json();
+  const text = await res.text();
+  return text ? JSON.parse(text) : { success: true };
 };
 
 export const updateContactStatus = async (id: string, status: string): Promise<Contact> => {
