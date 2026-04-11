@@ -68,7 +68,8 @@ export const createArticle = async (article: Partial<Article>): Promise<Article>
     headers: headers(true),
     body: JSON.stringify(article),
   });
-  return res.json();
+  const text = await res.text();
+  return text ? JSON.parse(text) : { success: true };
 };
 
 export const updateArticle = async (id: string, article: Partial<Article>): Promise<Article> => {
@@ -78,7 +79,8 @@ export const updateArticle = async (id: string, article: Partial<Article>): Prom
     headers: headers(true),
     body: JSON.stringify(article),
   });
-  return res.json();
+  const text = await res.text();
+  return text ? JSON.parse(text) : { success: true };
 };
 
 export const deleteArticle = async (id: string): Promise<void> => {
