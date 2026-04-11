@@ -33,7 +33,8 @@ const AdminLayout = () => {
   };
 
   if (!isAuthenticated) {
-    return <Outlet />;
+    navigate("/admin", { replace: true });
+    return null;
   }
 
   return (
