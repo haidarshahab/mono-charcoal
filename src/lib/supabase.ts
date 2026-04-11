@@ -103,6 +103,10 @@ export const addSubscriber = async (email: string): Promise<Subscriber> => {
     headers: headers(true),
     body: JSON.stringify({ email }),
   });
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.message || 'Failed to subscribe');
+  }
   return res.json();
 };
 
@@ -120,6 +124,10 @@ export const addContact = async (contact: Partial<Contact>): Promise<Contact> =>
     headers: headers(true),
     body: JSON.stringify(contact),
   });
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.message || 'Failed to add contact');
+  }
   return res.json();
 };
 
