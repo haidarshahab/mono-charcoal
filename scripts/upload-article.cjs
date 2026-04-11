@@ -60,8 +60,8 @@ async function uploadArticle(article) {
  * Generate sitemap after article upload
  */
 async function generateSitemap() {
-  // Fetch all published articles
-  const url = `${CONFIG.supabaseUrl}/rest/v1/articles?select=slug,published&published=eq.true`;
+  // Fetch all articles (both published and draft)
+  const url = `${CONFIG.supabaseUrl}/rest/v1/articles?select=slug,published`;
   
   const response = await fetch(url, {
     headers: {
