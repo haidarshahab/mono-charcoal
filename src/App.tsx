@@ -13,6 +13,7 @@ import OEM from "./pages/OEM";
 import Quality from "./pages/Quality";
 import Export from "./pages/Export";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/quality" element={<Quality />} />
           <Route path="/export" element={<Export />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
         <Route path="*" element={<NotFound />} />

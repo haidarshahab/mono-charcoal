@@ -1,10 +1,23 @@
 import SEO from "@/components/SEO";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Clock, ArrowRight } from "lucide-react";
+import { Clock, ArrowRight, Mail, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Blog = () => {
   const ref = useScrollReveal();
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      const mailtoUrl = `mailto:admin@monocharcoal.com?subject=Newsletter%20Subscription&body=I%20want%20to%20subscribe%20to%20the%20Mono%20Charcoal%20newsletter.%20My%20email%20is:%20${encodeURIComponent(email)}`;
+      window.location.href = mailtoUrl;
+      setSubscribed(true);
+    }
+  };
+
   const blogPosts = [
     { slug: "why-indonesian-coconut-charcoal-is-superior", title: "Why Indonesian Coconut Charcoal is Superior for Shisha", excerpt: "Discover what makes Indonesian coconut shell charcoal the preferred choice for hookah lounges worldwide.", date: "2025-04-10", readTime: "8 min read", category: "Industry Knowledge" },
     { slug: "coconut-charcoal-factory-vs-middleman", title: "Coconut Charcoal Factory vs Middleman: The Hidden Costs", excerpt: "Buying from a middleman adds 20-30% to your costs. Learn how to source directly from factories.", date: "2025-04-05", readTime: "6 min read", category: "Sourcing Guide" },
@@ -46,7 +59,7 @@ const Blog = () => {
                     <div className="flex items-center gap-4 text-sm text-slate-500 mb-3"><span>{post.date}</span><span className="flex items-center gap-1"><Clock className="w-4 h-4" />{post.readTime}</span></div>
                     <h2 className="text-xl font-bold text-slate-900 mb-3 hover:text-amber-600 transition-colors">{post.title}</h2>
                     <p className="text-slate-600 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
-                    <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition-colors">Read More <ArrowRight className="w-4 h-4" /></Link>
+                    <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition-colors">Read Article <ArrowRight className="w-4 h-4" /></Link>
                   </div>
                 </article>
               ))}
@@ -58,11 +71,30 @@ const Blog = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-slate-900 mb-4">Stay Updated</h2>
-              <p className="text-slate-600 mb-8">Subscribe to our newsletter for the latest insights.</p>
-              <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input type="email" placeholder="Enter your email" className="flex-1 px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-amber-500" />
-                <button type="submit" className="bg-amber-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-600 transition-colors">Subscribe</button>
-              </form>
+              <p className="text-slate-600 mb-8">Subscribe to our newsletter for the latest industry insights, sourcing tips, and charcoal business guides.</p>
+              {subscribed ? (
+                <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
+                  <p className="text-amber-800 font-medium mb-4">Thank you for subscribing! Check your email for confirmation.</p>
+                  <a href="https://wa.me/62881024922133" className="inline-flex items-center gap-2 text-amber-600 hover:text-amber-700">
+                    <MessageCircle className="w-5 h-5" /> Or contact us on WhatsApp
+                  </a>
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                  <input 
+                    type="email" 
+                    placeholder="Enter your email" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="flex-1 px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-amber-500" 
+                  />
+                  <button type="submit" className="bg-amber-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-600 transition-colors flex items-center gap-2">
+                    <Mail className="w-5 h-5" /> Subscribe
+                  </button>
+                </form>
+              )}
+              <p className="text-slate-500 text-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
             </div>
           </div>
         </section>
