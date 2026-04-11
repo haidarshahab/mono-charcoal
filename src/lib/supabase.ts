@@ -20,6 +20,7 @@ export interface Article {
   date: string | null;
   read_time: string | null;
   published: boolean;
+  scheduled_publish: string | null;
   created_at: string;
 }
 

@@ -1,0 +1,56 @@
+name: Publish Scheduled Articles
+
+on:
+  # Schedule: Daily at 9:00 UTC (after daily article upload)
+  schedule:
+    - cron: '0 9 * * *'
+  
+  # Manual trigger
+  workflow_dispatch:
+
+env:
+  SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+jobs:
+  publish-scheduled:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      
+      # Step 2: Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      # Step 3: Publish scheduled articles
+      - name: Publish Scheduled Articles
+        run: |
+          echo "🔄 Checking for scheduled articles..."
+          node scripts/publish-scheduled.cjs
+        env:
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      
+      # Step 4: Commit and Push Sitemap Update
+      - name: Commit Sitemap Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add public/sitemap.xml
+          git commit -m "Update sitemap after scheduled publishing" || echo "No changes to commit"
+      
+      # Step 5: Push Changes
+      - name: Push Changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+      
+      # Step 6: Summary
+      - name: Summary
+        run: |
+          echo "✅ Scheduled publishing job completed!"

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { ArrowLeft, Save, Eye, Loader2 } from "lucide-react";
+import { ArrowLeft, Save, Eye, Loader2, Zap } from "lucide-react";
 import { getArticleById, createArticle, updateArticle, generateSlug, Article } from "@/lib/supabase";
 import SEO from "@/components/SEO";
 
@@ -32,6 +32,7 @@ const AdminArticleEdit = () => {
     date: new Date().toISOString().split("T")[0],
     readTime: "5 min read",
     published: false,
+    scheduled_publish: "",
   });
 
   useEffect(() => {
@@ -50,6 +51,7 @@ const AdminArticleEdit = () => {
               date: article.date || "",
               readTime: article.read_time || "5 min read",
               published: article.published || false,
+              scheduled_publish: article.scheduled_publish ? article.scheduled_publish.slice(0, 16) : "",
             });
           }
         } catch (error) {
@@ -91,6 +93,7 @@ const AdminArticleEdit = () => {
         date: form.date,
         read_time: form.readTime,
         published: form.published,
+        scheduled_publish: form.scheduled_publish ? new Date(form.scheduled_publish).toISOString() : null,
       };
 
       if (isEdit && id) {
@@ -243,6 +246,39 @@ const AdminArticleEdit = () => {
                 {form.published 
                   ? "This article is visible on the blog" 
                   : "This article is a draft and hidden"}
+              </p>
+              {form.scheduled_publish && !form.published && (
+                <button
+                  type="button"
+                  onClick={async () => {
+                    try {
+                      await updateArticle(id!, { published: true, scheduled_publish: null });
+                      setForm(prev => ({ ...prev, published: true, scheduled_publish: "" }));
+                      alert("Article published immediately!");
+                    } catch (error) {
+                      console.error("Failed to publish:", error);
+                    }
+                  }}
+                  className="mt-3 flex items-center gap-2 text-amber-500 hover:text-amber-400 text-sm"
+                >
+                  <Zap className="w-4 h-4" /> Publish immediately
+                </button>
+              )}
+            </div>
+
+            {/* Scheduled Publish */}
+            <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
+              <h3 className="text-white font-semibold mb-4">Schedule Publishing</h3>
+              <label className="block text-slate-400 text-sm mb-2">Publish Date & Time</label>
+              <input
+                type="datetime-local"
+                name="scheduled_publish"
+                value={form.scheduled_publish}
+                onChange={handleChange}
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-amber-500"
+              />
+              <p className="text-slate-500 text-sm mt-2">
+                Leave empty for manual publishing. Set date/time to auto-publish.
               </p>
             </div>
 

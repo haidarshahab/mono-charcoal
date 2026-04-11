@@ -1,19 +1,15 @@
 /**
- * Article Upload Script for Automated Blog System
+ * Publish Scheduled Articles Script
  * 
- * Usage: node scripts/upload-article.js
+ * This script is used by GitHub Actions to automatically publish
+ * articles that have reached their scheduled publish date.
  * 
- * This script is used by GitHub Actions to upload articles to Supabase.
- * It uploads an article from JSON file and triggers sitemap regeneration.
- * 
- * Input: articles/daily/[number].json
- * Output: Creates article in Supabase, updates sitemap
+ * Usage: node scripts/publish-scheduled.cjs
  */
 
 const fs = require('fs');
 const path = require('path');
 
-// Configuration
 const CONFIG = {
   domain: 'monocharcoal.com',
   supabaseUrl: 'https://rnjalauqcvamvhpenjtg.supabase.co',
@@ -21,13 +17,31 @@ const CONFIG = {
 };
 
 /**
- * Upload article to Supabase
+ * Get articles that are scheduled to be published
  */
-async function uploadArticle(article) {
-  const url = `${CONFIG.supabaseUrl}/rest/v1/articles`;
+async function getScheduledArticles() {
+  const now = new Date().toISOString();
+  const url = `${CONFIG.supabaseUrl}/rest/v1/articles?select=id,title,slug,scheduled_publish,published&scheduled_publish=lte.${now}&published=eq.false`;
   
   const response = await fetch(url, {
-    method: 'POST',
+    headers: {
+      'apikey': CONFIG.serviceKey,
+      'Authorization': `Bearer ${CONFIG.serviceKey}`,
+    },
+  });
+
+  const articles = await response.json();
+  return articles;
+}
+
+/**
+ * Publish an article
+ */
+async function publishArticle(id) {
+  const url = `${CONFIG.supabaseUrl}/rest/v1/articles?id=eq.${id}`;
+  
+  const response = await fetch(url, {
+    method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
       'apikey': CONFIG.serviceKey,
@@ -35,34 +49,23 @@ async function uploadArticle(article) {
       'Prefer': 'return=representation',
     },
     body: JSON.stringify({
-      title: article.title,
-      slug: article.slug,
-      excerpt: article.excerpt,
-      content: article.content,
-      category: article.category,
-      keywords: article.keywords,
-      date: article.date || new Date().toISOString().split('T')[0],
-      read_time: article.read_time || `${Math.ceil(article.content.split(' ').length / 200)} min read`,
-      published: false,
-      scheduled_publish: article.scheduled_publish || null,
+      published: true,
     }),
   });
 
   if (!response.ok) {
     const error = await response.text();
-    throw new Error(`Failed to upload article: ${error}`);
+    throw new Error(`Failed to publish article: ${error}`);
   }
 
-  const result = await response.json();
-  return result[0];
+  return response.json();
 }
 
 /**
- * Generate sitemap after article upload
+ * Generate sitemap
  */
 async function generateSitemap() {
-  // Fetch all articles (both published and draft)
-  const url = `${CONFIG.supabaseUrl}/rest/v1/articles?select=slug,published`;
+  const url = `${CONFIG.supabaseUrl}/rest/v1/articles?select=slug,published&published=eq.true`;
   
   const response = await fetch(url, {
     headers: {
@@ -73,7 +76,6 @@ async function generateSitemap() {
 
   const articles = await response.json();
 
-  // Static pages
   const staticPages = [
     { url: '/', priority: '1.0', changefreq: 'daily' },
     { url: '/about', priority: '0.8', changefreq: 'monthly' },
@@ -90,7 +92,6 @@ async function generateSitemap() {
   let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
 
-  // Add static pages
   for (const page of staticPages) {
     sitemap += `
   <url>
@@ -100,7 +101,6 @@ async function generateSitemap() {
   </url>`;
   }
 
-  // Add blog articles
   for (const article of articles) {
     if (article.slug) {
       sitemap += `
@@ -115,54 +115,41 @@ async function generateSitemap() {
   sitemap += `
 </urlset>`;
 
-  // Write sitemap
   const sitemapPath = path.join(__dirname, '../public/sitemap.xml');
   fs.writeFileSync(sitemapPath, sitemap);
   
-  console.log(`✅ Sitemap updated with ${articles.length} articles`);
+  console.log(`✅ Sitemap updated with ${articles.length} published articles`);
 }
 
 /**
  * Main function
  */
 async function main() {
-  // Get article number from command line
-  const articleNumber = process.argv[2] || '1';
-  const articlePath = path.join(__dirname, `../articles/daily/${articleNumber}.json`);
+  console.log(`\n🔄 Checking for scheduled articles to publish...\n`);
   
-  console.log(`\n🚀 Starting article upload...`);
-  console.log(`📄 Reading: ${articlePath}\n`);
+  const scheduledArticles = await getScheduledArticles();
   
-  // Check if file exists
-  if (!fs.existsSync(articlePath)) {
-    console.error(`❌ Article file not found: ${articlePath}`);
-    console.log(`\nUsage: node scripts/upload-article.js [article-number]`);
-    console.log(`Example: node scripts/upload-article.js 1`);
-    process.exit(1);
+  if (scheduledArticles.length === 0) {
+    console.log(`📭 No articles scheduled for publishing today.`);
+    console.log(`   Next check: Tomorrow at 9:00 UTC\n`);
+    return;
   }
   
-  // Read article JSON
-  const articleData = JSON.parse(fs.readFileSync(articlePath, 'utf8'));
+  console.log(`📋 Found ${scheduledArticles.length} article(s) to publish:\n`);
   
-  console.log(`📝 Article: ${articleData.title}`);
-  console.log(`📂 Category: ${articleData.category}`);
-  console.log(`🏷️  Keywords: ${articleData.keywords?.join(', ')}`);
+  for (const article of scheduledArticles) {
+    console.log(`   - ${article.title}`);
+    await publishArticle(article.id);
+    console.log(`     ✅ Published!`);
+  }
   
-  // Upload to Supabase
-  console.log(`\n📤 Uploading to Supabase...`);
-  const result = await uploadArticle(articleData);
-  console.log(`✅ Article uploaded! ID: ${result?.id}`);
-  
-  // Update sitemap
   console.log(`\n🗺️  Updating sitemap...`);
   await generateSitemap();
   
-  console.log(`\n✨ Article upload complete!`);
-  console.log(`   Status: DRAFT (awaiting approval)`);
-  console.log(`   Next step: Review in Admin and publish\n`);
+  console.log(`\n✨ Scheduled publishing complete!`);
+  console.log(`   Published: ${scheduledArticles.length} article(s)\n`);
 }
 
-// Run
 main().catch(error => {
   console.error('\n❌ Error:', error.message);
   process.exit(1);

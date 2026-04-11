@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { Plus, Edit, Trash2, Eye, EyeOff, Search, FileText } from "lucide-react";
+import { Plus, Edit, Trash2, Eye, EyeOff, Search, FileText, Clock } from "lucide-react";
 import { getArticles, deleteArticle, Article } from "@/lib/supabase";
 import SEO from "@/components/SEO";
 
@@ -126,11 +126,17 @@ const AdminArticles = () => {
                         inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium
                         ${article.published 
                           ? "bg-green-500/20 text-green-400" 
-                          : "bg-slate-600/50 text-slate-400"}
+                          : article.scheduled_publish 
+                            ? "bg-amber-500/20 text-amber-400"
+                            : "bg-slate-600/50 text-slate-400"}
                       `}>
                         {article.published ? (
                           <>
                             <Eye className="w-3.5 h-3.5" /> Published
+                          </>
+                        ) : article.scheduled_publish ? (
+                          <>
+                            <Clock className="w-3.5 h-3.5" /> Scheduled
                           </>
                         ) : (
                           <>
@@ -141,7 +147,12 @@ const AdminArticles = () => {
                     </td>
                     <td className="px-6 py-4">
                       <span className="text-slate-400 text-sm">
-                        {article.date || new Date(article.created_at).toLocaleDateString()}
+                        {article.published 
+                          ? (article.date || new Date(article.created_at).toLocaleDateString())
+                          : article.scheduled_publish 
+                            ? `Scheduled: ${new Date(article.scheduled_publish).toLocaleDateString()}`
+                            : (article.date || new Date(article.created_at).toLocaleDateString())
+                        }
                       </span>
                     </td>
                     <td className="px-6 py-4">
