@@ -78,7 +78,7 @@ const About = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-slate-200 rounded-2xl h-96 flex items-center justify-center"><p className="text-slate-500">Factory Image Placeholder</p></div>
+              <img src="/assets/factory-exterior.jpg" alt="Mono Charcoal Factory" className="rounded-2xl w-full h-full object-cover" />
             </div>
           </div>
         </section>
@@ -92,7 +92,7 @@ const About = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {team.map((member, index) => (
                 <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
-                  <div className="w-24 h-24 bg-slate-200 rounded-full mx-auto mb-4 flex items-center justify-center"><Users className="w-10 h-10 text-slate-400" /></div>
+                  <img src="/assets/team.jpg" alt="Mono Charcoal Team" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
                   <h3 className="text-xl font-semibold text-slate-900 text-center mb-1">{member.name}</h3>
                   <p className="text-amber-600 text-center text-sm font-medium mb-3">{member.role}</p>
                   <p className="text-slate-600 text-center text-sm">{member.description}</p>
@@ -154,9 +154,9 @@ const About = () => {
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-white/20 rounded-lg p-4"><MapPin className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">Bekasi, West Java, Indonesia</p></div>
                 <div className="bg-white/20 rounded-lg p-4"><Phone className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">+62 (WhatsApp)</p></div>
-                <div className="bg-white/20 rounded-lg p-4"><Mail className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">haidar@monocoal.com</p></div>
+                <div className="bg-white/20 rounded-lg p-4"><Mail className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">admin@monocharcoal.com</p></div>
               </div>
-              <a href="https://wa.me/" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Contact Us via WhatsApp</a>
+              <a href="https://wa.me/62881024922133" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Contact Us via WhatsApp</a>
             </div>
           </div>
         </section>

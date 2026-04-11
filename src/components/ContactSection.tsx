@@ -18,7 +18,7 @@ const ContactSection = () => {
     // For now, open mailto with pre-filled data
     const subject = encodeURIComponent(`Inquiry from ${formData.name}`);
     const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
-    window.open(`mailto:haidar@monocoal.com?subject=${subject}&body=${body}`);
+    window.open(`mailto:admin@monocharcoal.com?subject=${subject}&body=${body}`);
     toast({ title: "Opening email client...", description: "Your message is being prepared." });
     setFormData({ name: "", email: "", message: "" });
   };
@@ -58,9 +58,9 @@ const ContactSection = () => {
                 size="lg"
                 className="w-full sm:w-auto border-2 border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 font-heading gap-2 ml-0 sm:ml-4"
               >
-                <a href="mailto:haidar@monocoal.com">
+                <a href="mailto:admin@monocharcoal.com">
                   <Mail size={20} />
-                  haidar@monocoal.com
+                  admin@monocharcoal.com
                 </a>
               </Button>
             </div>

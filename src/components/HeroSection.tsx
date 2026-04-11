@@ -46,7 +46,7 @@ const HeroSection = () => {
               size="lg"
               className="border-2 border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 font-heading text-base gap-2"
             >
-              <a href="mailto:haidar@monocoal.com">
+              <a href="mailto:admin@monocharcoal.com">
                 <Mail size={20} />
                 Send Email
               </a>

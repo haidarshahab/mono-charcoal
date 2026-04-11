@@ -39,7 +39,7 @@ const Export = () => {
               <p className="text-xl text-slate-300 mb-8">Reliable worldwide shipping from Indonesia with comprehensive documentation.</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="#shipping" className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors">View Shipping Routes</a>
-                <a href="https://wa.me/" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">Get Shipping Quote</a>
+                <a href="https://wa.me/62881024922133" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">Get Shipping Quote</a>
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ const Export = () => {
               <h2 className="text-3xl font-bold mb-4">Ready to Order?</h2>
               <p className="text-white/90 text-lg mb-8">Contact us for a detailed shipping quote.</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/" className="bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Get Shipping Quote</a>
+                <a href="https://wa.me/62881024922133" className="bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Get Shipping Quote</a>
                 <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-amber-600 font-semibold px-8 py-3 rounded-lg transition-colors">Contact Sales</a>
               </div>
             </div>

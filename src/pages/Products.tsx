@@ -38,7 +38,7 @@ const Products = () => {
                   <p className="text-white/80">Premium hookah coals for wholesale buyers</p>
                 </div>
                 <div className="p-6">
-                  <div className="bg-slate-100 rounded-xl h-48 flex items-center justify-center mb-6"><p className="text-slate-500">Product Image</p></div>
+                  <img src="/assets/shisha-product.jpg" alt="Shisha Charcoal" className="w-full h-48 object-cover rounded-xl mb-6" />
                   <ul className="space-y-3 mb-6">
                     {shishaFeatures.map((feature, i) => (<li key={i} className="flex items-center gap-2 text-slate-600"><CheckCircle className="w-5 h-5 text-amber-500 flex-shrink-0" />{feature}</li>))}
                   </ul>
@@ -52,7 +52,7 @@ const Products = () => {
                   <p className="text-white/80">Premium grilling charcoal for global markets</p>
                 </div>
                 <div className="p-6">
-                  <div className="bg-slate-100 rounded-xl h-48 flex items-center justify-center mb-6"><p className="text-slate-500">Product Image</p></div>
+                  <img src="/assets/bbq-product.jpg" alt="BBQ Charcoal" className="w-full h-48 object-cover rounded-xl mb-6" />
                   <ul className="space-y-3 mb-6">
                     {bbqFeatures.map((feature, i) => (<li key={i} className="flex items-center gap-2 text-slate-600"><CheckCircle className="w-5 h-5 text-amber-500 flex-shrink-0" />{feature}</li>))}
                   </ul>
@@ -106,7 +106,7 @@ const Products = () => {
                 </ul>
                 <Link to="/oem" className="inline-flex items-center gap-2 bg-amber-500 text-white px-6 py-3 rounded-lg hover:bg-amber-600 transition-colors font-medium">Learn More About OEM <ChevronRight className="w-5 h-5" /></Link>
               </div>
-              <div className="bg-slate-100 rounded-2xl h-80 flex items-center justify-center"><p className="text-slate-500">OEM Packaging Examples</p></div>
+              <img src="/assets/packaging.jpg" alt="OEM Packaging" className="w-full h-80 object-cover rounded-2xl" />
             </div>
           </div>
         </section>
@@ -126,7 +126,7 @@ const Products = () => {
               <h2 className="text-3xl font-bold mb-4">Ready to Order?</h2>
               <p className="text-slate-300 text-lg mb-8">Contact us for a free sample and competitive quote.</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="https://wa.me/" className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors">Get Free Sample</a>
+                <a href="https://wa.me/62881024922133" className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors">Get Free Sample</a>
                 <a href="/contact" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">Contact Sales</a>
               </div>
             </div>

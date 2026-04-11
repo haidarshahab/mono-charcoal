@@ -30,7 +30,7 @@ const BBQCharcoal = () => {
               <p className="text-xl text-slate-300 mb-8">High-quality coconut shell charcoal for professional grilling.</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="#specs" className="bg-amber-500 text-white font-semibold px-8 py-3 rounded-lg hover:bg-amber-600 transition-colors">View Specifications</a>
-                <a href="https://wa.me/" className="border-2 border-white text-white hover:bg-white hover:text-slate-800 font-semibold px-8 py-3 rounded-lg transition-colors">Get Free Sample</a>
+                <a href="https://wa.me/62881024922133" className="border-2 border-white text-white hover:bg-white hover:text-slate-800 font-semibold px-8 py-3 rounded-lg transition-colors">Get Free Sample</a>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ const BBQCharcoal = () => {
                   {features.map((feature, index) => (<li key={index} className="flex items-start gap-3"><CheckCircle className="w-6 h-6 text-amber-500 flex-shrink-0 mt-0.5" /><span className="text-slate-700">{feature}</span></li>))}
                 </ul>
               </div>
-              <div className="bg-slate-100 rounded-2xl h-80 flex items-center justify-center"><div className="text-center"><Flame className="w-20 h-20 text-amber-500 mx-auto mb-4" /><p className="text-slate-500">BBQ Charcoal on Grill</p></div></div>
+              <img src="/assets/bbq-product.jpg" alt="BBQ Charcoal" className="w-full h-80 object-cover rounded-2xl" />
             </div>
           </div>
         </section>
@@ -84,7 +84,7 @@ const BBQCharcoal = () => {
             <div className="max-w-4xl mx-auto bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 md:p-12 text-center text-white">
               <h2 className="text-3xl font-bold mb-4">Ready to Order?</h2>
               <p className="text-white/90 text-lg mb-8">Contact us for pricing and samples.</p>
-              <a href="https://wa.me/" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Get Quote via WhatsApp</a>
+              <a href="https://wa.me/62881024922133" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Get Quote via WhatsApp</a>
             </div>
           </div>
         </section>

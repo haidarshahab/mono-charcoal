@@ -38,7 +38,7 @@ const Quality = () => {
               <p className="text-xl text-slate-300 mb-8">Our 8-step quality control process ensures every batch meets your specifications.</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="#process" className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors">View QC Process</a>
-                <a href="https://wa.me/" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">Request Lab Reports</a>
+                <a href="https://wa.me/62881024922133" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">Request Lab Reports</a>
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@ const Quality = () => {
             <div className="max-w-4xl mx-auto bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 md:p-12 text-center text-white">
               <h2 className="text-3xl font-bold mb-4">Request Quality Documentation</h2>
               <p className="text-white/90 text-lg mb-8">We provide complete lab reports and certificates with every export shipment.</p>
-              <a href="https://wa.me/" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Request Sample & Reports</a>
+              <a href="https://wa.me/62881024922133" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Request Sample & Reports</a>
             </div>
           </div>
         </section>

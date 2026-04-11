@@ -41,8 +41,8 @@ const Footer = () => {
               <a href="https://wa.me/62881024922133" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
                 <MessageCircle size={16} /> +62 881 0249 22133
               </a>
-              <a href="mailto:haidar@monocoal.com" className="flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
-                <Mail size={16} /> haidar@monocoal.com
+              <a href="mailto:admin@monocharcoal.com" className="flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                <Mail size={16} /> admin@monocharcoal.com
               </a>
               <div className="flex items-start gap-2 text-primary-foreground/60 text-sm">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5" />
