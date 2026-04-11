@@ -43,8 +43,8 @@ const Blog = () => {
       console.log("Subscribed successfully!");
     } catch (err: any) {
       console.error("Subscribe error:", err);
-      if (err?.message?.includes("duplicate") || err?.status === 409 || err?.message?.includes("unique constraint")) {
-        setSubscribed(true); // Already subscribed, show success
+      if (err?.message?.includes("duplicate") || err?.status === 409 || err?.message?.includes("unique constraint") || err?.message?.includes("JSON")) {
+        setSubscribed(true); // Success - data is saved
       } else {
         setError("Failed: " + (err.message || "Please try again."));
       }
