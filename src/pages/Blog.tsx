@@ -37,13 +37,16 @@ const Blog = () => {
     setError("");
     
     try {
+      console.log("Subscribing email:", email);
       await addSubscriber(email);
       setSubscribed(true);
+      console.log("Subscribed successfully!");
     } catch (err: any) {
+      console.error("Subscribe error:", err);
       if (err?.message?.includes("duplicate") || err?.status === 409) {
         setError("You're already subscribed!");
       } else {
-        setError("Failed to subscribe. Please try again.");
+        setError("Failed: " + (err.message || "Please try again."));
       }
     } finally {
       setSubscribing(false);

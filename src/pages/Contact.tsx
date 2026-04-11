@@ -14,6 +14,7 @@ const Contact = () => {
     e.preventDefault();
     setSending(true);
     try {
+      console.log("Submitting contact form:", formData);
       await addContact({
         name: formData.name,
         email: formData.email,
@@ -23,8 +24,10 @@ const Contact = () => {
       });
       setSent(true);
       setFormData({ name: "", email: "", company: "", country: "", message: "" });
-    } catch (error) {
+      console.log("Contact submitted successfully!");
+    } catch (error: any) {
       console.error("Failed to send message:", error);
+      alert("Error: " + (error.message || "Failed to send. Please try WhatsApp instead."));
     } finally {
       setSending(false);
     }
