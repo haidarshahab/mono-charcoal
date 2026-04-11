@@ -37,8 +37,11 @@ async function getScheduledArticles() {
 /**
  * Publish an article
  */
-async function publishArticle(id) {
+async function publishArticle(id, scheduledPublish) {
   const url = `${CONFIG.supabaseUrl}/rest/v1/articles?id=eq.${id}`;
+  
+  // Extract date from scheduled_publish (e.g., "2026-04-13T08:00:00+00:00" -> "2026-04-13")
+  const publishDate = scheduledPublish ? scheduledPublish.split('T')[0] : new Date().toISOString().split('T')[0];
   
   const response = await fetch(url, {
     method: 'PATCH',
@@ -50,6 +53,7 @@ async function publishArticle(id) {
     },
     body: JSON.stringify({
       published: true,
+      date: publishDate,
     }),
   });
 
@@ -139,7 +143,7 @@ async function main() {
   
   for (const article of scheduledArticles) {
     console.log(`   - ${article.title}`);
-    await publishArticle(article.id);
+    await publishArticle(article.id, article.scheduled_publish);
     console.log(`     ✅ Published!`);
   }
   
