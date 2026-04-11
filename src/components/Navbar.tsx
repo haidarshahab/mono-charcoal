@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logoWhite from "@/assets/logo-white.png";
+import logoWhite from "@/assets/logo-dark.png";
 
 const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%20I%27m%20interested%20in%20your%20products";
 

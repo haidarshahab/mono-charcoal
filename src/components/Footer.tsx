@@ -1,6 +1,6 @@
 import { MessageCircle, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import logoWhite from "@/assets/logo-white.png";
+import logoWhite from "@/assets/logo-dark.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
