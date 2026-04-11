@@ -46,6 +46,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://monocharcoal.com/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://monocharcoal.com/blog/why-indonesian-coconut-charcoal-is-superior</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -57,11 +62,6 @@
   </url>
   <url>
     <loc>https://monocharcoal.com/blog/oem-charcoal-manufacturing-guide</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://monocharcoal.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
