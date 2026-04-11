@@ -1,8 +1,10 @@
 User-agent: Googlebot
 Allow: /
+Sitemap: https://monocharcoal.com/sitemap.xml
 
 User-agent: Bingbot
 Allow: /
+Sitemap: https://monocharcoal.com/sitemap.xml
 
 User-agent: Twitterbot
 Allow: /
