@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Lock } from "lucide-react";
-import { ADMIN_PASSWORD } from "@/components/AdminLayout";
+const ADMIN_PASSWORD = "Monoadmin123";
 import SEO from "@/components/SEO";
 
 const Admin = () => {
