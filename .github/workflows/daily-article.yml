@@ -65,7 +65,6 @@ on:
           - '49'
           - '50'
 
-# Set environment for secrets
 env:
   SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
 
@@ -121,7 +120,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
       
-      # Step 7: Notify (Optional - for future WhatsApp integration)
+      # Step 7: Notify
       - name: Create Deployment Issue
         if: always()
         run: |
