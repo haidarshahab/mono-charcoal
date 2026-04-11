@@ -102,7 +102,7 @@ jobs:
       - name: Upload Article to Supabase
         run: |
           echo "📤 Uploading article #${{ steps.article.outputs.number }}..."
-          node scripts/upload-article.js ${{ steps.article.outputs.number }}
+          node scripts/upload-article.cjs ${{ steps.article.outputs.number }}
         env:
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
       
