@@ -2,10 +2,10 @@ const SUPABASE_URL = 'https://rnjalauqcvamvhpenjtg.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuamFsYXVxY3ZhbXZocGVuanRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU4ODg5MTAsImV4cCI6MjA5MTQ2NDkxMH0.vDk1vxDeohAfOVnB4cD-bvUcJhNSyjQx5rsPfcgXovU';
 const SUPABASE_SERVICE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuamFsYXVxY3ZhbXZocGVuanRnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTg4ODkxMCwiZXhwIjoyMDkxNDY0OTEwfQ.J1SRjX1lqUs4YintyDC_GPk9VjgG4TKdnF2tYXDjvFc';
 
-const headers = (isAdmin: boolean = false) => ({
+const headers = () => ({
   'Content-Type': 'application/json',
-  'apikey': SUPABASE_ANON_KEY,
-  'Authorization': `Bearer ${isAdmin ? SUPABASE_SERVICE_KEY : SUPABASE_ANON_KEY}`,
+  'apikey': SUPABASE_SERVICE_KEY,
+  'Authorization': `Bearer ${SUPABASE_SERVICE_KEY}`,
 });
 
 export interface Article {
