@@ -43,8 +43,8 @@ const Blog = () => {
       console.log("Subscribed successfully!");
     } catch (err: any) {
       console.error("Subscribe error:", err);
-      if (err?.message?.includes("duplicate") || err?.status === 409) {
-        setError("You're already subscribed!");
+      if (err?.message?.includes("duplicate") || err?.status === 409 || err?.message?.includes("unique constraint")) {
+        setSubscribed(true); // Already subscribed, show success
       } else {
         setError("Failed: " + (err.message || "Please try again."));
       }
