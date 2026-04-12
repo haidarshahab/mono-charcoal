@@ -6,21 +6,21 @@ import SEO from "@/components/SEO";
 
 const JARKATA_OFFSET_HOURS = 7; // UTC+7 (WIB/Jakarta Time)
 
-const toJakartaISO = (localDateStr: string): string | null => {
+const toUTC = (localDateStr: string): string | null => {
   if (!localDateStr) return null;
   const [datePart, timePart] = localDateStr.split('T');
   const [year, month, day] = datePart.split('-').map(Number);
   const [hour, minute] = timePart.split(':').map(Number);
-  const jakartaAsUTC = new Date(Date.UTC(year, month - 1, day, hour - JARKATA_OFFSET_HOURS, minute));
-  return jakartaAsUTC.toISOString();
+  const utcDate = new Date(Date.UTC(year, month - 1, day, hour - JARKATA_OFFSET_HOURS, minute));
+  return utcDate.toISOString();
 };
 
-const fromJakartaISO = (isoDate: string | null): string => {
+const fromUTC = (isoDate: string | null): string => {
   if (!isoDate) return "";
   const utcDate = new Date(isoDate);
-  const jakartaDate = new Date(utcDate.getTime() + JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
+  const wibDate = new Date(utcDate.getTime() + JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
   const pad = (n: number) => n.toString().padStart(2, '0');
-  return `${jakartaDate.getUTCFullYear()}-${pad(jakartaDate.getUTCMonth() + 1)}-${pad(jakartaDate.getUTCDate())}T${pad(jakartaDate.getUTCHours())}:${pad(jakartaDate.getUTCMinutes())}`;
+  return `${wibDate.getUTCFullYear()}-${pad(wibDate.getUTCMonth() + 1)}-${pad(wibDate.getUTCDate())}T${pad(wibDate.getUTCHours())}:${pad(wibDate.getUTCMinutes())}`;
 };
 
 const categories = [
@@ -70,7 +70,7 @@ const AdminArticleEdit = () => {
               date: article.date || "",
               readTime: article.read_time || "5 min read",
               published: article.published || false,
-              scheduled_publish: fromJakartaISO(article.scheduled_publish),
+              scheduled_publish: fromUTC(article.scheduled_publish),
             });
           }
         } catch (error) {
@@ -112,7 +112,7 @@ const AdminArticleEdit = () => {
         date: form.date,
         read_time: form.readTime,
         published: form.published,
-        scheduled_publish: toJakartaISO(form.scheduled_publish),
+        scheduled_publish: toUTC(form.scheduled_publish),
       };
 
       if (isEdit && id) {
@@ -288,7 +288,7 @@ const AdminArticleEdit = () => {
             {/* Scheduled Publish */}
             <div className="bg-slate-800 rounded-xl p-6 border border-slate-700">
               <h3 className="text-white font-semibold mb-4">Schedule Publishing</h3>
-              <label className="block text-slate-400 text-sm mb-2">Publish Date & Time</label>
+              <label className="block text-slate-400 text-sm mb-2">Publish Date & Time (WIB)</label>
               <input
                 type="datetime-local"
                 name="scheduled_publish"
