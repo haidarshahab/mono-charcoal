@@ -150,7 +150,7 @@ const AdminArticles = () => {
                         {article.published 
                           ? (article.date || new Date(article.created_at).toLocaleDateString())
                           : article.scheduled_publish 
-                            ? `Scheduled: ${new Date(article.scheduled_publish).toLocaleDateString()}`
+                            ? `Scheduled: ${new Date(new Date(article.scheduled_publish).getTime() + 7 * 60 * 60 * 1000).toLocaleString('id-ID', { timeZone: 'Asia/Jakarta', dateStyle: 'medium', timeStyle: 'short' })}`
                             : (article.date || new Date(article.created_at).toLocaleDateString())
                         }
                       </span>

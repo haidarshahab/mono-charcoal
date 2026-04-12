@@ -4,6 +4,22 @@ import { ArrowLeft, Save, Eye, Loader2, Zap } from "lucide-react";
 import { getArticleById, createArticle, updateArticle, generateSlug, Article } from "@/lib/supabase";
 import SEO from "@/components/SEO";
 
+const JARKATA_OFFSET_HOURS = 7;
+
+const toJakartaISO = (localDateStr: string): string | null => {
+  if (!localDateStr) return null;
+  const localDate = new Date(localDateStr);
+  const jakartaDate = new Date(localDate.getTime() - JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
+  return jakartaDate.toISOString();
+};
+
+const fromJakartaISO = (isoDate: string | null): string => {
+  if (!isoDate) return "";
+  const utcDate = new Date(isoDate);
+  const jakartaDate = new Date(utcDate.getTime() + JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
+  return jakartaDate.toISOString().slice(0, 16);
+};
+
 const categories = [
   "Industry Knowledge",
   "Sourcing Guide", 
@@ -51,7 +67,7 @@ const AdminArticleEdit = () => {
               date: article.date || "",
               readTime: article.read_time || "5 min read",
               published: article.published || false,
-              scheduled_publish: article.scheduled_publish ? article.scheduled_publish.slice(0, 16) : "",
+              scheduled_publish: fromJakartaISO(article.scheduled_publish),
             });
           }
         } catch (error) {
@@ -93,7 +109,7 @@ const AdminArticleEdit = () => {
         date: form.date,
         read_time: form.readTime,
         published: form.published,
-        scheduled_publish: form.scheduled_publish ? new Date(form.scheduled_publish).toISOString() : null,
+        scheduled_publish: toJakartaISO(form.scheduled_publish),
       };
 
       if (isEdit && id) {
