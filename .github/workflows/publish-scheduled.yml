@@ -1,9 +1,9 @@
 name: Publish Scheduled Articles
 
 on:
-  # Schedule: Daily at 9:00 UTC (after daily article upload)
+  # Schedule: Daily at 2:02 UTC = 09:02 WIB (UTC+7)
   schedule:
-    - cron: '0 9 * * *'
+    - cron: '2 2 * * *'
   
   # Manual trigger
   workflow_dispatch:
