@@ -150,7 +150,11 @@ const AdminArticles = () => {
                         {article.published 
                           ? (article.date || new Date(article.created_at).toLocaleDateString())
                           : article.scheduled_publish 
-                            ? `Scheduled: ${new Date(new Date(article.scheduled_publish).getTime() + 7 * 60 * 60 * 1000).toLocaleString('id-ID', { timeZone: 'Asia/Jakarta', dateStyle: 'medium', timeStyle: 'short' })}`
+                            ? (() => {
+                                const wibDate = new Date(new Date(article.scheduled_publish).getTime() + 7 * 60 * 60 * 1000);
+                                const pad = (n: number) => n.toString().padStart(2, '0');
+                                return `${wibDate.getUTCFullYear()}-${pad(wibDate.getUTCMonth() + 1)}-${pad(wibDate.getUTCDate())} ${pad(wibDate.getUTCHours())}:${pad(wibDate.getUTCMinutes())} WIB`;
+                              })()
                             : (article.date || new Date(article.created_at).toLocaleDateString())
                         }
                       </span>
