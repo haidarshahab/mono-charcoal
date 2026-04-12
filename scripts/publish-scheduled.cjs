@@ -16,12 +16,26 @@ const CONFIG = {
   serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuamFsYXVxY3ZhbXZocGVuanRnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTg4ODkxMCwiZXhwIjoyMDkxNDY0OTEwfQ.J1SRjX1lqUs4YintyDC_GPk9VjgG4TKdnF2tYXDjvFc',
 };
 
+const JARKATA_OFFSET_HOURS = 7;
+
+function getJakartaNow() {
+  const now = new Date();
+  return new Date(now.getTime() + JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
+}
+
+function toUTC(jakartaDateStr) {
+  if (!jakartaDateStr) return null;
+  const jakartaDate = new Date(jakartaDateStr);
+  const utcDate = new Date(jakartaDate.getTime() - JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
+  return utcDate.toISOString();
+}
+
 /**
- * Get articles that are scheduled to be published
+ * Get articles that are scheduled to be published (Jakarta time)
  */
 async function getScheduledArticles() {
-  const now = new Date().toISOString();
-  const url = `${CONFIG.supabaseUrl}/rest/v1/articles?select=id,title,slug,scheduled_publish,published&scheduled_publish=lte.${now}&published=eq.false`;
+  const jakartaNow = getJakartaNow().toISOString();
+  const url = `${CONFIG.supabaseUrl}/rest/v1/articles?select=id,title,slug,scheduled_publish,published&scheduled_publish=lte.${jakartaNow}&published=eq.false`;
   
   const response = await fetch(url, {
     headers: {

@@ -1,7 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-const startDate = new Date('2026-04-13T08:00:00Z');
+const JARKATA_OFFSET_HOURS = 7;
+
+const startDate = new Date('2026-04-13T09:00:00');
+const jakartaStartDate = new Date(startDate.getTime() + JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
 
 for (let i = 1; i <= 50; i++) {
   const filePath = path.join(__dirname, `articles/daily/${i}.json`);
@@ -9,8 +12,8 @@ for (let i = 1; i <= 50; i++) {
   if (fs.existsSync(filePath)) {
     const article = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     
-    const publishDate = new Date(startDate);
-    publishDate.setDate(startDate.getDate() + (i - 1));
+    const publishDate = new Date(jakartaStartDate);
+    publishDate.setDate(jakartaStartDate.getDate() + (i - 1));
     
     article.scheduled_publish = publishDate.toISOString();
     

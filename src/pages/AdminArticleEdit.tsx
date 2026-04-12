@@ -8,16 +8,19 @@ const JARKATA_OFFSET_HOURS = 7;
 
 const toJakartaISO = (localDateStr: string): string | null => {
   if (!localDateStr) return null;
-  const localDate = new Date(localDateStr);
-  const jakartaDate = new Date(localDate.getTime() - JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
-  return jakartaDate.toISOString();
+  const [datePart, timePart] = localDateStr.split('T');
+  const [year, month, day] = datePart.split('-').map(Number);
+  const [hour, minute] = timePart.split(':').map(Number);
+  const jakartaAsUTC = new Date(Date.UTC(year, month - 1, day, hour - JARKATA_OFFSET_HOURS, minute));
+  return jakartaAsUTC.toISOString();
 };
 
 const fromJakartaISO = (isoDate: string | null): string => {
   if (!isoDate) return "";
   const utcDate = new Date(isoDate);
   const jakartaDate = new Date(utcDate.getTime() + JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
-  return jakartaDate.toISOString().slice(0, 16);
+  const pad = (n: number) => n.toString().padStart(2, '0');
+  return `${jakartaDate.getUTCFullYear()}-${pad(jakartaDate.getUTCMonth() + 1)}-${pad(jakartaDate.getUTCDate())}T${pad(jakartaDate.getUTCHours())}:${pad(jakartaDate.getUTCMinutes())}`;
 };
 
 const categories = [
