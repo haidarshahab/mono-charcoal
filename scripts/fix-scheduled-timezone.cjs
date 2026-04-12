@@ -8,7 +8,7 @@ const CONFIG = {
   serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJuamFsYXVxY3ZhbXZocGVuanRnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTg4ODkxMCwiZXhwIjoyMDkxNDY0OTEwfQ.J1SRjX1lqUs4YintyDC_GPk9VjgG4TKdnF2tYXDjvFc',
 };
 
-const JARKATA_OFFSET_HOURS = 7;
+const JARKATA_OFFSET_HOURS = 7; // UTC+7 (WIB/Jakarta Time)
 
 function toJakartaISO(isoDateStr) {
   if (!isoDateStr) return null;

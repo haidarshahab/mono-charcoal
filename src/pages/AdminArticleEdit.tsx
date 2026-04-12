@@ -4,7 +4,7 @@ import { ArrowLeft, Save, Eye, Loader2, Zap } from "lucide-react";
 import { getArticleById, createArticle, updateArticle, generateSlug, Article } from "@/lib/supabase";
 import SEO from "@/components/SEO";
 
-const JARKATA_OFFSET_HOURS = 7;
+const JARKATA_OFFSET_HOURS = 7; // UTC+7 (WIB/Jakarta Time)
 
 const toJakartaISO = (localDateStr: string): string | null => {
   if (!localDateStr) return null;

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const JARKATA_OFFSET_HOURS = 7;
+const JARKATA_OFFSET_HOURS = 7; // UTC+7 (WIB/Jakarta Time)
 
 const startDate = new Date('2026-04-13T09:00:00');
 const jakartaStartDate = new Date(startDate.getTime() + JARKATA_OFFSET_HOURS * 60 * 60 * 1000);
