@@ -24,7 +24,7 @@ const WhyChooseUsSection = () => {
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
           {/* Left — Problem statement */}
-          <div className="bg-primary px-8 py-20 md:px-16 lg:px-20 flex flex-col justify-center">
+          <div className="bg-primary px-8 md:px-16 lg:px-20 flex flex-col justify-center py-[80px]">
             <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-6 font-heading">
               {t.whyChoose.title}
             </p>
@@ -67,7 +67,7 @@ const WhyChooseUsSection = () => {
         </div>
 
         {/* Company Profile CTA */}
-        <div className={`flex justify-center py-12 bg-[#F8F7F4] lg:bg-background transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: "900ms" }}>
+        <div className={`flex justify-center bg-[#F8F7F4] lg:bg-background transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"} py-[30px]`} style={{ transitionDelay: "900ms" }}>
           <Button asChild variant="outline" className="gap-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 text-base font-heading">
             <a href="/mono-charcoal-company-profile.pdf" download>
               <Download size={18} />

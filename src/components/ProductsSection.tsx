@@ -38,7 +38,7 @@ const ProductsSection = () => {
   ];
 
   return (
-    <section id="products" className="py-20 md:py-32 bg-card">
+    <section id="products" className="py-20 bg-card md:py-[120px]">
       <div
         ref={ref}
         className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}

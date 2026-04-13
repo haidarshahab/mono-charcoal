@@ -6,7 +6,7 @@ import { getTranslation } from "@/hooks/translations";
 const stats = [
   { value: 10, suffix: "+", labelKey: "yearsExp" as const },
   { value: 1000, suffix: "+", labelKey: "tonsExported" as const },
-  { value: 30, suffix: "+", labelKey: "countries" as const },
+  { value: 15, suffix: "+", labelKey: "countries" as const },
 ];
 
 function AnimatedCounter({ target, suffix, isVisible }: { target: number; suffix: string; isVisible: boolean }) {
@@ -42,7 +42,7 @@ const AboutSection = () => {
   const t = getTranslation(currentLang);
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-background">
+    <section id="about" className="py-20 bg-background md:py-[120px]">
       <div
         ref={ref}
         className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
