@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Language, SITE_URL, languages } from "@/hooks/useLanguage";
 
 interface SEOProps {
@@ -14,6 +14,28 @@ interface SEOProps {
 
 const siteName = "Mono Charcoal";
 
+const getOrCreateMeta = (selector: string, createAttrs: Record<string, string>, trackedElements: HTMLElement[]) => {
+  let el = document.querySelector<HTMLElement>(selector);
+  if (!el) {
+    el = document.createElement("meta");
+    Object.entries(createAttrs).forEach(([k, v]) => el!.setAttribute(k, v));
+    document.head.appendChild(el);
+    trackedElements.push(el);
+  }
+  return el;
+};
+
+const getOrCreateLink = (selector: string, createAttrs: Record<string, string>, trackedElements: HTMLElement[]) => {
+  let el = document.querySelector<HTMLElement>(selector);
+  if (!el) {
+    el = document.createElement("link");
+    Object.entries(createAttrs).forEach(([k, v]) => el!.setAttribute(k, v));
+    document.head.appendChild(el);
+    trackedElements.push(el);
+  }
+  return el;
+};
+
 const SEO = ({
   title,
   description,
@@ -24,157 +46,68 @@ const SEO = ({
   noindex = false,
   currentLang = "en",
 }: SEOProps) => {
-  const [mounted, setMounted] = useState(false);
-
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
+    const created: HTMLElement[] = [];
     const fullTitle = `${title} | ${siteName}`;
     document.title = fullTitle;
 
-    // Meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", description);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "description";
-      meta.content = description;
-      document.head.appendChild(meta);
-    }
+    // Meta tags
+    const desc = getOrCreateMeta('meta[name="description"]', { name: "description" }, created);
+    desc.setAttribute("content", description);
 
-    // Meta keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute("content", keywords);
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "keywords";
-      meta.content = keywords;
-      document.head.appendChild(meta);
-    }
+    const kw = getOrCreateMeta('meta[name="keywords"]', { name: "keywords" }, created);
+    kw.setAttribute("content", keywords);
 
-    // Robots meta
-    const metaRobots = document.querySelector('meta[name="robots"]');
-    if (metaRobots) {
-      metaRobots.setAttribute("content", "index, follow");
-    } else {
-      const meta = document.createElement("meta");
-      meta.name = "robots";
-      meta.content = "index, follow";
-      document.head.appendChild(meta);
-    }
+    const robots = getOrCreateMeta('meta[name="robots"]', { name: "robots" }, created);
+    robots.setAttribute("content", noindex ? "noindex, nofollow" : "index, follow");
 
-    // Canonical link
-    const canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (canonicalLink) {
-      canonicalLink.setAttribute("href", canonical);
-    } else {
-      const link = document.createElement("link");
-      link.rel = "canonical";
-      link.href = canonical;
-      document.head.appendChild(link);
-    }
+    // Canonical
+    const can = getOrCreateLink('link[rel="canonical"]', { rel: "canonical" }, created);
+    can.setAttribute("href", canonical);
 
-    // OG Title
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) {
-      ogTitle.setAttribute("content", fullTitle);
-    } else {
-      const meta = document.createElement("meta");
-      meta.setAttribute("property", "og:title");
-      meta.content = fullTitle;
-      document.head.appendChild(meta);
-    }
+    // OG tags
+    const ogT = getOrCreateMeta('meta[property="og:title"]', { property: "og:title" }, created);
+    ogT.setAttribute("content", fullTitle);
 
-    // OG Description
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) {
-      ogDescription.setAttribute("content", description);
-    } else {
-      const meta = document.createElement("meta");
-      meta.setAttribute("property", "og:description");
-      meta.content = description;
-      document.head.appendChild(meta);
-    }
+    const ogD = getOrCreateMeta('meta[property="og:description"]', { property: "og:description" }, created);
+    ogD.setAttribute("content", description);
 
-    // OG URL
-    const ogUrl = document.querySelector('meta[property="og:url"]');
-    if (ogUrl) {
-      ogUrl.setAttribute("content", canonical);
-    } else {
-      const meta = document.createElement("meta");
-      meta.setAttribute("property", "og:url");
-      meta.content = canonical;
-      document.head.appendChild(meta);
-    }
+    const ogU = getOrCreateMeta('meta[property="og:url"]', { property: "og:url" }, created);
+    ogU.setAttribute("content", canonical);
 
-    // OG Image
-    const ogImageMeta = document.querySelector('meta[property="og:image"]');
-    if (ogImageMeta) {
-      ogImageMeta.setAttribute("content", ogImage);
-    } else {
-      const meta = document.createElement("meta");
-      meta.setAttribute("property", "og:image");
-      meta.content = ogImage;
-      document.head.appendChild(meta);
-    }
+    const ogI = getOrCreateMeta('meta[property="og:image"]', { property: "og:image" }, created);
+    ogI.setAttribute("content", ogImage);
 
     // Schema.org
-    const existingSchema = document.querySelector('script[type="application/ld+json"]');
-    if (existingSchema) {
-      existingSchema.textContent = JSON.stringify(schema);
+    let schemaEl = document.querySelector('script[type="application/ld+json"][data-seo]');
+    if (schemaEl) {
+      if (schema) schemaEl.textContent = JSON.stringify(schema);
     } else if (schema) {
-      const script = document.createElement("script");
-      script.type = "application/ld+json";
-      script.textContent = JSON.stringify(schema);
-      document.head.appendChild(script);
+      schemaEl = document.createElement("script");
+      schemaEl.setAttribute("type", "application/ld+json");
+      schemaEl.setAttribute("data-seo", "true");
+      schemaEl.textContent = JSON.stringify(schema);
+      document.head.appendChild(schemaEl);
+      created.push(schemaEl as HTMLElement);
     }
 
-    // Robots meta
-    if (noindex) {
-      const metaRobots = document.querySelector('meta[name="robots"]');
-      if (metaRobots) {
-        metaRobots.setAttribute("content", "noindex, nofollow");
-      } else {
-        const meta = document.createElement("meta");
-        meta.name = "robots";
-        meta.content = "noindex, nofollow";
-        document.head.appendChild(meta);
-      }
-    }
-
-    // hreflang tags for multi-language SEO
+    // hreflang tags
     languages.forEach((lang) => {
       const langUrl = lang.code === 'en' ? SITE_URL : `${SITE_URL}/${lang.code}/`;
-      const hreflang = document.querySelector(`link[rel="alternate"][hreflang="${lang.code}"]`);
-      if (hreflang) {
-        hreflang.setAttribute("href", langUrl);
-      } else {
-        const link = document.createElement("link");
-        link.rel = "alternate";
-        link.hreflang = lang.code;
-        link.href = langUrl;
-        document.head.appendChild(link);
-      }
+      const hl = getOrCreateLink(`link[rel="alternate"][hreflang="${lang.code}"]`, { rel: "alternate", hreflang: lang.code }, created);
+      hl.setAttribute("href", langUrl);
     });
 
-    // x-default hreflang
-    const hreflangDefault = document.querySelector('link[rel="alternate"][hreflang="x-default"]');
-    if (hreflangDefault) {
-      hreflangDefault.setAttribute("href", SITE_URL + "/");
-    } else {
-      const link = document.createElement("link");
-      link.rel = "alternate";
-      link.hreflang = "x-default";
-      link.href = SITE_URL + "/";
-      document.head.appendChild(link);
-    }
-  }, [title, description, keywords, canonical, ogImage, schema, mounted, noindex, currentLang]);
+    const def = getOrCreateLink('link[rel="alternate"][hreflang="x-default"]', { rel: "alternate", hreflang: "x-default" }, created);
+    def.setAttribute("href", SITE_URL + "/");
+
+    // Cleanup: only remove elements this effect created
+    return () => {
+      created.forEach((el) => {
+        try { el.parentNode?.removeChild(el); } catch {}
+      });
+    };
+  }, [title, description, keywords, canonical, ogImage, schema, noindex, currentLang]);
 
   return null;
 };
@@ -197,17 +130,8 @@ export const organizationSchema = {
     contactType: "sales",
   },
   areaServed: [
-    "Australia",
-    "New Zealand",
-    "Turkey",
-    "Canada",
-    "Ukraine",
-    "Russia",
-    "Brazil",
-    "Japan",
-    "Jordan",
-    "Iraq",
-    "Saudi Arabia",
+    "Australia", "New Zealand", "Turkey", "Canada", "Ukraine",
+    "Russia", "Brazil", "Japan", "Jordan", "Iraq", "Saudi Arabia",
   ],
 };
 
