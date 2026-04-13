@@ -38,7 +38,7 @@ const Navbar = () => {
             <Link
               key={link.href}
               to={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-semibold transition-colors ${
                 location.pathname === link.href
                   ? "text-amber-500"
                   : "text-primary-foreground/80 hover:text-primary-foreground"

@@ -45,7 +45,7 @@ const ContactSection = () => {
               {t.contact.cta}
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-4 px-0">
               <Button
                 asChild
                 size="lg"
@@ -59,7 +59,7 @@ const ContactSection = () => {
               <Button
                 asChild
                 size="lg"
-                className="w-full sm:w-auto border-2 border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 font-heading gap-2 ml-0 sm:ml-4"
+                className="w-full sm:w-auto border-2 border-primary-foreground/40 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 font-heading gap-2 ml-0 sm:ml-4 mx-0"
               >
                 <a href="mailto:admin@monocharcoal.com">
                   <Mail size={20} />
