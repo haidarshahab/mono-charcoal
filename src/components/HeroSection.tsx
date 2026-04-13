@@ -27,7 +27,7 @@ const HeroSection = () => {
           <p className="font-heading text-accent text-base font-semibold uppercase tracking-widest mb-4 animate-fade-in">
             {t.hero.title}
           </p>
-          <h1 className="font-heading md:text-5xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in text-4xl lg:text-xl" style={{ animationDelay: "0.1s" }}>
+          <h1 className="font-heading md:text-5xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in text-4xl lg:text-5xl" style={{ animationDelay: "0.1s" }}>
             {t.hero.subtitle}
           </h1>
           <p className="text-primary-foreground/70 text-lg max-w-xl mb-10 font-body animate-fade-in md:text-lg" style={{ animationDelay: "0.2s" }}>
