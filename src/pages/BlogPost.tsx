@@ -9,7 +9,7 @@ const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
   const [article, setArticle] = useState<Article | null>(null);
   const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
@@ -75,7 +75,7 @@ const BlogPost = () => {
       <SEO 
         title={article.title} 
         description={article.excerpt || undefined}
-        keywords={article.keywords || undefined}
+        keywords={article.keywords?.join(', ') || undefined}
       />
       <div ref={ref}>
         <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-12 lg:py-20">
