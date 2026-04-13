@@ -144,7 +144,7 @@ export const addContact = async (contact: Partial<Contact>): Promise<Contact> =>
     }
   }
   const text = await res.text();
-  return text ? JSON.parse(text) : { success: true };
+  return text ? JSON.parse(text) : ({} as Contact);
 };
 
 export const updateContactStatus = async (id: string, status: string): Promise<Contact> => {
