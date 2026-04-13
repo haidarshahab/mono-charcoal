@@ -86,7 +86,7 @@ const SEO = ({
       ogTitle.setAttribute("content", fullTitle);
     } else {
       const meta = document.createElement("meta");
-      meta.property = "og:title";
+      meta.setAttribute("property", "og:title");
       meta.content = fullTitle;
       document.head.appendChild(meta);
     }
@@ -97,7 +97,7 @@ const SEO = ({
       ogDescription.setAttribute("content", description);
     } else {
       const meta = document.createElement("meta");
-      meta.property = "og:description";
+      meta.setAttribute("property", "og:description");
       meta.content = description;
       document.head.appendChild(meta);
     }
@@ -108,7 +108,7 @@ const SEO = ({
       ogUrl.setAttribute("content", canonical);
     } else {
       const meta = document.createElement("meta");
-      meta.property = "og:url";
+      meta.setAttribute("property", "og:url");
       meta.content = canonical;
       document.head.appendChild(meta);
     }
@@ -119,7 +119,7 @@ const SEO = ({
       ogImageMeta.setAttribute("content", ogImage);
     } else {
       const meta = document.createElement("meta");
-      meta.property = "og:image";
+      meta.setAttribute("property", "og:image");
       meta.content = ogImage;
       document.head.appendChild(meta);
     }
