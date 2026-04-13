@@ -7,7 +7,7 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { getTranslation } from "@/hooks/translations";
 
 const Contact = () => {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
   const currentLang = useLanguage();
   const t = getTranslation(currentLang);
   const [formData, setFormData] = useState({ name: "", email: "", company: "", country: "", message: "" });

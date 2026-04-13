@@ -5,7 +5,7 @@ import { getTranslation } from "@/hooks/translations";
 import { Globe, Truck, Ship, CreditCard, FileText, Clock, MapPin, Calendar } from "lucide-react";
 
 const Export = () => {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
   const currentLang = useLanguage();
   const t = getTranslation(currentLang);
 
