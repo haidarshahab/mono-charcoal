@@ -22,5 +22,8 @@ export function useScrollReveal(threshold = 0.15) {
     return () => observer.disconnect();
   }, [threshold]);
 
-  return { ref, isVisible };
+  // Return ref directly (with isVisible attached) so pages can do: const ref = useScrollReveal(); <div ref={ref}>
+  const result = ref as React.MutableRefObject<HTMLDivElement> & { isVisible: boolean };
+  result.isVisible = isVisible;
+  return result;
 }
