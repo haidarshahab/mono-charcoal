@@ -31,7 +31,7 @@ const HeroSection = () => {
             {t.hero.subtitle}
           </h1>
           <p className="text-primary-foreground/70 text-lg max-w-xl mb-10 font-body animate-fade-in md:text-lg" style={{ animationDelay: "0.2s" }}>
-            {t.common.manufacturer} - {t.common.exporter}
+            {t.common.manufacturer}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <Button
