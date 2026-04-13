@@ -1,10 +1,12 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { getTranslation } from "@/hooks/translations";
 
 const stats = [
-  { value: 10, suffix: "+", label: "Years Experience" },
-  { value: 1000, suffix: "+", label: "Tons Exported" },
-  { value: 30, suffix: "+", label: "Countries Served" },
+  { value: 10, suffix: "+", labelKey: "yearsExp" as const },
+  { value: 1000, suffix: "+", labelKey: "tonsExported" as const },
+  { value: 30, suffix: "+", labelKey: "countries" as const },
 ];
 
 function AnimatedCounter({ target, suffix, isVisible }: { target: number; suffix: string; isVisible: boolean }) {
@@ -36,6 +38,8 @@ function AnimatedCounter({ target, suffix, isVisible }: { target: number; suffix
 
 const AboutSection = () => {
   const { ref, isVisible } = useScrollReveal();
+  const currentLang = useLanguage();
+  const t = getTranslation(currentLang);
 
   return (
     <section id="about" className="py-20 md:py-32 bg-background">
@@ -45,29 +49,29 @@ const AboutSection = () => {
       >
         <div className="max-w-3xl mx-auto text-center mb-16">
           <p className="font-heading text-accent text-sm font-semibold uppercase tracking-widest mb-4">
-            About Us
+            {t.about.title}
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Indonesia's Finest Coconut Charcoal Factory for Shisha and Barbecue
+            {t.about.subtitle}
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed font-body">
-            PT Mono Milik Nusantara (Mono Charcoal) is a leading manufacturer and exporter of premium coconut shell charcoal briquettes. Based in Indonesia, we combine traditional craftsmanship with modern production techniques to deliver the highest quality charcoal for shisha and barbecue use worldwide.
+            {t.about.description}
           </p>
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center p-6">
+            <div key={stat.labelKey} className="text-center p-6">
               <AnimatedCounter target={stat.value} suffix={stat.suffix} isVisible={isVisible} />
-              <p className="text-muted-foreground text-sm font-medium mt-2 font-body">{stat.label}</p>
+              <p className="text-muted-foreground text-sm font-medium mt-2 font-body">{t.about[stat.labelKey]}</p>
             </div>
           ))}
         </div>
 
         {/* Trust badges */}
         <div className="flex flex-wrap justify-center gap-6 mt-16">
-          {["ISO Certified", "Halal Certified", "Eco-Friendly", "Lab Tested"].map((badge) => (
+          {[t.about.iso, t.about.halal, t.about.eco, t.about.labTested].map((badge) => (
             <div
               key={badge}
               className="px-6 py-3 rounded-full border border-border bg-card text-sm font-medium text-foreground font-body"

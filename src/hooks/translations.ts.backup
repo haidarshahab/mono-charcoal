@@ -1,0 +1,1219 @@
+import { Language } from './useLanguage';
+
+export interface TranslationStrings {
+  // Navigation
+  nav: {
+    home: string;
+    products: string;
+    shisha: string;
+    bbq: string;
+    oem: string;
+    quality: string;
+    export: string;
+    about: string;
+    blog: string;
+    contact: string;
+  };
+  // Hero Section
+  hero: {
+    title: string;
+    subtitle: string;
+    cta1: string;
+    cta2: string;
+  };
+  // Common
+  common: {
+    learnMore: string;
+    getSample: string;
+    contactUs: string;
+    viewSpecs: string;
+    freeSample: string;
+    wholesale: string;
+    factory: string;
+    manufacturer: string;
+    exporter: string;
+  };
+  // Footer
+  footer: {
+    description: string;
+    products: string;
+    company: string;
+    getInTouch: string;
+    shisha: string;
+    bbq: string;
+    oem: string;
+    quality: string;
+    export: string;
+    about: string;
+    contact: string;
+    allRights: string;
+  };
+  // Products Section
+  products: {
+    title: string;
+    subtitle: string;
+    shishaName: string;
+    shishaDesc: string;
+    bbqName: string;
+    bbqDesc: string;
+    burnTime: string;
+    ashContent: string;
+    noOdor: string;
+    heatValue: string;
+  };
+  // About Section
+  about: {
+    title: string;
+    subtitle: string;
+    description: string;
+    yearsExp: string;
+    tonsExported: string;
+    countries: string;
+    iso: string;
+    halal: string;
+    eco: string;
+    labTested: string;
+  };
+  // Contact Section
+  contact: {
+    title: string;
+    subtitle: string;
+    cta: string;
+    whatsapp: string;
+    email: string;
+    yourName: string;
+    yourEmail: string;
+    yourMessage: string;
+    send: string;
+    openingEmail: string;
+  };
+  // About Section
+  whyChoose: {
+    title: string;
+    subtitle: string;
+    problem: string;
+    butFinding: string;
+    description: string;
+    onTime: string;
+    onTimeDesc: string;
+    docs: string;
+    docsDesc: string;
+    logistics: string;
+    logisticsDesc: string;
+    quality: string;
+    qualityDesc: string;
+    downloadProfile: string;
+  };
+  // Page titles
+  pages: {
+    about: string;
+    products: string;
+    oem: string;
+    quality: string;
+    export: string;
+    blog: string;
+    contact: string;
+  };
+  // OEM page
+  oem: {
+    charcoalMfg: string;
+    createBrand: string;
+    howItWorks: string;
+    requestQuote: string;
+    whyPartner: string;
+    confidential: string;
+    confidentialDesc: string;
+    design: string;
+    designDesc: string;
+    packaging: string;
+    packagingDesc: string;
+    docs: string;
+    docsDesc: string;
+    oemProcess: string;
+    inquiry: string;
+    inquiryDesc: string;
+    sample: string;
+    sampleDesc: string;
+    design2: string;
+    design2Desc: string;
+    production: string;
+    productionDesc: string;
+    shipping: string;
+    shippingDesc: string;
+    packagingOptions: string;
+    innerBox: string;
+    masterBox: string;
+    plastic: string;
+    sizes: string;
+    features: string;
+    fullColor: string;
+    lamination: string;
+    embossing: string;
+    colorPrint: string;
+    uv: string;
+    customSize: string;
+    heatSeal: string;
+    zipLock: string;
+    standPouch: string;
+    variousSizes: string;
+    customPrint: string;
+    brandSafe: string;
+    brandSafeDesc: string;
+    signedNDA: string;
+    dedicatedLine: string;
+    designConf: string;
+    startBrand: string;
+    startBrandDesc: string;
+    contactOEM: string;
+  };
+  // About page extended
+  about: {
+    productionCapacity: string;
+    exportCountries: string;
+    clients: string;
+    factoryTitle: string;
+    factoryDesc: string;
+    modernEquip: string;
+    modernEquipDesc: string;
+    qcCert: string;
+    qcCertDesc: string;
+    globalReady: string;
+    globalReadyDesc: string;
+    whyIndo: string;
+    richPotassium: string;
+    richPotassiumDesc: string;
+    highCarbon: string;
+    highCarbonDesc: string;
+    odorless: string;
+    odorlessDesc: string;
+    sustainable: string;
+    sustainableDesc: string;
+    visitFactory: string;
+    visitFactoryDesc: string;
+  };
+  // SEO Keywords
+  keywords: string[];
+}
+
+const en: TranslationStrings = {
+  nav: {
+    home: 'Home',
+    products: 'Products',
+    shisha: 'Shisha Charcoal',
+    bbq: 'BBQ Charcoal',
+    oem: 'OEM',
+    quality: 'Quality',
+    export: 'Export',
+    about: 'About',
+    blog: 'Blog',
+    contact: 'Contact Us',
+  },
+  hero: {
+    title: 'Premium Coconut Shell Charcoal',
+    subtitle: 'From Indonesia to the World',
+    cta1: 'View Products',
+    cta2: 'Get Free Sample',
+  },
+  common: {
+    learnMore: 'Learn More',
+    getSample: 'Get Free Sample',
+    contactUs: 'Contact Us',
+    viewSpecs: 'View Specifications',
+    freeSample: 'Free Sample',
+    wholesale: 'Wholesale',
+    factory: 'Factory',
+    manufacturer: 'Manufacturer',
+    exporter: 'Exporter',
+  },
+  footer: {
+    description: "Indonesia's finest coconut charcoal factory. Premium shisha and BBQ briquettes for global export.",
+    products: 'Products',
+    company: 'Company',
+    getInTouch: 'Get in Touch',
+    shisha: 'Shisha Charcoal',
+    bbq: 'BBQ Charcoal',
+    oem: 'OEM Services',
+    quality: 'Quality',
+    export: 'Export Info',
+    about: 'About Us',
+    contact: 'Contact',
+    allRights: 'All rights reserved.',
+  },
+  products: {
+    title: 'Our Products',
+    subtitle: 'Premium Charcoal for Every Need. Made with love and passions.',
+    shishaName: 'Shisha Charcoal',
+    shishaDesc: 'The coconut charcoal we manufacture will get your shisha lounges and wholesalers that will do repeat orders. 100% Good Coconut. We are able to manufacture any size you want.',
+    bbqName: 'BBQ Charcoal',
+    bbqDesc: 'High-heat hexagonal and pillow briquettes perfect for grilling. Consistent temperature and easy to light. 100% perfect grill.',
+    burnTime: 'Burn Time',
+    ashContent: 'Ash Content',
+    noOdor: 'No Odor',
+    heatValue: 'Heat Value',
+  },
+  about: {
+    title: 'About Us',
+    subtitle: "Indonesia's Finest Coconut Charcoal Factory for Shisha and Barbecue",
+    description: 'PT Mono Milik Nusantara (Mono Charcoal) is a leading manufacturer and exporter of premium coconut shell charcoal briquettes. Based in Indonesia, we combine traditional craftsmanship with modern production techniques to deliver the highest quality charcoal for shisha and barbecue use worldwide.',
+    yearsExp: 'Years Experience',
+    tonsExported: 'Tons Exported',
+    countries: 'Countries Served',
+    iso: 'ISO Certified',
+    halal: 'Halal Certified',
+    eco: 'Eco-Friendly',
+    labTested: 'Lab Tested',
+    productionCapacity: 'Production Capacity',
+    exportCountries: 'Export Countries',
+    clients: 'Clients Served',
+    factoryTitle: 'Our Factory in Bekasi',
+    factoryDesc: 'Located in Bekasi, West Java, our state-of-the-art manufacturing facility operates with a monthly production capacity of over 1,000 metric tons. We utilize modern equipment and stringent quality control processes to deliver consistent, premium-quality charcoal to global markets.',
+    modernEquip: 'Modern Equipment',
+    modernEquipDesc: 'Industrial-grade machinery for precise production',
+    qcCert: 'Quality Certified',
+    qcCertDesc: 'ISO 9001:2015 certified production process',
+    globalReady: 'Global Export Ready',
+    globalReadyDesc: 'Experienced in international shipping and logistics',
+    whyIndo: 'Why Indonesian Coconut Charcoal?',
+    richPotassium: 'Rich in Potassium',
+    richPotassiumDesc: 'Indonesian coconut shells contain high potassium content, resulting in lower ash content and cleaner burn.',
+    highCarbon: 'High Carbon Content',
+    highCarbonDesc: 'Our coconut charcoal achieves 75-80% fixed carbon content, ensuring longer burn time and higher heat output.',
+    odorless: 'Odorless & Chemical-Free',
+    odorlessDesc: '100% natural coconut shell with no additives, ensuring pure flavor for shisha and BBQ.',
+sustainable: 'Sustainable Sourcing',
+    sustainableDesc: 'Indonesia is the world\'s largest coconut producer, ensuring consistent supply and competitive pricing.',
+    visitFactory: 'Visit Our Factory',
+    visitFactoryDesc: 'We welcome wholesale buyers to visit our factory in Bekasi, Indonesia. See our production process firsthand.',
+  },
+  contact: {
+    title: 'Contact Us',
+    subtitle: 'Ready to Order?',
+    cta: "Get in touch with us today for pricing, samples, or custom orders. We respond within 24 hours.",
+    whatsapp: 'Chat on WhatsApp',
+    email: 'admin@monocharcoal.com',
+    yourName: 'Your Name',
+    yourEmail: 'Your Email',
+    yourMessage: 'Your Message',
+    send: 'Send Message',
+    openingEmail: 'Opening email client...',
+    getQuote: 'Get Your Quote Today',
+    readyOrder: 'Ready to start your order? Contact us for free samples and competitive quotes.',
+    factoryLocation: 'Factory Location',
+    phone: 'Phone',
+    responseTime: 'Response Time',
+    within24: 'Within 24 hours',
+    sendMessage: 'Send Us a Message',
+    formDesc: 'Fill out the form below and we\'ll get back to you within 24 hours.',
+    company: 'Company',
+    country: 'Country',
+    messagePlaceholder: 'Tell us about your requirements',
+    sending: 'Sending...',
+    thankYou: 'Thank you! Your message has been sent. We\'ll respond within 24 hours.',
+    preferWA: 'Prefer WhatsApp?',
+    WADesc: 'Contact us directly on WhatsApp for fastest response.',
+    seoDesc: 'Contact Mono Charcoal Indonesia. Get free sample, wholesale quote, factory visit. WhatsApp available. Fast response within 24 hours.',
+  },
+  whyChoose: {
+    title: 'Why Mono Charcoal',
+    subtitle: "Indonesia produces the world's best coconut charcoal.",
+    butFinding: "But finding a manufacturer you can actually rely on? That's the hard part.",
+    description: "Hundreds of factories. But most lack real management — leading to extreme production delays, incomplete export documents, shipping problems, and inconsistent product quality. We built Mono Charcoal to be different.",
+    onTime: 'On-Time Production',
+    onTimeDesc: 'Structured workflow, real deadlines, no excuses. Your order ships when we say it will.',
+    docs: 'Full Documentation',
+    docsDesc: 'Packing lists, COA, fumigation certificates — always ready before your shipment leaves.',
+    logistics: 'Managed Logistics',
+    logisticsDesc: 'We handle freight, customs, and tracking end-to-end. You just receive the goods.',
+    quality: 'Consistent Quality',
+    qualityDesc: 'Lab-tested every batch. Same specs, same performance, every single shipment.',
+    downloadProfile: 'Download Company Profile',
+  },
+pages: {
+    about: 'About',
+    products: 'Products',
+    oem: 'OEM',
+    quality: 'Quality',
+    export: 'Export',
+    blog: 'Blog',
+    contact: 'Contact Us',
+  },
+  oem: {
+    charcoalMfg: 'Charcoal Manufacturing',
+    createBrand: 'Create your own brand of premium coconut charcoal. Full customization from product to packaging.',
+    howItWorks: 'How It Works',
+    requestQuote: 'Request Quote',
+    whyPartner: 'Why Partner With Us for OEM?',
+    confidential: 'Full Confidentiality',
+    confidentialDesc: 'We sign NDA agreements and protect your brand identity.',
+    design: 'Custom Design Support',
+    designDesc: 'Our design team helps create packaging that matches your brand.',
+    packaging: 'Flexible Packaging Options',
+    packagingDesc: 'Choose from various box sizes, materials, and printing options.',
+    docs: 'Complete Documentation',
+    docsDesc: 'We provide all necessary export documents and certifications.',
+    oemProcess: 'OEM Process',
+    inquiry: 'Inquiry',
+    inquiryDesc: 'Send us your requirements and brand guidelines',
+    sample: 'Sample',
+    sampleDesc: 'We produce sample products for your approval',
+    design2: 'Design',
+    design2Desc: 'Our team creates packaging design based on your brand',
+    production: 'Production',
+    productionDesc: 'Full production with your custom packaging',
+    shipping: 'Shipping',
+    shippingDesc: 'Worldwide delivery to your warehouse',
+    packagingOptions: 'Packaging Options',
+    innerBox: 'Inner Box',
+    masterBox: 'Master Box',
+    plastic: 'Plastic',
+    sizes: 'Sizes:',
+    features: 'Features:',
+    fullColor: 'Full color print',
+    lamination: 'Lamination',
+    embossing: 'Embossing',
+    colorPrint: 'Color print',
+    uv: 'UV coating',
+    customSize: 'Custom size',
+    heatSeal: 'Heat seal',
+    zipLock: 'Zip lock',
+    standPouch: 'Stand-up pouch',
+    variousSizes: 'Various sizes',
+    customPrint: 'Custom printing',
+    brandSafe: 'Your Brand is Safe With Us',
+    brandSafeDesc: 'All OEM partners receive Non-Disclosure Agreements (NDA).',
+    signedNDA: 'Signed NDA',
+    dedicatedLine: 'Dedicated production line',
+    designConf: 'Design confidentiality',
+    startBrand: 'Start Your Own Brand',
+    startBrandDesc: "Let's discuss how we can help you build your private label charcoal business.",
+    contactOEM: 'Contact Us for OEM',
+  },
+  about: {
+    title: 'عن الشركة',
+    subtitle: 'أفضل مصنع فحم قشرة جوز الهند في إندونيسيا للشيشة والشواء',
+    description: 'PT Mono Milik Nusantara (Mono Charcoal) هي مصنع ومصدّر رائد لفحم قشرة جوز الهند الفاخر. مقرنا في إندونيسيا، ونجمع بين الحرفة التقليدية والتقنيات الحديثة لتقديم أعلى جودة فحم للشيشة والشواء عالمياً.',
+    yearsExp: 'سنوات الخبرة',
+    tonsExported: 'أطنان مصدرة',
+    countries: 'بلدان تم تخديمها',
+    iso: 'معتمد ISO',
+    halal: 'معتمد حلال',
+    eco: 'صديق البيئة',
+    labTested: 'مختبر معتمد',
+    productionCapacity: 'طاقة الإنتاج',
+    exportCountries: 'بلدان التصدير',
+    clients: 'العملاء',
+    factoryTitle: 'مصنعنا في بيكاسي',
+    factoryDesc: 'يقع في غرب جاوة بإندونيسيا، وتعمل منشأتنا التصنيحية بسعة إنتاجية شهرية تتجاوز 1000 طن متري.',
+    modernEquip: 'معدات حديثة',
+    modernEquipDesc: 'آلات صناعية للإنتاج الدقيق',
+    qcCert: 'معتمد الجودة',
+    qcCertDesc: 'عملية إنتاجية معتمدة ISO 9001:2015',
+    globalReady: 'جاهز للتصدير',
+    globalReadyDesc: 'خبرة في الشحن واللوجستيات الدولية',
+    whyIndo: 'لماذا فحم جوز الهند الإندونيسي؟',
+    richPotassium: 'غني بالبوتاسيوم',
+    richPotassiumDesc: 'قشور جوز الهند الإندونيسية تحتوي على نسبة عالية من البوتاسيوم.',
+    highCarbon: 'محتوى كربون عالي',
+    highCarbonDesc: 'يحققة فحم جوز الهند 75-80% كربون ثابت.',
+    odorless: 'بدون رائحة وكيميائي',
+    odorlessDesc: 'قشرة جوز الهند الطبيعية 100% بدون إضافات.',
+    sustainable: 'استدامة',
+    sustainableDesc: 'إندونيسيا أكبر منتج لجوز الهند في العالم.',
+    visitFactory: 'زيا المصنع',
+    visitFactoryDesc: 'نرحب بالمشترين لزيارة مصنعنا في بيكاسي.',
+  },
+  contact: {
+    title: 'اتصل بنا',
+    subtitle: 'جاهز للطلب؟',
+    cta: 'تواصل معنا اليوم للأسعار أو العينات أو الطلبات المخصصة. نرد خلال 24 ساعة.',
+    whatsapp: 'محادثة واتساب',
+    email: 'admin@monocharcoal.com',
+    yourName: 'اسمك',
+    yourEmail: 'بريدك الإلكتروني',
+    yourMessage: 'رسالتك',
+    send: 'إرسال الرسالة',
+    openingEmail: 'جارٍ فتح البريد الإلكتروني...',
+    getQuote: 'احصل على عرض سعر اليوم',
+    readyOrder: 'جاهز لبدء طلبك؟ تواصل معنا للعينات والأسعار.',
+    factoryLocation: 'موقع المصنع',
+    phone: 'الهاتف',
+    responseTime: 'وقت الاستجابة',
+    within24: 'خلال 24 ساعة',
+    sendMessage: 'أرسل لنا رسالة',
+    formDesc: 'املأ النموذج وسنرد خلال 24 ساعة.',
+    company: 'الشركة',
+    country: 'البلد',
+    messagePlaceholder: 'أخبرنا عن متطلباتك',
+    sending: 'جارٍ الإرسال...',
+    thankYou: 'شكراً! تم إرسال رسالتك. سنرد خلال 24 ساعة.',
+    preferWA: 'تفضل واتساب؟',
+    WADesc: 'تواصل معنا مباشرة على واتساب للاستجابة السريعة.',
+    seoDesc: 'تواصل مع مصنع فحم جوز الهند إندونيسيا. احصل على عينة مجانية وعروض سعرية.',
+  },
+  whyChoose: {
+    title: 'لماذا فحم مونو',
+    subtitle: 'إندونيسيا تنتج أفضل فحم جوز الهند في العالم.',
+    butFinding: 'لكن إيجاد مصنع يمكن الاعتماد عليه؟ هذا هو الأصعب.',
+    description: 'مئات المصانع.لكن معظمها يفتقر للإدارة الحقيقية — مما يؤدي لتأخيرات إنتاجية كبيرة، وثائق تصدير ناقصة، ومشاكل شحن وجودة غير متسقة. بنينا فحم مونو ليكون مختلفاً.',
+    onTime: 'إنتاج في الوقت',
+    onTimeDesc: 'عملية عمل منظمة، مواعيد نهائية حقيقية. طلبك يشحن عندما نقول.',
+    docs: 'وثائق كاملة',
+    docsDesc: 'قوائم التعبئة، شهادات التحليل والت fumigation — جاهزة دائماً قبل شحن طلبك.',
+    logistics: 'لوجستيات كاملة',
+    logisticsDesc: 'نتولى الشحن والجمارك والتتبع من البداية للنهاية. أنت فقط تستلم البضائع.',
+    quality: 'جودة متسقة',
+    qualityDesc: 'اختبار كل دفعة في المختبر. نفس المواصفات والأداء في كل شحنة.',
+    downloadProfile: 'تحميل ملف الشركة',
+  },
+  pages: {
+    about: 'عن الشركة',
+    products: 'المنتجات',
+    oem: 'تصنيع',
+    quality: 'الجودة',
+    export: 'التصدير',
+    blog: 'المدونة',
+    contact: 'اتصل بنا',
+  },
+  keywords: 'فحم الشيشة, فحم الشواء, فحم جوز الهند, مصنع فحم إندونيسيا, فحم_hookah, مصنّع فحم, مُصدّر فحم',
+};
+
+const de: TranslationStrings = {
+  nav: {
+    home: 'Startseite',
+    products: 'Produkte',
+    shisha: 'Shisha Kohle',
+    bbq: 'BBQ Kohle',
+    oem: 'OEM',
+    quality: 'Qualität',
+    export: 'Export',
+    about: 'Über uns',
+    blog: 'Blog',
+    contact: 'Kontakt',
+  },
+  hero: {
+    title: 'Premium Kokosnuss-Schale Kohle',
+    subtitle: 'Von Indonesien in die Welt',
+    cta1: 'Produkte ansehen',
+    cta2: 'Kostenlose Probe',
+  },
+  common: {
+    learnMore: 'Mehr erfahren',
+    getSample: 'Kostenlose Probe',
+    contactUs: 'Kontakt',
+    viewSpecs: 'Spezifikationen',
+    freeSample: 'Kostenlose Probe',
+    wholesale: 'Großhandel',
+    factory: 'Fabrik',
+    manufacturer: 'Hersteller',
+    exporter: 'Exporteur',
+  },
+  footer: {
+    description: 'Indonesiens beste Kokosnuss-Schale Kohle Fabrik. Premium Shisha und BBQ Briketts für globalen Export.',
+    products: 'Produkte',
+    company: 'Unternehmen',
+    getInTouch: 'Kontakt',
+    shisha: 'Shisha Kohle',
+    bbq: 'BBQ Kohle',
+    oem: 'OEM Dienstleistungen',
+    quality: 'Qualität',
+    export: 'Export Info',
+    about: 'Über uns',
+    contact: 'Kontakt',
+    allRights: 'Alle Rechte vorbehalten.',
+  },
+  products: {
+    title: 'Unsere Produkte',
+    subtitle: 'Premium Kohle für jeden Bedarf. Mit Liebe und Leidenschaft hergestellt.',
+    shishaName: 'Shisha Kohle',
+    shishaDesc: 'Die Kokosnuss-Kohle, die wir herstellen, wird Ihre Shisha-Lounges und Großhändler zu Wiederholungsbestellungen veranlassen. 100% gute Kokosnuss. Wir können jede gewünschte Größe herstellen.',
+    bbqName: 'BBQ Kohle',
+    bbqDesc: 'Hochhitze-Briketts perfekt zum Grillieren. Gleichmäßige Temperatur und einfach anzuzünden. 100% perfektes Grillen.',
+    burnTime: 'Brenndauer',
+    ashContent: 'Aschegehalt',
+    noOdor: 'Geruchlos',
+    heatValue: 'Heizwert',
+  },
+  about: {
+    title: 'Über uns',
+    subtitle: 'Indonesiens beste Kokosnuss-Schale Kohlefabrik für Shisha und Grillen',
+    description: 'PT Mono Milik Nusantara (Mono Charcoal) ist ein führender Hersteller und Exporteur von Premium Kokosnuss-Schale Kohlebriketts. In Indonesien ansässig, kombinieren wir traditionelles Handwerk mit modernen Produktionstechniken, um höchste Qualitätskohle für Shisha und Grillen weltweit zu liefern.',
+    yearsExp: 'Jahre Erfahrung',
+    tonsExported: 'Tonnen exportiert',
+    countries: 'Länder bedient',
+    iso: 'ISO Zertifiziert',
+    halal: 'Halal Zertifiziert',
+    eco: 'Umweltfreundlich',
+    labTested: 'Laborgeprüft',
+    productionCapacity: 'Produktionskapazität',
+    exportCountries: 'Exportländer',
+    clients: 'Kunden',
+    factoryTitle: 'Unsere Fabrik in Bekasi',
+    factoryDesc: 'In Bekasi, Westjava, verfügt unsere hochmoderne Produktionsstätte über eine monatliche Kapazität von über 1.000 Tonnen.',
+    modernEquip: 'Moderne Ausrüstung',
+    modernEquipDesc: 'Industriemaschinen für präzise Produktion',
+    qcCert: 'Qualitätszertifiziert',
+    qcCertDesc: 'ISO 9001:2015 zertifizierter Produktionsprozess',
+    globalReady: 'Globaler Export',
+    globalReadyDesc: 'Erfahren im internationalen Versand',
+    whyIndo: 'Warum indonesischer Kokoskohle?',
+    richPotassium: 'Reich an Kalium',
+    richPotassiumDesc: 'Indonesische Kokosnussschalen enthalten viel Kalium.',
+    highCarbon: 'Hoher Kohlenstoffgehalt',
+    highCarbonDesc: '75-80% fester Kohlenstoffgehalt erreicht.',
+    odorless: 'Geruchlos & Chemiefrei',
+    odorlessDesc: '100% natürliche Kokosnussschale ohne Zusätze.',
+    sustainable: 'Nachhaltige Beschaffung',
+    sustainableDesc: 'Indonesien ist der größte Kokosproduzent.',
+    visitFactory: 'Fabrik besuchen',
+    visitFactoryDesc: 'Wir heißen Einkäufer in Bekasi willkommen.',
+  },
+  contact: {
+    title: 'Kontakt',
+    subtitle: 'Bereit zu bestellen?',
+    cta: 'Kontaktieren Sie uns heute für Preise, Muster oder Sonderbestellungen. Wir antworten innerhalb von 24 Stunden.',
+    whatsapp: 'Auf WhatsApp chatten',
+    email: 'admin@monocharcoal.com',
+    yourName: 'Ihr Name',
+    yourEmail: 'Ihre E-Mail',
+    yourMessage: 'Ihre Nachricht',
+    send: 'Nachricht senden',
+    openingEmail: 'E-Mail-Client wird geöffnet...',
+    getQuote: 'Holen Sie sich heute ein Angebot',
+    readyOrder: 'Bereit zu bestellen? Kontaktieren Sie uns für Muster und Preise.',
+    factoryLocation: 'Fabrikstandort',
+    phone: 'Telefon',
+    responseTime: 'Antwortzeit',
+    within24: 'Innerhalb von 24 Stunden',
+    sendMessage: 'Nachricht senden',
+    formDesc: 'Füllen Sie das Formular aus und wir melden uns innerhalb von 24 Stunden.',
+    company: 'Unternehmen',
+    country: 'Land',
+    messagePlaceholder: 'Erzählen Sie uns von Ihren Anforderungen',
+    sending: 'Wird gesendet...',
+    thankYou: 'Danke! Ihre Nachricht wurde gesendet. Wir melden uns innerhalb von 24 Stunden.',
+    preferWA: 'WhatsApp bevorzugt?',
+    WADesc: 'Kontaktieren Sie uns direkt auf WhatsApp für schnellste Antwort.',
+    seoDesc: 'Kontaktieren Sie Mono Charcoal Indonesien. Kostenlose Muster, Großhandelsangebote. Schnelle Antwort innerhalb von 24 Stunden.',
+  },
+  whyChoose: {
+    title: 'Warum Mono Charcoal',
+    subtitle: 'Indonesien produziert die beste Kokosnuss-Kohle der Welt.',
+    butFinding: 'Aber einen Hersteller zu finden, dem Sie wirklich vertrauen können? Das ist das Schwierige.',
+    description: 'Hunderte von Fabriken. Aber die meisten haben keine echte Management — was zu extremen Produktionsverzögerungen, unvollständigen Exportdokumenten, Versandproblemen und inkonsistenter Produktqualität führt. Wir haben Mono Charcoal anders aufgebaut.',
+    onTime: 'Pünktliche Produktion',
+    onTimeDesc: 'Strukturierter Arbeitsablauf, echte Fristen. Ihre Bestellung wird versendet, wenn wir sagen.',
+    docs: 'Vollständige Dokumentation',
+    docsDesc: 'Packlisten, COA, Begasungszertifikate — immer bereit bevor Ihr Versand geht.',
+    logistics: 'Verwaltete Logistik',
+    logisticsDesc: 'Wir kümmern uns um Fracht, Zoll und Tracking von Anfang bis Ende. Sie erhalten einfach die Ware.',
+    quality: 'Konstante Qualität',
+    qualityDesc: 'Laborgeprüft jede Charge. Gleiche Spezifikationen, gleiche Leistung bei jeder Lieferung.',
+    downloadProfile: 'Unternehmensprofil herunterladen',
+  },
+  pages: {
+    about: 'Über uns',
+    products: 'Produkte',
+    oem: 'OEM',
+    quality: 'Qualität',
+    export: 'Export',
+    blog: 'Blog',
+    contact: 'Kontakt',
+  },
+  keywords: 'Shisha Kohle, BBQ Kohle, Kokoskohle, Kohlefabrik Indonesien, Hookah Kohle, Kohlehersteller, Kohleexporteur',
+};
+
+const fr: TranslationStrings = {
+  nav: {
+    home: 'Accueil',
+    products: 'Produits',
+    shisha: 'Charbon Shisha',
+    bbq: 'Charbon BBQ',
+    oem: 'OEM',
+    quality: 'Qualité',
+    export: 'Export',
+    about: 'À propos',
+    blog: 'Blog',
+    contact: 'Contact',
+  },
+  hero: {
+    title: 'Charbon de Coque de Noix de Coco Premium',
+    subtitle: "De l'Indonésie vers le Monde",
+    cta1: 'Voir les Produits',
+    cta2: 'Échantillon Gratuit',
+  },
+  common: {
+    learnMore: 'En Savoir Plus',
+    getSample: 'Échantillon Gratuit',
+    contactUs: 'Contactez-nous',
+    viewSpecs: 'Voir les Spécifications',
+    freeSample: 'Échantillon Gratuit',
+    wholesale: 'Gros',
+    factory: 'Usine',
+    manufacturer: 'Fabricant',
+    exporter: 'Exportateur',
+  },
+  footer: {
+    description: "La meilleure usine de charbon de noix de coco d'Indonésie. Briquettes shisha et BBQ premium pour l'exportation mondiale.",
+    products: 'Produits',
+    company: 'Entreprise',
+    getInTouch: 'Nous Contacter',
+    shisha: 'Charbon Shisha',
+    bbq: 'Charbon BBQ',
+    oem: 'Services OEM',
+    quality: 'Qualité',
+    export: 'Info Export',
+    about: 'À propos',
+    contact: 'Contact',
+    allRights: 'Tous droits réservés.',
+  },
+products: {
+    title: 'Nos Produits',
+    subtitle: 'Charbon Premium pour Chaque Besoin. Fait avec amour et passion.',
+    shishaName: 'Charbon Shisha',
+    shishaDesc: 'Le charbon de noix de coco que nous fabriquons convaincra vos salons shisha et grossistes pour des commandes répétées. 100% bonne noix de coco. Nous pouvons fabriquer la taille que vous souhaitez.',
+    bbqName: 'Charbon BBQ',
+    bbqDesc: 'Briquettes hexagonales et rondes haute chaleur parfaites pour le gril. Température constante et facile à allumer. 100% gril parfait.',
+    burnTime: 'Temps de combustion',
+    ashContent: 'Teneur en cendres',
+    noOdor: 'Sans odeur',
+    heatValue: 'Valeur calorifique',
+  },
+  about: {
+    title: 'À propos',
+    subtitle: "La meilleure usine de charbon de noix de coco d'Indonésie pour Shisha et Barbecue",
+    description: 'PT Mono Milik Nusantara (Mono Charcoal) est un fabricant et exportateur leader de briquettes de charbon de noix de coco premium. Basés en Indonésie, nous combinons l\'artisanat traditionnel avec des techniques de production modernes pour livrer la plus haute qualité de charbon pour shisha et barbecue dans le monde.',
+    yearsExp: "Années d'Expérience",
+    tonsExported: 'Tonnes Exportées',
+    countries: 'Pays Desservis',
+    iso: 'Certifié ISO',
+    halal: 'Certifié Halal',
+    eco: 'Écologique',
+    labTested: 'Testé en Laboratoire',
+    productionCapacity: 'Capacité de Production',
+    exportCountries: 'Pays Exportateurs',
+    clients: 'Clients',
+    factoryTitle: 'Notre Usine à Bekasi',
+    factoryDesc: 'Notre installation de fabrication à Bekasi, Java Ouest, a une capacité mensuelle de plus de 1 000 tonnes métriques.',
+    modernEquip: 'Équipement Moderne',
+    modernEquipDesc: 'Machines industrielles pour production précise',
+    qcCert: 'Certifié Qualité',
+    qcCertDesc: 'Processus de production certifié ISO 9001:2015',
+    globalReady: 'Prêt pour Export',
+    globalReadyDesc: 'Expérimentés dans les expéditions internationales',
+    whyIndo: 'Pourquoi le Charbon Indonésien?',
+    richPotassium: 'Riche en Potassium',
+    richPotassiumDesc: 'Les coques de noix de coco indonésiennes contiennent beaucoup de potassium.',
+    highCarbon: 'Haute Teneur en Carbone',
+    highCarbonDesc: '75-80% de carbone fixe atteint.',
+    odorless: 'Inodore & Sans Chimique',
+    odorlessDesc: 'Coque de noix de coco 100% naturelle sans additifs.',
+    sustainable: 'Approvisionnement Durable',
+    sustainableDesc: 'L\'Indonésie est le plus gros producteur de noix de coco.',
+    visitFactory: 'Visiter l\'Usine',
+    visitFactoryDesc: 'Nous accueillons les acheteurs à Bekasi.',
+  },
+  contact: {
+    title: 'Contact',
+    subtitle: 'Prêt à commander?',
+    cta: 'Contactez-nous aujourd\'hui pour les prix, échantillons ou commandes personnalisées. Nous répondons dans les 24 heures.',
+    whatsapp: 'Discuter sur WhatsApp',
+    email: 'admin@monocharcoal.com',
+    yourName: 'Votre Nom',
+    yourEmail: 'Votre Email',
+    yourMessage: 'Votre Message',
+    send: 'Envoyer',
+    openingEmail: 'Ouverture du client email...',
+    getQuote: 'Obtenez votre devis aujourd\'hui',
+    readyOrder: 'Prêt à commander? Contactez-nous pour échantillons et prix.',
+    factoryLocation: 'Emplacement Usine',
+    phone: 'Téléphone',
+    responseTime: 'Délai de réponse',
+    within24: 'Sous 24 heures',
+    sendMessage: 'Envoyez-nous un message',
+    formDesc: 'Remplissez le formulaire et nous vous répondrons sous 24 heures.',
+    company: 'Entreprise',
+    country: 'Pays',
+    messagePlaceholder: 'Parlez-nous de vos besoins',
+    sending: 'Envoi en cours...',
+    thankYou: 'Merci! Votre message a été envoyé. Nous répondrons sous 24 heures.',
+    preferWA: 'Préférez WhatsApp?',
+    WADesc: 'Contactez-nous directement sur WhatsApp pour une réponse rapide.',
+    seoDesc: 'Contactez Mono Charcoal Indonésie. Échantillons gratuits, devis gros. Réponse rapide sous 24 heures.',
+  },
+  whyChoose: {
+    title: 'Pourquoi Mono Charcoal',
+    subtitle: "L'Indonésie produit le meilleur charbon de noix de coco au monde.",
+    butFinding: 'Mais trouver un fabricant sur qui compter? C\'est la partie difficile.',
+    description: 'Des centaines d\'usines. Mais la plupart manquent de verdadera gestion — menant à des retards de production extrêmes, documents d\'export incomplets, problèmes d\'expédition et qualité incoherent. Nous avons construit Mono Charcoal pour être différent.',
+    onTime: 'Production dans les Temps',
+    onTimeDesc: 'Flux de travail structuré, délais réels. Votre commandeexpédie quand nous disons.',
+    docs: 'Documentation Complète',
+    docsDesc: 'Listes de colisage, COA, certificats de fumigation — toujours prêts avant votre expédition.',
+    logistics: 'Logistique Gérée',
+    logisticsDesc: 'Nous gérons fret, douanes et suivi de A à Z. Vous recevez simplement les marchandises.',
+    quality: 'Qualité Constante',
+    qualityDesc: 'Testé en laboratoire chaque lot. Mêmes spécifications, même performance à chaque shipment.',
+    downloadProfile: 'Télécharger le Profil Entreprise',
+  },
+  pages: {
+    about: 'À propos',
+    products: 'Produits',
+    oem: 'OEM',
+    quality: 'Qualité',
+    export: 'Export',
+    blog: 'Blog',
+    contact: 'Contact',
+  },
+  keywords: 'charbon shisha, charbon BBQ, charbon noix de coco, usine charbon Indonésie, charbon hookah, fabricant charbon, exportateur charbon',
+};
+
+const tr: TranslationStrings = {
+nav: {
+    home: 'Ana Sayfa',
+    products: 'Ürünler',
+    shisha: 'Nargate Kömürü',
+    bbq: 'Izgara Kömürü',
+    oem: 'OEM',
+    quality: 'Kalite',
+    export: 'İhracat',
+    about: 'Hakkımızda',
+    blog: 'Blog',
+    contact: 'İletişim',
+  },
+  hero: {
+    title: 'Premium Hindistan Cevizi Kabuğu Kömürü',
+    subtitle: 'Endonezya\'dan Dünya\'ya',
+    cta1: 'Ürünleri Gör',
+    cta2: 'Ücretsiz Numune',
+  },
+  common: {
+    learnMore: 'Daha Fazla',
+    getSample: 'Ücretsiz Numune',
+    contactUs: 'Bize Ulaşın',
+    viewSpecs: 'Özellikleri Gör',
+    freeSample: 'Ücretsiz Numune',
+    wholesale: 'Toptan',
+    factory: 'Fabrika',
+    manufacturer: 'Üretici',
+    exporter: 'İhracatçı',
+  },
+  footer: {
+    description: 'Endonezya\'nın en iyi hindistan cevizi kabuğu kömürü fabrikası. Premium nargate ve izgara briketleri küresel ihracat için.',
+    products: 'Ürünler',
+    company: 'Şirket',
+    getInTouch: 'İletişim',
+    shisha: 'Nargate Kömürü',
+    bbq: 'Izgara Kömürü',
+    oem: 'OEM Hizmetleri',
+    quality: 'Kalite',
+    export: 'İhracat Bilgisi',
+    about: 'Hakkımızda',
+    contact: 'İletişim',
+    allRights: 'Tüm hakları saklıdır.',
+  },
+  products: {
+    title: 'Ürünlerimiz',
+    subtitle: 'Her İhtiyaç İçin Premium Kömür. Aşk ve tutku ile yapılmıştır.',
+    shishaName: 'Nargate Kömürü',
+    shishaDesc: 'Ürettiğimiz hindistan cevizi kömürü, tekrar sipariş vereceğiniz shisha salonları ve toptancılar için mükemmeldir. %100 iyi hindistan cevizi. İstediğiniz her boyutu üretebiliriz.',
+    bbqName: 'Izgara Kömürü',
+    bbqDesc: 'Izgara için mükemmel yüksek ısılı altıgen ve yastık briketler. Tutarlı sıcaklık ve kolay tutuşturma. %100 mükemmel izgara.',
+    burnTime: 'Yanma Süresi',
+    ashContent: 'Kül İçeriği',
+    noOdor: 'Kokusuz',
+    heatValue: 'Isı Değeri',
+  },
+  about: {
+    title: 'Hakkımızda',
+    subtitle: 'Endonezya\'nın en iyi Nargate ve Izgara için Hindistan Cevizi Kömürü Fabrikası',
+    description: 'PT Mono Milik Nusantara (Mono Charcoal), premium hindistan cevizi kabuğu kömürü briketler önde gelen üreticisi ve ihracatçısıdır. Endonezya\'da merkezi olan firma, geleneksel zanaatkarlığı modern üretim teknikleriyle birleştirerek dünya genelinde en yüksek kaliteli kömürü sunmaktadır.',
+    yearsExp: 'Yıl Deneyim',
+    tonsExported: 'Ton İhracat',
+    countries: 'Ülke',
+    iso: 'ISO Sertifikalı',
+    halal: 'Helal Sertifikalı',
+    eco: 'Çevre Dostu',
+    labTested: 'Laboratuvar Testli',
+    productionCapacity: 'Üretim Kapasitesi',
+    exportCountries: 'İhracat Ülkeleri',
+    clients: 'Müşteriler',
+    factoryTitle: 'Bekasi\'deki Fabrikamız',
+    factoryDesc: 'Batı Java\'daki tesisimiz aylık 1.000 ton aşkın kapasiteye sahiptir.',
+    modernEquip: 'Modern Ekipman',
+    modernEquipDesc: 'Hassas üretim için endüstriyel makinalar',
+    qcCert: 'Kalite Sertifikalı',
+    qcCertDesc: 'ISO 9001:2015 Sertifikalı üretim',
+    globalReady: 'İhracata Hazır',
+    globalReadyDesc: 'Uluslararası sevkiyat deneyimi',
+    whyIndo: 'Neden Endonezya Kömürü?',
+    richPotassium: 'Potasyum Zengini',
+    richPotassiumDesc: 'Endonezya hindistan cevizi kabukları çok potasyum içerir.',
+    highCarbon: 'Yüksek Karbon',
+    highCarbonDesc: '%75-80 sabit karbon içeriği.',
+   odorless: 'Kokusuz & Kimyasalsız',
+    odorlessDesc: '%100 doğal hindistan cevizi kabuğu.',
+    sustainable: 'Sürdürülebilir',
+    sustainableDesc: 'Endonezya en büyük hindistan cevizi üreticisi.',
+    visitFactory: 'Fabrikayı Ziyaret',
+    visitFactoryDesc: 'Bekasi\'de fabrikamızı ziyaret etmenizi bekliyoruz.',
+  },
+  contact: {
+    title: 'İletişim',
+    subtitle: 'Sipariş Vermeye Hazır mısınız?',
+    cta: 'Fiyatlar, numuneler veya özel siparişler için bugün bizimle iletişime geçin. 24 saat içinde cevap veriyoruz.',
+    whatsapp: 'WhatsApp\'ta Sohbet',
+    email: 'admin@monocharcoal.com',
+    yourName: 'Adınız',
+    yourEmail: 'E-posta Adresiniz',
+    yourMessage: 'Mesajınız',
+    send: 'Gönder',
+    openingEmail: 'E-posta istemcisi açılıyor...',
+    getQuote: 'Bugün Fiyat Teklifi Alın',
+    readyOrder: 'Siparişe hazır mısınız? Numuneler ve fiyatlar için bizimle iletişime geçin.',
+    factoryLocation: 'Fabrika Konumu',
+    phone: 'Telefon',
+    responseTime: 'Yanıt Süresi',
+    within24: '24 saat içinde',
+    sendMessage: 'Bize Mesaj Gönderin',
+    formDesc: 'Formu doldurun, 24 saat içinde size dönelim.',
+    company: 'Şirket',
+    country: 'Ülke',
+    messagePlaceholder: 'Bize gereksinimlerinizi anlatın',
+    sending: 'Gönderiliyor...',
+    thankYou: 'Teşekkürler! Mesajınız gönderildi. 24 saat içinde döneceğiz.',
+    preferWA: 'WhatsApp mı tercih edersiniz?',
+    WADesc: 'En hızlı yanıt için WhatsApp üzerinden iletişime geçin.',
+    seoDesc: 'Mono Charcoal Endonezya ile iletişim. Ücretsiz numune, toptan fiyat. 24 saat içinde yanıt.',
+  },
+  whyChoose: {
+    title: 'Neden Mono Charcoal',
+    subtitle: 'Endonezya dünyanın en iyi hindistan cevizi kömürü üretiyor.',
+    butFinding: 'Ama güvenebileceğiniz bir üretici bulmak? İşte asıl zor kısım bu.',
+    description: 'Yüzlerce fabrika. Ama çoğu gerçek yönetimden yoksun — aşırı üretim gecikmeleri, eksik belgeler, nakliye sorunları ve tutarsız ürün kalitesine yol açıyor. Mono Charcoal\'u farklı olmak için kurduk.',
+    onTime: 'Zamanında Üretim',
+    onTimeDesc: 'Yapılandırılmış iş akışı, gerçek teslim tarihleri. Sipairişinizi söylediğimiz zaman gönderiyoruz.',
+    docs: 'Tam Belgeleme',
+    docsDesc: 'Packing listeleri, COA, fumigation sertifikaları — sevkiyatınızdan önce her zaman hazır.',
+    logistics: 'Yönetilen Lojistik',
+    logisticsDesc: 'Nakliye, gümrük ve takibi baştan sona hallediyoruz. Sadece malları teslim alırsınız.',
+    quality: 'Tutarlı Kalite',
+    qualityDesc: 'Her parti laboratuvarda test edilir. Aynı özellikler, her sevkiyatta aynı performans.',
+    downloadProfile: 'Şirket Profilini İndir',
+  },
+  pages: {
+    about: 'Hakkımızda',
+    products: 'Ürünler',
+    oem: 'OEM',
+    quality: 'Kalite',
+    export: 'İhracat',
+    blog: 'Blog',
+    contact: 'İletişim',
+  },
+  keywords: 'nargate kömürü, izgara kömürü, hindistan cevizi kömürü, Endonezya kömür fabrikası, hookah kömürü, kömür üreticisi, kömür ihracatçısı',
+};
+
+const ru: TranslationStrings = {
+  nav: {
+    home: 'Главная',
+    products: 'Продукты',
+    shisha: 'Уголь для кальяна',
+    bbq: 'Уголь для гриля',
+    oem: 'OEM',
+    quality: 'Качество',
+    export: 'Экспорт',
+    about: 'О нас',
+    blog: 'Блог',
+    contact: 'Контакты',
+  },
+  hero: {
+    title: 'Премиум Кокосовый Уголь',
+    subtitle: 'Из Индонезии в Мир',
+    cta1: 'Смотреть Продукты',
+    cta2: 'Бесплатный Образец',
+  },
+  common: {
+    learnMore: 'Узнать Больше',
+    getSample: 'Бесплатный Образец',
+    contactUs: 'Связаться',
+    viewSpecs: 'Характеристики',
+    freeSample: 'Бесплатный образец',
+    wholesale: 'Оптом',
+    factory: 'Фабрика',
+    manufacturer: 'Производитель',
+    exporter: 'Экспортёр',
+  },
+  footer: {
+    description: 'Лучшая фабрика кокосового угля в Индонезии. Премиум брикеты для кальяна и гриля для мирового экспорта.',
+    products: 'Продукты',
+    company: 'Компания',
+    getInTouch: 'Связаться',
+    shisha: 'Уголь для кальяна',
+    bbq: 'Уголь для гриля',
+    oem: 'Услуги OEM',
+    quality: 'Качество',
+    export: 'Инфо Экспорт',
+    about: 'О нас',
+    contact: 'Контакты',
+    allRights: 'Все права защищены.',
+  },
+  products: {
+    title: 'Наши Продукты',
+    subtitle: 'Премиум Уголь для Любых Потребностей. Сделано с любовью и страстью.',
+    shishaName: 'Уголь для кальяна',
+    shishaDesc: 'Кокосовый уголь, который мы производим, заставит ваши кальянные и оптовиков делать повторные заказы. 100% качественная кокосовая скорлупа. Мы можем изготовить любой размер.',
+    bbqName: 'Уголь для гриля',
+    bbqDesc: 'Высококалорийные шестиугольные и подушечные брикеты идеальны для гриля. Стабильная температура и лёгкое розжиг. 100% идеальный гриль.',
+    burnTime: 'Время горения',
+    ashContent: 'Содержание золы',
+    noOdor: 'Без запаха',
+    heatValue: 'Теплота сгорания',
+  },
+  about: {
+    title: 'О нас',
+    subtitle: 'Лучшая фабрика кокосового угля в Индонезии для кальяна и гриля',
+    description: 'PT Mono Milik Nusantara (Mono Charcoal) — ведущий производитель и экспортёр премиальных брикетов из кокосовой скорлупы. базируется в Индонезии, мы сочетаем традиционное мастерство с современными производственными технологиями для поставки высочайшего качества угля для кальяна и гриля по всему миру.',
+    yearsExp: 'Лет Опыта',
+    tonsExported: 'Тонн Экспорта',
+    countries: 'Стран',
+    iso: 'Сертификат ISO',
+    halal: 'Сертификат Халяль',
+    eco: 'Экологичный',
+    labTested: 'Лабораторный Тест',
+    productionCapacity: 'Производственная Мощность',
+    exportCountries: 'Стран Экспорта',
+    clients: 'Клиентов',
+    factoryTitle: 'Наша Фабрика в Бекаси',
+    factoryDesc: 'Наше производство в Западной Яве имеет мощность более 1000 тонн в месяц.',
+    modernEquip: 'Современное Оборудование',
+    modernEquipDesc: 'Промышленное оборудование для точного производства',
+    qcCert: 'Сертификат Качества',
+    qcCertDesc: 'Сертифицированный процесс ISO 9001:2015',
+    globalReady: 'Готов к Экспорту',
+    globalReadyDesc: 'Опыт в международной доставке',
+    whyIndo: 'Почему Индонезийский Уголь?',
+    richPotassium: 'Богат Калием',
+    richPotassiumDesc: 'Индонезийская скорлупа содержит много калия.',
+    highCarbon: 'Высокий Углерод',
+    highCarbonDesc: 'Содержание 75-80% связанного углерода.',
+    odorless: 'Без Запаха и Химии',
+    odorlessDesc: '100% натуральная скорлупа кокоса без добавок.',
+    sustainable: 'Устойчивое Снабжение',
+    sustainableDesc: 'Индонезия — крупнейший производитель кокосов.',
+    visitFactory: 'Посетить Фабрику',
+    visitFactoryDesc: 'Приглашаем покупателей в Бекаси.',
+  },
+  contact: {
+    title: 'Контакты',
+    subtitle: 'Готовы заказать?',
+    cta: 'Свяжитесь с нами сегодня для получения цен, образцов или индивидуальных заказов. Мы отвечаем в течение 24 часов.',
+    whatsapp: 'Чат в WhatsApp',
+    email: 'admin@monocharcoal.com',
+    yourName: 'Ваше Имя',
+    yourEmail: 'Ваш Email',
+    yourMessage: 'Ваше Сообщение',
+    send: 'Отправить',
+    openingEmail: 'Открытие почтового клиента...',
+    getQuote: 'Получите КП Сегодня',
+    readyOrder: 'Готовы заказать? Свяжитесь для образцов и цен.',
+    factoryLocation: 'Расположение Фабрики',
+    phone: 'Телефон',
+    responseTime: 'Время Ответа',
+    within24: 'В течение 24 часов',
+    sendMessage: 'Отправить Сообщение',
+    formDesc: 'Заполните форму и мы ответим в течение 24 часов.',
+    company: 'Компания',
+    country: 'Страна',
+    messagePlaceholder: 'Расскажите о ваших требованиях',
+    sending: 'Отправка...',
+    thankYou: 'Спасибо! Ваше сообщение отправлено. Мы ответим в течение 24 часов.',
+    preferWA: 'Предпочитаете WhatsApp?',
+    WADesc: 'Свяжитесь с нами напрямую в WhatsApp для быстрого ответа.',
+    seoDesc: 'Свяжитесь с Mono Charcoal Индонезия. Бесплатные образцы, оптовые цены. Быстрый ответ.',
+  },
+  whyChoose: {
+    title: 'Почему Mono Charcoal',
+    subtitle: 'Индонезия производит лучший кокосовый уголь в мире.',
+    butFinding: 'Но найти производителя, которому можно доверять? Это самая сложная часть.',
+    description: 'Сотни фабрик. Но большинство не имеют реального управления — что приводит к крайним задержкам производства, неполным экспортным документам, проблемам с доставкой и непоследовательному качеству. Мы создали Mono Charcoal, чтобы быть другим.',
+    onTime: 'Производство В Срок',
+    onTimeDesc: 'Структурированный рабочий процесс, реальные сроки. Ваш заказ отправляется, когда мы говорим.',
+    docs: 'Полная Документация',
+    docsDesc: 'Упаковочные листы, COA, сертификаты фумигации — всегда готовы до отправки.',
+    logistics: 'Управляемая Логистика',
+    logisticsDesc: 'Мы занимаемся фрахтом, таможней и отслеживанием от начала до конца. Вы просто получаете товар.',
+    quality: 'Постоянное Качество',
+    qualityDesc: 'Лабораторное тестирование каждой партии. Одинаковые спецификации, одинаковая производительность в каждой поставке.',
+    downloadProfile: 'Скачать Профиль Компании',
+  },
+  pages: {
+    about: 'О нас',
+    products: 'Продукты',
+    oem: 'OEM',
+    quality: 'Качество',
+    export: 'Экспорт',
+    blog: 'Блог',
+    contact: 'Контакты',
+  },
+  keywords: 'уголь для кальяна, уголь для гриля, кокосовый уголь, фабрика угля Индонезия, уголь хука, производитель угля, экспортёр угля',
+};
+
+const ja: TranslationStrings = {
+  nav: {
+    home: 'ホーム',
+    products: '製品',
+    shisha: 'シーシャ炭',
+    bbq: 'BBQ炭',
+    oem: 'OEM',
+    quality: '品質',
+    export: '輸出',
+    about: '会社概要',
+    blog: 'ブログ',
+    contact: 'お問い合わせ',
+  },
+  hero: {
+    title: 'プレミアムヤシ殻炭',
+    subtitle: 'インドネシアから世界へ',
+    cta1: '製品を見る',
+    cta2: '無料サンプル',
+  },
+  common: {
+    learnMore: '詳細',
+    getSample: '無料サンプル',
+    contactUs: 'お問い合わせ',
+    viewSpecs: '仕様を見る',
+    freeSample: '無料サンプル',
+    wholesale: '卸売',
+    factory: '工場',
+    manufacturer: 'メーカー',
+    exporter: '輸出者',
+  },
+  footer: {
+    description: 'インドネシア最高級のヤシ殻炭工場。プレミアムシーシャ＆BBQブリケットを世界輸出。',
+    products: '製品',
+    company: '会社',
+    getInTouch: 'お問い合わせ',
+    shisha: 'シーシャ炭',
+    bbq: 'BBQ炭',
+    oem: 'OEMサービス',
+    quality: '品質',
+    export: '輸出情報',
+    about: '会社概要',
+    contact: 'お問い合わせ',
+    allRights: '全著作権所有。',
+  },
+  products: {
+    title: '製品一覧',
+    subtitle: 'あらゆるニーズに応じたプレミアム炭。愛と情熱込めて製造。',
+    shishaName: 'シーシャ炭',
+    shishaDesc: '弊社製法ヤシ殻炭は、リピート注文が増えるシーシャラウンジや卸売りに最適。100%良質ヤシ殻。希望のサイズを製造可能です。',
+    bbqName: 'BBQ炭',
+    bbqDesc: 'グリルに最適な六角形・ピラミッド型の高火力ブリケット。温度一定で着火簡単。完璧なグリル。',
+    burnTime: '燃焼時間',
+    ashContent: '灰分',
+    noOdor: '無臭',
+    heatValue: '発熱量',
+  },
+about: {
+    title: '会社概要',
+    subtitle: 'インドネシア最高質のシーシャ・BBQ用ヤシ殻炭工場',
+    description: 'PT Mono Milik Nusantara (Mono Charcoal) は、プレミアムヤシ殻炭ブリケットの大手製造・輸出業者입니다。インドネシアベースに、伝統的な技術と最新の製造技術を融合し、世界最高品質のシーシャ・BBQ用炭を供給しています。',
+    yearsExp: '経験年数',
+    tonsExported: '輸出トン数',
+    countries: '取引国数',
+    iso: 'ISO認証',
+    halal: 'ハラール認証',
+    eco: 'エコフリー',
+    labTested: 'ラボテスト済',
+    productionCapacity: '生産能力',
+    exportCountries: '輸出国',
+    clients: 'クライアント',
+    factoryTitle: 'ベカシ工場',
+    factoryDesc: '西ジャワにある工場は月間1,000トン以上の生産能力があります。',
+    modernEquip: '最新設備',
+    modernEquipDesc: '高精度生産のための産業機械',
+    qcCert: '品質認証',
+    qcCertDesc: 'ISO 9001:2015認証プロセス',
+    globalReady: '輸出可能',
+    globalReadyDesc: '国際輸送の経験豊富',
+    whyIndo: 'インドネシア炭の特徴',
+    richPotassium: 'カリウム豊富',
+    richPotassiumDesc: 'インドネシアヤシ殻はカリウム豊富。',
+    highCarbon: '高炭素含有',
+    highCarbonDesc: '75-80%の固定炭素含有。',
+    odorless: '無臭・化学添加物不使用',
+    odorlessDesc: '100%天然ヤシ殻。',
+    sustainable: '持続可能な調達',
+    sustainableDesc: 'インドネシアは世界最大のヤシ生産国。',
+    visitFactory: '工場見学',
+    visitFactoryDesc: 'ベカシ工場へようこそ。',
+  },
+contact: {
+    title: 'お問い合わせ',
+    subtitle: 'ご注文準備はできましたか？',
+    cta: '価格・サンプル・大口注文はいませんか。24時間以内にご返答します。',
+    whatsapp: 'WhatsAppで相談',
+    email: 'admin@monocharcoal.com',
+    yourName: 'お名前',
+    yourEmail: 'メールアドレス',
+    yourMessage: 'メッセージ',
+    send: '送信',
+    openingEmail: 'メールクライアントを開いています...',
+    getQuote: '今すぐ見積もりを',
+    readyOrder: 'ご注文準備はできましたか？サンプルや価格をご案内します。',
+    factoryLocation: '工場所在地',
+    phone: '電話番号',
+    responseTime: '応答時間',
+    within24: '24時間以内',
+    sendMessage: 'メッセージを送信',
+    formDesc: 'フォームにご入力ください。24時間以内にご返答します。',
+    company: '会社名',
+    country: '国',
+    messagePlaceholder: 'ご要望をお聞かせください',
+    sending: '送信中...',
+    thankYou: 'ありがとうございます！メッセージを送信しました。24時間以内にご返答します。',
+    preferWA: 'WhatsAppが挺好?',
+    WADesc: '一番早い响应はWhatsAppからです。',
+    seoDesc: 'Mono Charcoalインドネシアへのお問い合わせ。無料サンプル、大口価格。24時間以内応答。',
+  },
+  whyChoose: {
+    title: 'Mono Charcoalが選ばれる理由',
+    subtitle: 'インドネシアは世界のベストヤシ殻炭を生産しています。',
+    butFinding: 'でも、信頼できるメーカーを探すのは本当に難しい。',
+    description: '数百の工場があります。しかし大半は当真な経営がありません — 極端な生産遅延、不完全な輸出書類、配送問題、品質の不一致につながります。Mono炭는 다르게 만들었습니다.',
+    onTime: '定時生産',
+    onTimeDesc: '構造化されたワークフロー、 реальные сроки. ご注文は言った時に出荷します。',
+    docs: '完全な書類',
+    docsDesc: 'パッキングリスト、COA、燻蒸証明書 — 出荷前に常に準備完毕。',
+    logistics: '物流管理',
+    logisticsDesc: '弊社は輸送、税関、追跡をエンドツーエンドで担当。商品は届くだけです。',
+    quality: '安定した品質',
+    qualityDesc: '各バッチをラボテスト。同じスペック、同じパフォーマンスを每一の出荷で。',
+    downloadProfile: '会社概要をダウンロード',
+  },
+  pages: {
+    about: '会社概要',
+    products: '製品',
+    oem: 'OEM',
+    quality: '品質',
+    export: '輸出',
+    blog: 'ブログ',
+    contact: 'お問い合わせ',
+  },
+  keywords: 'シーシャ炭, BBQ炭, ヤシ殻炭, インドネシア炭工場, ホ洛克炭, 炭メーカー, 炭輸出者',
+};
+
+export const translations: Record<Language, TranslationStrings> = {
+  en,
+  ar,
+  de,
+  fr,
+  tr,
+  ru,
+  ja,
+};
+
+export const getTranslation = (lang: Language): TranslationStrings => {
+  return translations[lang] || translations.en;
+};
+
+export default translations;

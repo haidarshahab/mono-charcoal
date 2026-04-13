@@ -4,34 +4,38 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MessageCircle, Flame, Wind, Sparkles } from "lucide-react";
 import shishaImg from "@/assets/shisha-charcoal.jpg";
 import bbqImg from "@/assets/bbq-charcoal.jpg";
+import { useLanguage } from "@/hooks/useLanguage";
+import { getTranslation } from "@/hooks/translations";
 
 const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%20I%27m%20interested%20in%20your%20products";
 
-const products = [
-  {
-    name: "Shisha Charcoal",
-    image: shishaImg,
-    description: "The coconut charcoal we manufacture will get your shisha lounges and wholesalers that will do repeat orders. 100% Good Coconut. We are able to manufacture any size you want.",
-    specs: [
-      { icon: Flame, label: "Burn Time", value: "120+ minutes" },
-      { icon: Sparkles, label: "Ash Content", value: "< 1.9%" },
-      { icon: Wind, label: "No Odor", value: "Tasteless" },
-    ],
-  },
-  {
-    name: "BBQ Charcoal",
-    image: bbqImg,
-    description: "High-heat hexagonal and pillow briquettes perfect for grilling. Consistent temperature and easy to light. 100% perfect grill.",
-    specs: [
-      { icon: Flame, label: "Burn Time", value: "120+ minutes" },
-      { icon: Sparkles, label: "Ash Content", value: "< 5%" },
-      { icon: Wind, label: "Heat Value", value: "7000+ kcal" },
-    ],
-  },
-];
-
 const ProductsSection = () => {
   const { ref, isVisible } = useScrollReveal();
+  const currentLang = useLanguage();
+  const t = getTranslation(currentLang);
+
+  const products = [
+    {
+      name: t.products.shishaName,
+      image: shishaImg,
+      description: t.products.shishaDesc,
+      specs: [
+        { icon: Flame, label: t.products.burnTime, value: "120+ minutes" },
+        { icon: Sparkles, label: t.products.ashContent, value: "< 1.9%" },
+        { icon: Wind, label: t.products.noOdor, value: "Tasteless" },
+      ],
+    },
+    {
+      name: t.products.bbqName,
+      image: bbqImg,
+      description: t.products.bbqDesc,
+      specs: [
+        { icon: Flame, label: t.products.burnTime, value: "120+ minutes" },
+        { icon: Sparkles, label: t.products.ashContent, value: "< 5%" },
+        { icon: Wind, label: t.products.heatValue, value: "7000+ kcal" },
+      ],
+    },
+  ];
 
   return (
     <section id="products" className="py-20 md:py-32 bg-card">
@@ -41,10 +45,10 @@ const ProductsSection = () => {
       >
         <div className="text-center mb-16">
           <p className="font-heading text-accent text-sm font-semibold uppercase tracking-widest mb-4">
-            Our Products
+            {t.products.title}
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground">
-            Premium Charcoal for Every Need. Made with love and passions.
+            {t.products.subtitle}
           </h2>
         </div>
 
@@ -74,7 +78,7 @@ const ProductsSection = () => {
                 >
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageCircle size={18} />
-                    Get Free Sample
+                    {t.common.getSample}
                   </a>
                 </Button>
               </CardContent>

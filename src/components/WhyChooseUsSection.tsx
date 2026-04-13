@@ -1,36 +1,20 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Clock, FileCheck, Ship, FlaskConical, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const solutions = [
-  {
-    icon: Clock,
-    number: "01",
-    title: "On-Time Production",
-    description: "Structured workflow, real deadlines, no excuses. Your order ships when we say it will.",
-  },
-  {
-    icon: FileCheck,
-    number: "02",
-    title: "Full Documentation",
-    description: "Packing lists, COA, fumigation certificates — always ready before your shipment leaves.",
-  },
-  {
-    icon: Ship,
-    number: "03",
-    title: "Managed Logistics",
-    description: "We handle freight, customs, and tracking end-to-end. You just receive the goods.",
-  },
-  {
-    icon: FlaskConical,
-    number: "04",
-    title: "Consistent Quality",
-    description: "Lab-tested every batch. Same specs, same performance, every single shipment.",
-  },
-];
+import { useLanguage } from "@/hooks/useLanguage";
+import { getTranslation } from "@/hooks/translations";
 
 const WhyChooseUsSection = () => {
   const { ref, isVisible } = useScrollReveal();
+  const currentLang = useLanguage();
+  const t = getTranslation(currentLang);
+
+  const solutions = [
+    { icon: Clock, number: "01", titleKey: "onTime" as const, descKey: "onTimeDesc" as const },
+    { icon: FileCheck, number: "02", titleKey: "docs" as const, descKey: "docsDesc" as const },
+    { icon: Ship, number: "03", titleKey: "logistics" as const, descKey: "logisticsDesc" as const },
+    { icon: FlaskConical, number: "04", titleKey: "quality" as const, descKey: "qualityDesc" as const },
+  ];
 
   return (
     <section className="py-0 md:py-0">
@@ -42,19 +26,17 @@ const WhyChooseUsSection = () => {
           {/* Left — Problem statement */}
           <div className="bg-primary px-8 py-20 md:px-16 lg:px-20 flex flex-col justify-center">
             <p className="text-accent text-sm font-semibold uppercase tracking-widest mb-6 font-heading">
-              Why Mono Charcoal
+              {t.whyChoose.title}
             </p>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-8">
-              Indonesia produces the world's best coconut charcoal.
+              {t.whyChoose.subtitle}
               <span className="block mt-2 text-white/60 font-normal text-2xl md:text-3xl lg:text-4xl">
-                But finding a manufacturer you can actually rely on? That's the hard part.
+                {t.whyChoose.butFinding}
               </span>
             </h2>
             <div className="w-12 h-[2px] bg-accent mb-8" />
             <p className="text-white/70 text-base md:text-lg leading-relaxed font-body max-w-lg">
-              Hundreds of factories. But most lack real management — leading to extreme production delays, 
-              incomplete export documents, shipping problems, and inconsistent product quality. 
-              We built Mono Charcoal to be different.
+              {t.whyChoose.description}
             </p>
           </div>
 
@@ -74,9 +56,9 @@ const WhyChooseUsSection = () => {
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <item.icon size={18} className="text-accent" />
-                      <h3 className="font-heading text-lg font-semibold text-foreground">{item.title}</h3>
+                      <h3 className="font-heading text-lg font-semibold text-foreground">{t.whyChoose[item.titleKey]}</h3>
                     </div>
-                    <p className="text-muted-foreground text-sm font-body leading-relaxed">{item.description}</p>
+                    <p className="text-muted-foreground text-sm font-body leading-relaxed">{t.whyChoose[item.descKey]}</p>
                   </div>
                 </div>
               ))}
@@ -89,7 +71,7 @@ const WhyChooseUsSection = () => {
           <Button asChild variant="outline" className="gap-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 text-base font-heading">
             <a href="/mono-charcoal-company-profile.pdf" download>
               <Download size={18} />
-              Download Company Profile
+              {t.whyChoose.downloadProfile}
             </a>
           </Button>
         </div>

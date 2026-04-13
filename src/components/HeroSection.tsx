@@ -1,9 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Mail } from "lucide-react";
+import { usePageTranslation } from "@/hooks/usePageTranslation";
 
 const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%20I%27m%20interested%20in%20your%20products";
 
 const HeroSection = () => {
+  const { t } = usePageTranslation();
+  
   return (
     <section className="relative min-h-screen flex items-center bg-primary overflow-hidden">
       {/* Background YouTube video */}
@@ -22,13 +25,13 @@ const HeroSection = () => {
       <div className="container relative mx-auto px-4 lg:px-8 pt-24 pb-16">
         <div className="max-w-3xl">
           <p className="font-heading text-accent text-sm font-semibold uppercase tracking-widest mb-4 animate-fade-in">
-            Premium Coconut Charcoal
+            {t.hero.title}
           </p>
           <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            The Best Coconut Charcoal from Indonesia
+            {t.hero.subtitle}
           </h1>
           <p className="text-primary-foreground/70 text-lg md:text-xl max-w-xl mb-10 font-body animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Crafted from 100% natural coconut shells. Superior quality shisha and BBQ briquettes, sustainably produced and exported worldwide.
+            {t.common.manufacturer} - {t.common.exporter}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <Button
@@ -38,7 +41,7 @@ const HeroSection = () => {
             >
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                 <MessageCircle size={20} />
-                Chat on WhatsApp
+                {t.hero.cta2}
               </a>
             </Button>
             <Button

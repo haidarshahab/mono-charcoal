@@ -21,7 +21,11 @@ const BBQCharcoal = () => {
 
   return (
     <>
-      <SEO title="BBQ Charcoal" description="Premium BBQ coconut charcoal from Indonesia. High heat output, long burn time, eco-friendly." schema={productSchema("BBQ Coconut Charcoal Briquettes", "Premium coconut shell charcoal for BBQ and grilling. High heat output, long burn time.")} />
+      <SEO 
+        title="BBQ Charcoal" 
+        description="Premium BBQ charcoal factory Indonesia. Coconut shell, high heat 7000+ cal/g. Grill, kettle, smoker fuel. Natural, eco-friendly. Global shipping."
+        keywords="BBQ charcoal, grill charcoal, lump charcoal, coconut charcoal BBQ, grilling fuel, charcoal for grill, BBQ fuel supplier"
+        schema={productSchema("BBQ Coconut Charcoal Briquettes", "Premium coconut shell charcoal for BBQ and grilling. High heat output, long burn time.")} />
       <div ref={ref}>
         <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white py-20 lg:py-28">
           <div className="container mx-auto px-4">

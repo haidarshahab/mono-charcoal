@@ -24,7 +24,11 @@ const ShishaCharcoal = () => {
 
   return (
     <>
-      <SEO title="Shisha Charcoal" description="Premium shisha coconut charcoal from Indonesia. Available in cube, finger, hexagonal shapes with low ash content. Factory direct, OEM supported." schema={productSchema("Shisha Coconut Charcoal Briquettes", "Premium coconut shell charcoal for shisha/hookah. Available in cube, finger, hexagonal shapes with 1.6%-2.5% ash content.")} />
+      <SEO 
+        title="Shisha Charcoal" 
+        description="Premium shisha charcoal factory Indonesia. Low ash 1.6-2.5%, 2+ hour burn time. Cube, finger, hexagonal shapes. OEM available. Global shipping."
+        keywords="shisha charcoal, hookah charcoal, hookah coal, quick light charcoal, coconut charcoal shisha, shisha coal supplier, hookah coal Indonesia"
+        schema={productSchema("Shisha Coconut Charcoal Briquettes", "Premium coconut shell charcoal for shisha/hookah. Available in cube, finger, hexagonal shapes with 1.6%-2.5% ash content.")} />
       <div ref={ref}>
         <section className="relative bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-white py-20 lg:py-28">
           <div className="container mx-auto px-4">

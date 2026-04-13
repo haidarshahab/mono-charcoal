@@ -27,6 +27,24 @@ import AdminSubscribers from "./pages/AdminSubscribers";
 
 const queryClient = new QueryClient();
 
+// Multi-language route groups - shared component for all languages
+const pageRoutes = [
+  { path: "/", element: <Index /> },
+  { path: "/about", element: <About /> },
+  { path: "/products", element: <Products /> },
+  { path: "/products/shisha", element: <ShishaCharcoal /> },
+  { path: "/products/bbq", element: <BBQCharcoal /> },
+  { path: "/oem", element: <OEM /> },
+  { path: "/quality", element: <Quality /> },
+  { path: "/export", element: <Export /> },
+  { path: "/blog", element: <Blog /> },
+  { path: "/blog/:slug", element: <BlogPost /> },
+  { path: "/contact", element: <Contact /> },
+];
+
+// Language prefixes (excluding 'en' which uses root)
+const langPrefixes = ['ar', 'de', 'fr', 'tr', 'ru', 'ja'];
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -34,17 +52,21 @@ const App = () => (
       <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/shisha" element={<ShishaCharcoal />} />
-          <Route path="/products/bbq" element={<BBQCharcoal />} />
-          <Route path="/oem" element={<OEM />} />
-          <Route path="/quality" element={<Quality />} />
-          <Route path="/export" element={<Export />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* Default English routes (no prefix) */}
+          {pageRoutes.map(route => (
+            <Route key={route.path} path={route.path} element={route.element} />
+          ))}
+          
+          {/* Language-prefixed routes */}
+          {langPrefixes.map(prefix => (
+            pageRoutes.map(route => (
+              <Route 
+                key={`${prefix}${route.path}`} 
+                path={`${prefix}${route.path === '/' ? '' : route.path}`} 
+                element={route.element} 
+              />
+            ))
+          ))}
         </Route>
         <Route path="/admin" element={<Admin />} />
         <Route element={<AdminLayout />}>

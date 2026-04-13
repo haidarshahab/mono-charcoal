@@ -1,43 +1,37 @@
 import SEO, { organizationSchema } from "@/components/SEO";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Award, Users, Factory, MapPin, Phone, Mail, Clock, Globe } from "lucide-react";
+import { Award, Factory, MapPin, Phone, Mail, Globe } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { getTranslation } from "@/hooks/translations";
 
 const About = () => {
   const ref = useScrollReveal();
+  const currentLang = useLanguage();
+  const t = getTranslation(currentLang);
 
   const stats = [
-    { label: "Production Capacity", value: "1,000+", suffix: "tons/month" },
-    { label: "Export Countries", value: "11", suffix: "countries" },
-    { label: "Years Experience", value: "6+", suffix: "years" },
-    { label: "Clients Served", value: "100+", suffix: "brands" },
-  ];
-
-  const team = [
-    { name: "Founder & CEO", role: "Leadership", description: "Leading Mono Charcoal's vision to become the premier Indonesian charcoal exporter." },
-    { name: "Production Director", role: "Operations", description: "Overseeing manufacturing processes ensuring consistent quality across all batches." },
-    { name: "Quality Control Manager", role: "Quality", description: "Ensuring every shipment meets international standards and customer specifications." },
-    { name: "Export Manager", role: "Sales", description: "Managing global logistics and building lasting relationships with international buyers." },
-  ];
-
-  const certifications = [
-    { name: "ISO 9001:2015", description: "Quality Management System" },
-    { name: "Export License", description: "Indonesian Government Certified" },
-    { name: "Factory Audit", description: "Third-Party Verified" },
-    { name: "MSDS", description: "Material Safety Data Sheet" },
+    { label: t.about.productionCapacity || "Production Capacity", value: "1,000+", suffix: "tons/month" },
+    { label: t.about.exportCountries || "Export Countries", value: "11", suffix: "countries" },
+    { label: t.about.yearsExp || "Years Experience", value: "6+", suffix: "years" },
+    { label: t.about.clients || "Clients Served", value: "100+", suffix: "brands" },
   ];
 
   return (
     <>
-      <SEO title="About Us" description="Learn about Mono Charcoal - Indonesia's leading coconut shell charcoal manufacturer and exporter. Our factory in Bekasi produces 1000+ tons monthly for global markets." schema={organizationSchema} />
+      <SEO 
+        title={t.pages.about} 
+        description="Mono Charcoal - Indonesia premium coconut shell charcoal manufacturer. Factory in Bekasi, 1000+ tons monthly capacity. Exporting to 20+ countries worldwide."
+        keywords="about mono charcoal, Indonesia charcoal factory, coconut charcoal manufacturer Bekasi, charcoal exporter Indonesia"
+        schema={organizationSchema} />
       <div ref={ref}>
         <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 lg:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Premium Coconut Charcoal <span className="block text-amber-500">From Indonesia to the World</span></h1>
-              <p className="text-xl text-slate-300 mb-8">Mono Charcoal is a leading manufacturer and exporter of high-quality coconut shell charcoal briquettes for shisha and BBQ applications. Based in Bekasi, Indonesia, we serve wholesale buyers across 11 countries.</p>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.hero.title} <span className="block text-amber-500">{t.hero.subtitle}</span></h1>
+              <p className="text-xl text-slate-300 mb-8">{t.about.description}</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="/contact" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">Get Free Sample</a>
-                <a href="/products" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">View Products</a>
+                <a href="/contact" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">{t.common.getSample}</a>
+                <a href="/products" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">{t.nav.products}</a>
               </div>
             </div>
           </div>
@@ -61,20 +55,20 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Our Factory in Bekasi</h2>
-                <p className="text-lg text-slate-600 mb-6">Located in Bekasi, West Java, our state-of-the-art manufacturing facility operates with a monthly production capacity of over 1,000 metric tons. We utilize modern equipment and stringent quality control processes to deliver consistent, premium-quality charcoal to global markets.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{t.about.factoryTitle || "Our Factory in Bekasi"}</h2>
+                <p className="text-lg text-slate-600 mb-6">{t.about.factoryDesc || "Located in Bekasi, West Java, our state-of-the-art manufacturing facility operates with a monthly production capacity of over 1,000 metric tons."}</p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <Factory className="w-6 h-6 text-amber-600 mt-1" />
-                    <div><h3 className="font-semibold text-slate-900">Modern Equipment</h3><p className="text-slate-600 text-sm">Industrial-grade machinery for precise production</p></div>
+                    <div><h3 className="font-semibold text-slate-900">{t.about.modernEquip || "Modern Equipment"}</h3><p className="text-slate-600 text-sm">{t.about.modernEquipDesc || "Industrial-grade machinery for precise production"}</p></div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Award className="w-6 h-6 text-amber-600 mt-1" />
-                    <div><h3 className="font-semibold text-slate-900">Quality Certified</h3><p className="text-slate-600 text-sm">ISO 9001:2015 certified production process</p></div>
+                    <div><h3 className="font-semibold text-slate-900">{t.about.qcCert || "Quality Certified"}</h3><p className="text-slate-600 text-sm">{t.about.qcCertDesc || "ISO 9001:2015 certified production process"}</p></div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Globe className="w-6 h-6 text-amber-600 mt-1" />
-                    <div><h3 className="font-semibold text-slate-900">Global Export Ready</h3><p className="text-slate-600 text-sm">Experienced in international shipping and logistics</p></div>
+                    <div><h3 className="font-semibold text-slate-900">{t.about.globalReady || "Global Export Ready"}</h3><p className="text-slate-600 text-sm">{t.about.globalReadyDesc || "Experienced in international shipping and logistics"}</p></div>
                   </div>
                 </div>
               </div>
@@ -83,63 +77,26 @@ const About = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-slate-50">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Leadership Team</h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">Our experienced team ensures every order meets the highest standards of quality and service.</p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.map((member, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
-                  <img src="/assets/team.jpg" alt="Mono Charcoal Team" className="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
-                  <h3 className="text-xl font-semibold text-slate-900 text-center mb-1">{member.name}</h3>
-                  <p className="text-amber-600 text-center text-sm font-medium mb-3">{member.role}</p>
-                  <p className="text-slate-600 text-center text-sm">{member.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Certifications & Compliance</h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">We maintain international quality standards and certifications.</p>
-            </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {certifications.map((cert, index) => (
-                <div key={index} className="border-2 border-slate-200 rounded-xl p-6 text-center hover:border-amber-500 transition-colors">
-                  <Award className="w-12 h-12 text-amber-600 mx-auto mb-4" />
-                  <h3 className="font-semibold text-slate-900 mb-2">{cert.name}</h3>
-                  <p className="text-slate-600 text-sm">{cert.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="py-20 bg-slate-900 text-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Why Indonesian Coconut Charcoal?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">{t.about.whyIndo || "Why Indonesian Coconut Charcoal?"}</h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
-                  <div><h3 className="font-semibold text-lg mb-2">Rich in Potassium</h3><p className="text-slate-300">Indonesian coconut shells contain high potassium content, resulting in lower ash content and cleaner burn.</p></div>
+                  <div><h3 className="font-semibold text-lg mb-2">{t.about.richPotassium || "Rich in Potassium"}</h3><p className="text-slate-300">{t.about.richPotassiumDesc || "Indonesian coconut shells contain high potassium content, resulting in lower ash content and cleaner burn."}</p></div>
                 </div>
                 <div className="flex gap-4">
                   <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
-                  <div><h3 className="font-semibold text-lg mb-2">High Carbon Content</h3><p className="text-slate-300">Our coconut charcoal achieves 75-80% fixed carbon content, ensuring longer burn time and higher heat output.</p></div>
+                  <div><h3 className="font-semibold text-lg mb-2">{t.about.highCarbon || "High Carbon Content"}</h3><p className="text-slate-300">{t.about.highCarbonDesc || "Our coconut charcoal achieves 75-80% fixed carbon content, ensuring longer burn time and higher heat output."}</p></div>
                 </div>
                 <div className="flex gap-4">
                   <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
-                  <div><h3 className="font-semibold text-lg mb-2">Odorless & Chemical-Free</h3><p className="text-slate-300">100% natural coconut shell with no additives, ensuring pure flavor for shisha and BBQ.</p></div>
+                  <div><h3 className="font-semibold text-lg mb-2">{t.about.odorless || "Odorless & Chemical-Free"}</h3><p className="text-slate-300">{t.about.odorlessDesc || "100% natural coconut shell with no additives, ensuring pure flavor for shisha and BBQ."}</p></div>
                 </div>
                 <div className="flex gap-4">
                   <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</div>
-                  <div><h3 className="font-semibold text-lg mb-2">Sustainable Sourcing</h3><p className="text-slate-300">Indonesia is the world's largest coconut producer, ensuring consistent supply and competitive pricing.</p></div>
+                  <div><h3 className="font-semibold text-lg mb-2">{t.about.sustainable || "Sustainable Sourcing"}</h3><p className="text-slate-300">{t.about.sustainableDesc || "Indonesia is the world's largest coconut producer, ensuring consistent supply and competitive pricing."}</p></div>
                 </div>
               </div>
             </div>
@@ -149,14 +106,14 @@ const About = () => {
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Visit Our Factory</h2>
-              <p className="text-white/90 text-lg mb-8">We welcome wholesale buyers to visit our factory in Bekasi, Indonesia. See our production process firsthand.</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t.about.visitFactory || "Visit Our Factory"}</h2>
+              <p className="text-white/90 text-lg mb-8">{t.about.visitFactoryDesc || "We welcome wholesale buyers to visit our factory in Bekasi, Indonesia."}</p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
                 <div className="bg-white/20 rounded-lg p-4"><MapPin className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">Bekasi, West Java, Indonesia</p></div>
                 <div className="bg-white/20 rounded-lg p-4"><Phone className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">+62 (WhatsApp)</p></div>
                 <div className="bg-white/20 rounded-lg p-4"><Mail className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">admin@monocharcoal.com</p></div>
               </div>
-              <a href="https://wa.me/62881024922133" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Contact Us via WhatsApp</a>
+              <a href="https://wa.me/62881024922133" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">{t.contact.whatsapp}</a>
             </div>
           </div>
         </section>

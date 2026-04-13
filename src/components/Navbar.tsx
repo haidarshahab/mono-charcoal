@@ -3,23 +3,28 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logoWhite from "@/assets/logo-dark.png";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "@/hooks/useLanguage";
+import { getTranslation } from "@/hooks/translations";
 
 const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%20I%27m%20interested%20in%20your%20products";
-
-const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "OEM", href: "/oem" },
-  { label: "Quality", href: "/quality" },
-  { label: "Export", href: "/export" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
+  const currentLang = useLanguage();
+  const t = getTranslation(currentLang);
+
+  const navLinks = [
+    { label: t.nav.home, href: "/" },
+    { label: t.nav.about, href: "/about" },
+    { label: t.nav.products, href: "/products" },
+    { label: t.nav.oem, href: "/oem" },
+    { label: t.nav.quality, href: "/quality" },
+    { label: t.nav.export, href: "/export" },
+    { label: t.nav.blog, href: "/blog" },
+    { label: t.nav.contact, href: "/contact" },
+  ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary/95 backdrop-blur-md border-b border-primary-foreground/10">
@@ -28,7 +33,7 @@ const Navbar = () => {
           <img src={logoWhite} alt="Mono Charcoal" className="h-10" />
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -42,14 +47,20 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
+          
+          <LanguageSwitcher />
+          
           <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90 font-heading text-sm">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Get in Touch</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{t.common.contactUs}</a>
           </Button>
         </div>
 
-        <button className="md:hidden text-primary-foreground" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher />
+          <button className="text-primary-foreground" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Toggle menu">
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
@@ -67,7 +78,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Button asChild className="w-full mt-2 bg-accent text-accent-foreground hover:bg-accent/90 font-heading text-sm">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">Get in Touch</a>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{t.common.contactUs}</a>
           </Button>
         </div>
       )}

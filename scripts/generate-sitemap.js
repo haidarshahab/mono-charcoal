@@ -56,24 +56,41 @@ async function fetchArticles() {
   return response.json();
 }
 
+// Languages for multilingual sitemap
+const languages = ['en', 'ar', 'de', 'fr', 'tr', 'ru', 'ja'];
+
 /**
- * Generate sitemap XML
+ * Generate sitemap XML with hreflang tags
  */
 function generateSitemap(articles) {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">`;
 
-  // Add static pages
+  // Add static pages with all language variants
   for (const page of staticPages) {
+    const baseUrl = `https://${CONFIG.domain}`;
+    
+    // Generate hreflang alternates for each language
+    let hreflangTags = '';
+    for (const lang of languages) {
+      const langUrl = lang === 'en' ? `${baseUrl}${page.url}` : `${baseUrl}/${lang}${page.url}`;
+      hreflangTags += `
+    <xhtml:link rel="alternate" hreflang="${lang}" href="${langUrl}"/>`;
+    }
+    // Add x-default
+    hreflangTags += `
+    <xhtml:link rel="alternate" hreflang="x-default" href="${baseUrl}${page.url}"/>`;
+
     xml += `
   <url>
-    <loc>https://${CONFIG.domain}${page.url}</loc>
+    <loc>${baseUrl}${page.url}</loc>
     <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
+    <priority>${page.priority}</priority>${hreflangTags}
   </url>`;
   }
 
-  // Add dynamic blog articles
+  // Add dynamic blog articles (only English for now)
   for (const article of articles) {
     if (article.slug) {
       xml += `

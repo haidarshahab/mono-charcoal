@@ -5,21 +5,24 @@ import { Textarea } from "@/components/ui/textarea";
 import { MessageCircle, Mail, Send } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/hooks/useLanguage";
+import { getTranslation } from "@/hooks/translations";
 
 const WHATSAPP_URL = "https://wa.me/62881024922133?text=Hi%20Mono%20Charcoal%2C%20I%27m%20interested%20in%20your%20products";
 
 const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal();
   const { toast } = useToast();
+  const currentLang = useLanguage();
+  const t = getTranslation(currentLang);
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // For now, open mailto with pre-filled data
     const subject = encodeURIComponent(`Inquiry from ${formData.name}`);
     const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
     window.open(`mailto:admin@monocharcoal.com?subject=${subject}&body=${body}`);
-    toast({ title: "Opening email client...", description: "Your message is being prepared." });
+    toast({ title: t.contact.openingEmail, description: "Your message is being prepared." });
     setFormData({ name: "", email: "", message: "" });
   };
 
@@ -33,13 +36,13 @@ const ContactSection = () => {
           {/* Left: CTA */}
           <div>
             <p className="font-heading text-accent text-sm font-semibold uppercase tracking-widest mb-4">
-              Contact Us
+              {t.contact.title}
             </p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-primary-foreground mb-6">
-              Ready to Order?
+              {t.contact.subtitle}
             </h2>
             <p className="text-primary-foreground/70 text-lg mb-10 font-body leading-relaxed">
-              Get in touch with us today for pricing, samples, or custom orders. We respond within 24 hours.
+              {t.contact.cta}
             </p>
 
             <div className="space-y-4">
@@ -50,7 +53,7 @@ const ContactSection = () => {
               >
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                   <MessageCircle size={20} />
-                  Chat on WhatsApp
+                  {t.contact.whatsapp}
                 </a>
               </Button>
               <Button
@@ -60,7 +63,7 @@ const ContactSection = () => {
               >
                 <a href="mailto:admin@monocharcoal.com">
                   <Mail size={20} />
-                  admin@monocharcoal.com
+                  {t.contact.email}
                 </a>
               </Button>
             </div>
@@ -69,7 +72,7 @@ const ContactSection = () => {
           {/* Right: Contact form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <Input
-              placeholder="Your Name"
+              placeholder={t.contact.yourName}
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               required
@@ -78,7 +81,7 @@ const ContactSection = () => {
             />
             <Input
               type="email"
-              placeholder="Your Email"
+              placeholder={t.contact.yourEmail}
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
@@ -86,7 +89,7 @@ const ContactSection = () => {
               className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40"
             />
             <Textarea
-              placeholder="Your Message"
+              placeholder={t.contact.yourMessage}
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               required
@@ -100,7 +103,7 @@ const ContactSection = () => {
               className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-heading gap-2"
             >
               <Send size={18} />
-              Send Message
+              {t.contact.send}
             </Button>
           </form>
         </div>
