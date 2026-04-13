@@ -24,13 +24,13 @@ const HeroSection = () => {
 
       <div className="container relative mx-auto px-4 lg:px-8 pt-24 pb-16">
         <div className="max-w-3xl">
-          <p className="font-heading text-accent text-sm font-semibold uppercase tracking-widest mb-4 animate-fade-in">
+          <p className="font-heading text-accent text-base font-semibold uppercase tracking-widest mb-4 animate-fade-in">
             {t.hero.title}
           </p>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-7xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <h1 className="font-heading md:text-5xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in text-4xl lg:text-xl" style={{ animationDelay: "0.1s" }}>
             {t.hero.subtitle}
           </h1>
-          <p className="text-primary-foreground/70 text-lg md:text-xl max-w-xl mb-10 font-body animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <p className="text-primary-foreground/70 text-lg max-w-xl mb-10 font-body animate-fade-in md:text-lg" style={{ animationDelay: "0.2s" }}>
             {t.common.manufacturer} - {t.common.exporter}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
