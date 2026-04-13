@@ -26,7 +26,6 @@ const Index = () => {
       <WhyChooseUsSection />
       <BlogSection />
       <ContactSection />
-      <Footer />
       <FloatingWhatsApp />
     </div>
     </>
