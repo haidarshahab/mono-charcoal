@@ -76,9 +76,8 @@ const ProductsSection = () => {
                   asChild
                   className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-heading gap-2"
                 >
-                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle size={18} />
-                    {t.common.getSample}
+                  <a href="/products">
+                    {t.common.seeMore}
                   </a>
                 </Button>
               </CardContent>
