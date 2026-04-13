@@ -5,7 +5,7 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { getTranslation } from "@/hooks/translations";
 
 const About = () => {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
   const currentLang = useLanguage();
   const t = getTranslation(currentLang);
 

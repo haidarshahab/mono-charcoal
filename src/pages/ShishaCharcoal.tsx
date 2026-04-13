@@ -3,7 +3,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { CheckCircle, Package, Scale, Thermometer, Clock, ChevronRight } from "lucide-react";
 
 const ShishaCharcoal = () => {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
 
   const shapes = [
     { name: "Cube", sizes: ["20x20x20mm", "22x22x22mm", "25x25x25mm", "26x26x26mm", "28x28x28mm", "30x30x30mm"] },

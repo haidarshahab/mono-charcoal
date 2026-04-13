@@ -5,7 +5,7 @@ import { getTranslation } from "@/hooks/translations";
 import { Award, CheckCircle, Shield, TestTube, FileCheck, ChevronRight } from "lucide-react";
 
 const Quality = () => {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
   const currentLang = useLanguage();
   const t = getTranslation(currentLang);
 

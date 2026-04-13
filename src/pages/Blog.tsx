@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { getArticles, addSubscriber, Article } from "@/lib/supabase";
 
 const Blog = () => {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");

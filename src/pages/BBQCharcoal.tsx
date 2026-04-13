@@ -3,7 +3,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Flame, CheckCircle, ChevronRight } from "lucide-react";
 
 const BBQCharcoal = () => {
-  const ref = useScrollReveal();
+  const { ref } = useScrollReveal();
   const features = ["High heat output for perfect grilling", "Long burn time reduces need for frequent replacement", "Low ash production for easy cleanup", "100% natural coconut shell - no chemicals", "Consistent size for even heat distribution", "Quick ignition - ready in 10-15 minutes"];
   const specifications = [
     { label: "Fixed Carbon", value: "75-80%" },
