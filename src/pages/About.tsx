@@ -27,7 +27,7 @@ const About = () => {
         keywords="about mono charcoal, Indonesia charcoal factory, coconut charcoal manufacturer Bekasi, charcoal exporter Indonesia"
         schema={organizationSchema} />
       <div ref={ref}>
-        <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 lg:py-32">
+        <section className="relative bg-gradient-to-br from-[#1D3F30] via-[#143728] to-[#1D3F30] text-white py-20 lg:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.hero.title} <span className="block text-amber-500">{t.hero.subtitle}</span></h1>

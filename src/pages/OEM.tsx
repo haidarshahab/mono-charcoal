@@ -38,7 +38,7 @@ const OEM = () => {
         keywords="OEM charcoal, private label charcoal, custom packaging charcoal, charcoal manufacturer, charcoal OEM supplier, brand charcoal"
         schema={organizationSchema} />
       <div ref={ref}>
-        <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 lg:py-28">
+        <section className="relative bg-gradient-to-br from-[#1D3F30] via-[#143728] to-[#1D3F30] text-white py-20 lg:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.pages.oem} <span className="block text-amber-500">{t.oem.charcoalMfg || "Charcoal Manufacturing"}</span></h1>

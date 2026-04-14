@@ -35,7 +35,7 @@ const Products = () => {
         keywords="coconut charcoal products, shisha charcoal, BBQ charcoal"
         schema={{ ...productSchema("Coconut Shell Charcoal Briquettes", "Premium quality"), ...faqSchema([]) }} />
       <div ref={ref}>
-        <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 lg:py-28">
+        <section className="relative bg-gradient-to-br from-[#1D3F30] via-[#143728] to-[#1D3F30] text-white py-20 lg:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.products.heroTitle} <span className="block text-amber-500">stake its reputation on.</span></h1>
@@ -128,7 +128,7 @@ const Products = () => {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-[#1D3F30] to-[#143728] rounded-2xl p-8 md:p-12 text-center text-white">
               <h2 className="text-3xl font-bold mb-4">{t.contact.readyOrder || "Ready to Order?"}</h2>
               <p className="text-slate-300 text-lg mb-8">{t.products.ctaDesc || "Contact us for a free sample and competitive quote."}</p>
               <div className="flex flex-wrap justify-center gap-4">

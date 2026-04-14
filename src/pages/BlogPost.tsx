@@ -78,7 +78,7 @@ const BlogPost = () => {
         keywords={article.keywords?.join(', ') || undefined}
       />
       <div ref={ref}>
-        <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-12 lg:py-20">
+        <section className="relative bg-gradient-to-br from-[#1D3F30] via-[#143728] to-[#1D3F30] text-white py-12 lg:py-20">
           <div className="container mx-auto px-4">
             <Link to="/blog" className="inline-flex items-center gap-2 text-slate-400 hover:text-white mb-8 transition-colors">
               <ArrowLeft className="w-5 h-5" /> Back to Blog
@@ -207,7 +207,7 @@ const BlogPost = () => {
 
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white">
+            <div className="max-w-3xl mx-auto bg-gradient-to-br from-[#1D3F30] to-[#143728] rounded-2xl p-8 md:p-12 text-center text-white">
               <h2 className="text-3xl font-bold mb-4">Have Questions?</h2>
               <p className="text-slate-300 text-lg mb-8">Contact us for more information about our charcoal products and OEM services.</p>
               <a href={WHATSAPP_URL} className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
