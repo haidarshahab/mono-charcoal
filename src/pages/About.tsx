@@ -1,8 +1,11 @@
 import SEO, { organizationSchema } from "@/components/SEO";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Award, Factory, MapPin, Phone, Mail, Globe } from "lucide-react";
+import { Award, Factory, MapPin, Phone, Mail, Globe, User } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { getTranslation } from "@/hooks/translations";
+import teamHaidar from "@/assets/team-haidar-ali.png";
+import teamAbdullah from "@/assets/team-abdullah-alatas.png";
+import teamJoko from "@/assets/team-joko.png";
 
 const About = () => {
   const { ref } = useScrollReveal();
@@ -73,6 +76,32 @@ const About = () => {
                 </div>
               </div>
               <img src="/assets/factory-exterior.jpg" alt="Mono Charcoal Factory" className="rounded-2xl w-full h-full object-cover" />
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Team</h2>
+              <p className="text-slate-600 max-w-2xl mx-auto">Meet the people behind Mono Charcoal's success</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <div className="text-center">
+                <img src={teamHaidar} alt="Haidar Ali" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-amber-500" />
+                <h3 className="text-xl font-bold text-slate-900">Haidar Ali</h3>
+                <p className="text-amber-600 font-medium">Managing Director</p>
+              </div>
+              <div className="text-center">
+                <img src={teamAbdullah} alt="Abdullah Alatas" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-amber-500" />
+                <h3 className="text-xl font-bold text-slate-900">Abdullah Alatas</h3>
+                <p className="text-amber-600 font-medium">Director of Business Development</p>
+              </div>
+              <div className="text-center">
+                <img src={teamJoko} alt="Joko" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-amber-500" />
+                <h3 className="text-xl font-bold text-slate-900">Joko</h3>
+                <p className="text-amber-600 font-medium">Director of Operations</p>
+              </div>
             </div>
           </div>
         </section>
