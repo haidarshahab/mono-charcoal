@@ -78,44 +78,55 @@ const BlogSection = () => {
             <Loader2 className="w-8 h-8 animate-spin text-amber-500" />
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {displayPosts.map((post, index) => (
-              <Card key={index} className="border border-border bg-background group hover:shadow-md transition-shadow duration-300 overflow-hidden">
-                <div className="h-48 overflow-hidden">
-                  <img 
-                    src={blogImages[index]} 
-                    alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <CardHeader className="pb-2">
-                  <p className="text-xs text-muted-foreground font-body">
-                    {formatDate(post.date) || post.date}
-                  </p>
-                  <h3 className="font-heading text-lg font-semibold text-foreground leading-snug">
-                    {post.title}
-                  </h3>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm font-body mb-4 line-clamp-3">
-                    {post.excerpt}
-                  </p>
-                  {"slug" in post ? (
-                    <Link
-                      to={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-1 text-accent text-sm font-semibold font-heading group-hover:gap-2 transition-all"
-                    >
-                      Read More <ArrowRight size={14} />
-                    </Link>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 text-accent text-sm font-semibold font-heading group-hover:gap-2 transition-all">
-                      Read More <ArrowRight size={14} />
-                    </span>
-                  )}
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {displayPosts.map((post, index) => (
+                <Card key={index} className="border border-border bg-background group hover:shadow-md transition-shadow duration-300 overflow-hidden">
+                  <div className="h-48 overflow-hidden">
+                    <img 
+                      src={blogImages[index]} 
+                      alt={post.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <CardHeader className="pb-2">
+                    <p className="text-xs text-muted-foreground font-body">
+                      {formatDate(post.date) || post.date}
+                    </p>
+                    <h3 className="font-heading text-lg font-semibold text-foreground leading-snug">
+                      {post.title}
+                    </h3>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground text-sm font-body mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    {"slug" in post ? (
+                      <Link
+                        to={`/blog/${post.slug}`}
+                        className="inline-flex items-center gap-1 text-accent text-sm font-semibold font-heading group-hover:gap-2 transition-all"
+                      >
+                        Read More <ArrowRight size={14} />
+                      </Link>
+                    ) : (
+                      <span className="inline-flex items-center gap-1 text-accent text-sm font-semibold font-heading group-hover:gap-2 transition-all">
+                        Read More <ArrowRight size={14} />
+                      </span>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12">
+              <Link
+                to="/blog"
+                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+              >
+                See All Blog <ArrowRight size={18} />
+              </Link>
+            </div>
+          </>
         )}
       </div>
     </section>
