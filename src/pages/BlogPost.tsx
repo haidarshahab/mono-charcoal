@@ -41,7 +41,7 @@ const BlogPost = () => {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-amber-500" />
+        <Loader2 className="w-8 h-8 animate-spin text-accent" />
       </div>
     );
   }
@@ -85,7 +85,7 @@ const BlogPost = () => {
             </Link>
             <div className="max-w-3xl">
               <div className="flex items-center gap-4 text-sm text-slate-400 mb-4">
-                <span className="bg-amber-500/20 text-amber-400 px-3 py-1 rounded-full">{article.category || "Article"}</span>
+                <span className="bg-accent/20 text-accent/80 px-3 py-1 rounded-full">{article.category || "Article"}</span>
                 <span className="flex items-center gap-1"><Calendar className="w-4 h-4" />{formatDate(article.date)}</span>
                 <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{article.read_time || "5 min read"}</span>
               </div>
@@ -127,7 +127,7 @@ const BlogPost = () => {
                     <ul key={index} className="space-y-2 mb-6">
                       {items.map((item, i) => (
                         <li key={i} className="flex items-start gap-2 text-slate-700">
-                          <span className="text-amber-500 mt-2">•</span>
+                          <span className="text-accent mt-2">•</span>
                           <span dangerouslySetInnerHTML={{ __html: item.replace('- **', '').replace('**', '<strong class="text-slate-900">').replace('**:', '</strong>:') }} />
                         </li>
                       ))}
@@ -188,14 +188,14 @@ const BlogPost = () => {
         </section>
 
         {article.takeaways && article.takeaways.length > 0 && (
-          <section className="py-16 bg-amber-50">
+          <section className="py-16 bg-accent/5">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto">
                 <h2 className="text-2xl font-bold text-slate-900 mb-6">Key Takeaways</h2>
                 <ul className="space-y-4">
                   {article.takeaways.map((takeaway, index) => (
                     <li key={index} className="flex items-start gap-3 bg-white p-4 rounded-lg">
-                      <span className="bg-amber-500 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">{index + 1}</span>
+                      <span className="bg-accent text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold">{index + 1}</span>
                       <span className="text-slate-700">{takeaway}</span>
                     </li>
                   ))}
@@ -210,7 +210,7 @@ const BlogPost = () => {
             <div className="max-w-3xl mx-auto bg-gradient-to-br from-[#1D3F30] to-[#143728] rounded-2xl p-8 md:p-12 text-center text-white">
               <h2 className="text-3xl font-bold mb-4">Have Questions?</h2>
               <p className="text-slate-300 text-lg mb-8">Contact us for more information about our charcoal products and OEM services.</p>
-              <a href={WHATSAPP_URL} className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
+              <a href={WHATSAPP_URL} className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
                 <MessageCircle className="w-5 h-5" /> Contact Us on WhatsApp
               </a>
             </div>
@@ -229,9 +229,9 @@ const BlogPost = () => {
                         <span>{related.category || "Article"}</span>
                         <span>{related.read_time || "5 min read"}</span>
                       </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3 hover:text-amber-600 transition-colors">{related.title}</h3>
+                      <h3 className="text-xl font-bold text-slate-900 mb-3 hover:text-accent transition-colors">{related.title}</h3>
                       <p className="text-slate-600 text-sm mb-4 line-clamp-2">{related.excerpt}</p>
-                      <Link to={`/blog/${related.slug}`} className="inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition-colors">
+                      <Link to={`/blog/${related.slug}`} className="inline-flex items-center gap-2 text-accent font-medium hover:text-accent transition-colors">
                         Read Article <ArrowLeft className="w-4 h-4 -rotate-90" />
                       </Link>
                     </div>

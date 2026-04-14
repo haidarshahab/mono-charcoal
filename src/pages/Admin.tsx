@@ -31,7 +31,7 @@ const Admin = () => {
         <div className="w-full max-w-md">
           {/* Logo */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-amber-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-4">
               <span className="text-white font-bold text-2xl">M</span>
             </div>
             <h1 className="text-3xl font-bold text-white">Mono Admin</h1>
@@ -51,7 +51,7 @@ const Admin = () => {
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+                    className="w-full pl-12 pr-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-accent"
                     placeholder="Enter admin password"
                     required
                   />
@@ -64,7 +64,7 @@ const Admin = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-50"
+                className="w-full bg-accent hover:bg-accent/90 text-white font-semibold py-3 rounded-lg transition-colors disabled:opacity-50"
               >
                 {loading ? "Verifying..." : "Login"}
               </button>

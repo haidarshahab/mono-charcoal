@@ -48,9 +48,9 @@ const Contact = () => {
         <section className="relative bg-gradient-to-br from-[#1D3F30] via-[#143728] to-[#1D3F30] text-white py-20 lg:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.pages.contact} <span className="block text-amber-500">{t.contact.getQuote || "Get Your Quote Today"}</span></h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.pages.contact} <span className="block text-accent">{t.contact.getQuote || "Get Your Quote Today"}</span></h1>
               <p className="text-xl text-slate-300 mb-8">{t.contact.readyOrder || "Ready to start your order? Contact us for free samples and competitive quotes."}</p>
-              <a href="https://wa.me/62881024922133" className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors flex items-center gap-2 inline-flex"><MessageCircle className="w-5 h-5" />{t.contact.whatsapp}</a>
+              <a href="https://wa.me/62881024922133" className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors flex items-center gap-2 inline-flex"><MessageCircle className="w-5 h-5" />{t.contact.whatsapp}</a>
             </div>
           </div>
         </section>
@@ -58,10 +58,10 @@ const Contact = () => {
         <section className="py-16 bg-slate-50">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-md text-center"><MapPin className="w-10 h-10 text-amber-500 mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.factoryLocation || "Factory Location"}</h3><p className="text-slate-600 text-sm">Bekasi, West Java, Indonesia</p></div>
-              <div className="bg-white rounded-xl p-6 shadow-md text-center"><Phone className="w-10 h-10 text-amber-500 mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.phone || "Phone"}</h3><p className="text-slate-600 text-sm">+62 881 0249 22133</p></div>
-              <div className="bg-white rounded-xl p-6 shadow-md text-center"><Mail className="w-10 h-10 text-amber-500 mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.email || "Email"}</h3><p className="text-slate-600 text-sm">admin@monocharcoal.com</p></div>
-              <div className="bg-white rounded-xl p-6 shadow-md text-center"><Clock className="w-10 h-10 text-amber-500 mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.responseTime || "Response Time"}</h3><p className="text-slate-600 text-sm">{t.contact.within24 || "Within 24 hours"}</p></div>
+              <div className="bg-white rounded-xl p-6 shadow-md text-center"><MapPin className="w-10 h-10 text-accent mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.factoryLocation || "Factory Location"}</h3><p className="text-slate-600 text-sm">Bekasi, West Java, Indonesia</p></div>
+              <div className="bg-white rounded-xl p-6 shadow-md text-center"><Phone className="w-10 h-10 text-accent mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.phone || "Phone"}</h3><p className="text-slate-600 text-sm">+62 881 0249 22133</p></div>
+              <div className="bg-white rounded-xl p-6 shadow-md text-center"><Mail className="w-10 h-10 text-accent mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.email || "Email"}</h3><p className="text-slate-600 text-sm">admin@monocharcoal.com</p></div>
+              <div className="bg-white rounded-xl p-6 shadow-md text-center"><Clock className="w-10 h-10 text-accent mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.responseTime || "Response Time"}</h3><p className="text-slate-600 text-sm">{t.contact.within24 || "Within 24 hours"}</p></div>
             </div>
           </div>
         </section>
@@ -72,15 +72,15 @@ const Contact = () => {
               <div className="text-center mb-12"><h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t.contact.sendMessage || "Send Us a Message"}</h2><p className="text-lg text-slate-600">{t.contact.formDesc || "Fill out the form below and we'll get back to you within 24 hours."}</p></div>
               <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-8">
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div><label className="block text-slate-700 font-medium mb-2">{t.contact.yourName} *</label><input type="text" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-amber-500" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} /></div>
-                  <div><label className="block text-slate-700 font-medium mb-2">{t.contact.yourEmail} *</label><input type="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-amber-500" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} /></div>
+                  <div><label className="block text-slate-700 font-medium mb-2">{t.contact.yourName} *</label><input type="text" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-accent" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} /></div>
+                  <div><label className="block text-slate-700 font-medium mb-2">{t.contact.yourEmail} *</label><input type="email" required className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-accent" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} /></div>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div><label className="block text-slate-700 font-medium mb-2">{t.contact.company || "Company"}</label><input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-amber-500" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} /></div>
-                  <div><label className="block text-slate-700 font-medium mb-2">{t.contact.country || "Country"}</label><input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-amber-500" value={formData.country} onChange={(e) => setFormData({ ...formData, country: e.target.value })} /></div>
+                  <div><label className="block text-slate-700 font-medium mb-2">{t.contact.company || "Company"}</label><input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-accent" value={formData.company} onChange={(e) => setFormData({ ...formData, company: e.target.value })} /></div>
+                  <div><label className="block text-slate-700 font-medium mb-2">{t.contact.country || "Country"}</label><input type="text" className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-accent" value={formData.country} onChange={(e) => setFormData({ ...formData, country: e.target.value })} /></div>
                 </div>
-                <div className="mb-6"><label className="block text-slate-700 font-medium mb-2">{t.contact.yourMessage} *</label><textarea required rows={5} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-amber-500 resize-none" placeholder={t.contact.messagePlaceholder || "Tell us about your requirements"} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}></textarea></div>
-                <button type="submit" disabled={sending} className="w-full bg-amber-500 text-white font-semibold py-4 rounded-lg hover:bg-amber-600 transition-colors flex items-center justify-center gap-2 disabled:opacity-50">
+                <div className="mb-6"><label className="block text-slate-700 font-medium mb-2">{t.contact.yourMessage} *</label><textarea required rows={5} className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-accent resize-none" placeholder={t.contact.messagePlaceholder || "Tell us about your requirements"} value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}></textarea></div>
+                <button type="submit" disabled={sending} className="w-full bg-accent text-white font-semibold py-4 rounded-lg hover:bg-accent/90 transition-colors flex items-center justify-center gap-2 disabled:opacity-50">
                 {sending ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
                 {sending ? (t.contact.sending || "Sending...") : t.contact.send}
               </button>
@@ -92,10 +92,10 @@ const Contact = () => {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 md:p-12 text-center text-white">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-accent to-accent rounded-2xl p-8 md:p-12 text-center text-white">
               <h2 className="text-3xl font-bold mb-4">{t.contact.preferWA || "Prefer WhatsApp?"}</h2>
               <p className="text-white/90 text-lg mb-8">{t.contact.WADesc || "Contact us directly on WhatsApp for fastest response."}</p>
-              <a href="https://wa.me/62881024922133" className="inline-flex items-center gap-2 bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors"><MessageCircle className="w-5 h-5" />{t.contact.whatsapp}</a>
+              <a href="https://wa.me/62881024922133" className="inline-flex items-center gap-2 bg-white text-accent font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors"><MessageCircle className="w-5 h-5" />{t.contact.whatsapp}</a>
             </div>
           </div>
         </section>

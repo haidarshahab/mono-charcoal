@@ -30,10 +30,10 @@ const About = () => {
         <section className="relative bg-gradient-to-br from-[#1D3F30] via-[#143728] to-[#1D3F30] text-white py-20 lg:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.hero.title} <span className="block text-amber-500">{t.hero.subtitle}</span></h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.hero.title} <span className="block text-accent">{t.hero.subtitle}</span></h1>
               <p className="text-xl text-slate-300 mb-8">{t.about.description}</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="/contact" className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">{t.common.getSample}</a>
+                <a href="/contact" className="bg-accent hover:bg-accent/90 text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">{t.common.getSample}</a>
                 <a href="/products" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">{t.nav.products}</a>
               </div>
             </div>
@@ -45,7 +45,7 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-amber-600 mb-2">{stat.value}</div>
+                  <div className="text-4xl md:text-5xl font-bold text-accent mb-2">{stat.value}</div>
                   <div className="text-slate-600 font-medium">{stat.label}</div>
                   <div className="text-slate-500 text-sm">{stat.suffix}</div>
                 </div>
@@ -62,15 +62,15 @@ const About = () => {
                 <p className="text-lg text-slate-600 mb-6">{t.about.factoryDesc || "Located in Bekasi, West Java, our state-of-the-art manufacturing facility operates with a monthly production capacity of over 1,000 metric tons."}</p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <Factory className="w-6 h-6 text-amber-600 mt-1" />
+                    <Factory className="w-6 h-6 text-accent mt-1" />
                     <div><h3 className="font-semibold text-slate-900">{t.about.modernEquip || "Modern Equipment"}</h3><p className="text-slate-600 text-sm">{t.about.modernEquipDesc || "Industrial-grade machinery for precise production"}</p></div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Award className="w-6 h-6 text-amber-600 mt-1" />
+                    <Award className="w-6 h-6 text-accent mt-1" />
                     <div><h3 className="font-semibold text-slate-900">{t.about.qcCert || "Quality Certified"}</h3><p className="text-slate-600 text-sm">{t.about.qcCertDesc || "ISO 9001:2015 certified production process"}</p></div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Globe className="w-6 h-6 text-amber-600 mt-1" />
+                    <Globe className="w-6 h-6 text-accent mt-1" />
                     <div><h3 className="font-semibold text-slate-900">{t.about.globalReady || "Global Export Ready"}</h3><p className="text-slate-600 text-sm">{t.about.globalReadyDesc || "Experienced in international shipping and logistics"}</p></div>
                   </div>
                 </div>
@@ -88,19 +88,19 @@ const About = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
-                <img src={teamHaidar} alt="Haidar Ali" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-amber-500" />
+                <img src={teamHaidar} alt="Haidar Ali" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-accent" />
                 <h3 className="text-xl font-bold text-slate-900">Haidar Ali</h3>
-                <p className="text-amber-600 font-medium">Managing Director</p>
+                <p className="text-accent font-medium">Managing Director</p>
               </div>
               <div className="text-center">
-                <img src={teamAbdullah} alt="Abdullah Alatas" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-amber-500" />
+                <img src={teamAbdullah} alt="Abdullah Alatas" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-accent" />
                 <h3 className="text-xl font-bold text-slate-900">Abdullah Alatas</h3>
-                <p className="text-amber-600 font-medium">Director of Business Development</p>
+                <p className="text-accent font-medium">Director of Business Development</p>
               </div>
               <div className="text-center">
-                <img src={teamJoko} alt="Joko" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-amber-500" />
+                <img src={teamJoko} alt="Joko" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-accent" />
                 <h3 className="text-xl font-bold text-slate-900">Joko</h3>
-                <p className="text-amber-600 font-medium">Director of Operations</p>
+                <p className="text-accent font-medium">Director of Operations</p>
               </div>
             </div>
           </div>
@@ -112,19 +112,19 @@ const About = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">{t.about.whyIndo || "Why Indonesian Coconut Charcoal?"}</h2>
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
+                  <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center flex-shrink-0 font-bold">1</div>
                   <div><h3 className="font-semibold text-lg mb-2">{t.about.richPotassium || "Rich in Potassium"}</h3><p className="text-slate-300">{t.about.richPotassiumDesc || "Indonesian coconut shells contain high potassium content, resulting in lower ash content and cleaner burn."}</p></div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
+                  <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center flex-shrink-0 font-bold">2</div>
                   <div><h3 className="font-semibold text-lg mb-2">{t.about.highCarbon || "High Carbon Content"}</h3><p className="text-slate-300">{t.about.highCarbonDesc || "Our coconut charcoal achieves 75-80% fixed carbon content, ensuring longer burn time and higher heat output."}</p></div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
+                  <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center flex-shrink-0 font-bold">3</div>
                   <div><h3 className="font-semibold text-lg mb-2">{t.about.odorless || "Odorless & Chemical-Free"}</h3><p className="text-slate-300">{t.about.odorlessDesc || "100% natural coconut shell with no additives, ensuring pure flavor for shisha and BBQ."}</p></div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</div>
+                  <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center flex-shrink-0 font-bold">4</div>
                   <div><h3 className="font-semibold text-lg mb-2">{t.about.sustainable || "Sustainable Sourcing"}</h3><p className="text-slate-300">{t.about.sustainableDesc || "Indonesia is the world's largest coconut producer, ensuring consistent supply and competitive pricing."}</p></div>
                 </div>
               </div>
@@ -134,7 +134,7 @@ const About = () => {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 md:p-12 text-center">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-accent to-accent rounded-2xl p-8 md:p-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t.about.visitFactory || "Visit Our Factory"}</h2>
               <p className="text-white/90 text-lg mb-8">{t.about.visitFactoryDesc || "We welcome wholesale buyers to visit our factory in Bekasi, Indonesia."}</p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
@@ -142,7 +142,7 @@ const About = () => {
                 <div className="bg-white/20 rounded-lg p-4"><Phone className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">+62 (WhatsApp)</p></div>
                 <div className="bg-white/20 rounded-lg p-4"><Mail className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">admin@monocharcoal.com</p></div>
               </div>
-              <a href="https://wa.me/62881024922133" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">{t.contact.whatsapp}</a>
+              <a href="https://wa.me/62881024922133" className="inline-block bg-white text-accent font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">{t.contact.whatsapp}</a>
             </div>
           </div>
         </section>

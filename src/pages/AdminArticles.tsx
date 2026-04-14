@@ -49,7 +49,7 @@ const AdminArticles = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-500"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
       </div>
     );
   }
@@ -66,7 +66,7 @@ const AdminArticles = () => {
           </div>
           <Link
             to="/admin/articles/new"
-            className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-4 py-2 rounded-lg transition-colors"
           >
             <Plus className="w-5 h-5" /> New Article
           </Link>
@@ -81,7 +81,7 @@ const AdminArticles = () => {
               placeholder="Search articles..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-12 pr-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+              className="w-full pl-12 pr-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-accent"
             />
           </div>
         </div>
@@ -94,7 +94,7 @@ const AdminArticles = () => {
             <p className="text-slate-400 mb-6">Create your first blog article to get started.</p>
             <Link
               to="/admin/articles/new"
-              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-4 py-2 rounded-lg transition-colors"
             >
               <Plus className="w-5 h-5" /> Create Article
             </Link>
@@ -127,7 +127,7 @@ const AdminArticles = () => {
                         ${article.published 
                           ? "bg-green-500/20 text-green-400" 
                           : article.scheduled_publish 
-                            ? "bg-amber-500/20 text-amber-400"
+                            ? "bg-accent/20 text-accent/80"
                             : "bg-slate-600/50 text-slate-400"}
                       `}>
                         {article.published ? (

@@ -47,7 +47,7 @@ const AdminContacts = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-500"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
       </div>
     );
   }
@@ -72,7 +72,7 @@ const AdminContacts = () => {
                 placeholder="Search messages..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-12 pr-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+                className="w-full pl-12 pr-4 py-2 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-accent"
               />
             </div>
           </div>
@@ -83,7 +83,7 @@ const AdminContacts = () => {
                 onClick={() => setFilter(f)}
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
                   filter === f
-                    ? "bg-amber-500 text-white"
+                    ? "bg-accent text-white"
                     : "bg-slate-800 text-slate-400 hover:text-white"
                 }`}
               >
@@ -107,7 +107,7 @@ const AdminContacts = () => {
                 key={contact.id}
                 className={`bg-slate-800 rounded-xl p-6 border ${
                   contact.status === "unread"
-                    ? "border-amber-500/30"
+                    ? "border-accent/30"
                     : "border-slate-700"
                 }`}
               >
@@ -118,7 +118,7 @@ const AdminContacts = () => {
                         {contact.name || "Anonymous"}
                       </h3>
                       {contact.status === "unread" && (
-                        <span className="bg-amber-500/20 text-amber-400 px-2 py-0.5 rounded-full text-xs font-medium">
+                        <span className="bg-accent/20 text-accent/80 px-2 py-0.5 rounded-full text-xs font-medium">
                           New
                         </span>
                       )}

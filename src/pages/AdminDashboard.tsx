@@ -37,7 +37,7 @@ const AdminDashboard = () => {
       value: stats?.publishedArticles || 0,
       subtext: `${stats?.draftArticles || 0} drafts`,
       icon: FileText,
-      color: "bg-amber-500",
+      color: "bg-accent",
       href: "/admin/articles",
     },
     {
@@ -69,7 +69,7 @@ const AdminDashboard = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-500"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
       </div>
     );
   }
@@ -92,7 +92,7 @@ const AdminDashboard = () => {
               <Link
                 key={index}
                 to={stat.href}
-                className="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-amber-500/50 transition-colors group"
+                className="bg-slate-800 rounded-xl p-6 border border-slate-700 hover:border-accent/50 transition-colors group"
               >
                 <div className="flex items-start justify-between">
                   <div>
@@ -104,7 +104,7 @@ const AdminDashboard = () => {
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                 </div>
-                <div className="mt-4 flex items-center text-amber-500 text-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="mt-4 flex items-center text-accent text-sm opacity-0 group-hover:opacity-100 transition-opacity">
                   <Eye className="w-4 h-4 mr-1" /> View
                 </div>
               </Link>
@@ -120,7 +120,7 @@ const AdminDashboard = () => {
               to="/admin/articles/new"
               className="flex items-center gap-3 p-4 bg-slate-900 rounded-lg hover:bg-slate-700 transition-colors"
             >
-              <div className="bg-amber-500 p-2 rounded-lg">
+              <div className="bg-accent p-2 rounded-lg">
                 <Plus className="w-5 h-5 text-white" />
               </div>
               <div>

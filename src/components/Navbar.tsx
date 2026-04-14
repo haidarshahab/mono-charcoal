@@ -40,7 +40,7 @@ const Navbar = () => {
               to={link.href}
               className={`text-sm font-semibold transition-colors ${
                 location.pathname === link.href
-                  ? "text-amber-500"
+                  ? "text-accent"
                   : "text-primary-foreground/80 hover:text-primary-foreground"
               }`}
             >
@@ -71,7 +71,7 @@ const Navbar = () => {
               to={link.href}
               onClick={() => setMobileOpen(false)}
               className={`block py-3 text-sm font-medium transition-colors ${
-                location.pathname === link.href ? "text-amber-500" : "text-primary-foreground/80"
+                location.pathname === link.href ? "text-accent" : "text-primary-foreground/80"
               }`}
             >
               {link.label}

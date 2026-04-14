@@ -75,7 +75,7 @@ const Blog = () => {
         <section className="relative bg-gradient-to-br from-[#1D3F30] via-[#143728] to-[#1D3F30] text-white py-20 lg:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Charcoal Industry <span className="block text-amber-500">Insights & Guides</span></h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Charcoal Industry <span className="block text-accent">Insights & Guides</span></h1>
               <p className="text-xl text-slate-300 mb-8">Expert insights on sourcing, manufacturing, and growing your charcoal business.</p>
             </div>
           </div>
@@ -88,7 +88,7 @@ const Blog = () => {
                 <button 
                   key={index} 
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${selectedCategory === cat ? "bg-amber-500 text-white" : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"}`}
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${selectedCategory === cat ? "bg-accent text-white" : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"}`}
                 >
                   {cat}
                 </button>
@@ -101,7 +101,7 @@ const Blog = () => {
           <div className="container mx-auto px-4">
             {loading ? (
               <div className="flex justify-center py-20">
-                <Loader2 className="w-8 h-8 animate-spin text-amber-500" />
+                <Loader2 className="w-8 h-8 animate-spin text-accent" />
               </div>
             ) : filteredArticles.length === 0 ? (
               <div className="text-center py-20">
@@ -112,7 +112,7 @@ const Blog = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredArticles.map((post) => (
                   <article key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="bg-gradient-to-br from-amber-500 to-amber-600 h-32 flex items-center justify-center">
+                    <div className="bg-gradient-to-br from-accent to-accent h-32 flex items-center justify-center">
                       <span className="text-white/80 text-sm font-medium px-4 text-center">{post.category || "Article"}</span>
                     </div>
                     <div className="p-6">
@@ -120,9 +120,9 @@ const Blog = () => {
                         <span>{formatDate(post.date)}</span>
                         <span className="flex items-center gap-1"><Clock className="w-4 h-4" />{post.read_time || "5 min read"}</span>
                       </div>
-                      <h2 className="text-xl font-bold text-slate-900 mb-3 hover:text-amber-600 transition-colors">{post.title}</h2>
+                      <h2 className="text-xl font-bold text-slate-900 mb-3 hover:text-accent transition-colors">{post.title}</h2>
                       <p className="text-slate-600 text-sm mb-4 line-clamp-3">{post.excerpt}</p>
-                      <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700 transition-colors">Read Article <ArrowRight className="w-4 h-4" /></Link>
+                      <Link to={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-accent font-medium hover:text-accent transition-colors">Read Article <ArrowRight className="w-4 h-4" /></Link>
                     </div>
                   </article>
                 ))}
@@ -151,12 +151,12 @@ const Blog = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    className="flex-1 px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-amber-500" 
+                    className="flex-1 px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-accent" 
                   />
                   <button 
                     type="submit" 
                     disabled={subscribing}
-                    className="bg-amber-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-amber-600 transition-colors flex items-center gap-2 disabled:opacity-50"
+                    className="bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors flex items-center gap-2 disabled:opacity-50"
                   >
                     {subscribing ? <Loader2 className="w-5 h-5 animate-spin" /> : <Mail className="w-5 h-5" />}
                     {subscribing ? "Subscribing..." : "Subscribe"}

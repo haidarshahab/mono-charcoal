@@ -75,7 +75,7 @@ const BlogSection = () => {
 
         {loading ? (
           <div className="flex justify-center py-12">
-            <Loader2 className="w-8 h-8 animate-spin text-amber-500" />
+            <Loader2 className="w-8 h-8 animate-spin text-accent" />
           </div>
         ) : (
           <>
@@ -121,7 +121,7 @@ const BlogSection = () => {
             <div className="text-center mt-12">
               <Link
                 to="/blog"
-                className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+                className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
               >
                 See All Blog <ArrowRight size={18} />
               </Link>

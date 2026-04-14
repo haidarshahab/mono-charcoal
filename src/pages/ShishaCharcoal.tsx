@@ -30,14 +30,14 @@ const ShishaCharcoal = () => {
         keywords="shisha charcoal, hookah charcoal, hookah coal, quick light charcoal, coconut charcoal shisha, shisha coal supplier, hookah coal Indonesia"
         schema={productSchema("Shisha Coconut Charcoal Briquettes", "Premium coconut shell charcoal for shisha/hookah. Available in cube, finger, hexagonal shapes with 1.6%-2.5% ash content.")} />
       <div ref={ref}>
-        <section className="relative bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 text-white py-20 lg:py-28">
+        <section className="relative bg-gradient-to-br from-accent via-accent/90 to-accent text-white py-20 lg:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Shisha Coconut Charcoal</h1>
               <p className="text-xl text-white/90 mb-8">Premium hookah coals for wholesale buyers. Low ash, long burn time, odorless.</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="#specs" className="bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">View Specifications</a>
-                <a href="https://wa.me/62881024922133" className="border-2 border-white text-white hover:bg-white hover:text-amber-600 font-semibold px-8 py-3 rounded-lg transition-colors">Get Free Sample</a>
+                <a href="#specs" className="bg-white text-accent font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">View Specifications</a>
+                <a href="https://wa.me/62881024922133" className="border-2 border-white text-white hover:bg-white hover:text-accent font-semibold px-8 py-3 rounded-lg transition-colors">Get Free Sample</a>
               </div>
             </div>
           </div>
@@ -48,7 +48,7 @@ const ShishaCharcoal = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {specifications.map((spec, index) => (
                 <div key={index} className="bg-slate-800 rounded-xl p-6 text-center">
-                  <spec.icon className="w-10 h-10 text-amber-500 mx-auto mb-3" />
+                  <spec.icon className="w-10 h-10 text-accent mx-auto mb-3" />
                   <div className="text-2xl font-bold text-white mb-1">{spec.value}</div>
                   <div className="text-slate-400 text-sm">{spec.label}</div>
                 </div>
@@ -69,7 +69,7 @@ const ShishaCharcoal = () => {
                   <div className="bg-slate-100 rounded-lg h-32 flex items-center justify-center mb-4"><span className="text-slate-400">Shape Image</span></div>
                   <h3 className="text-xl font-semibold text-slate-900 mb-3">{shape.name}</h3>
                   <div className="flex flex-wrap gap-2">
-                    {shape.sizes.map((size, i) => (<span key={i} className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium">{size}</span>))}
+                    {shape.sizes.map((size, i) => (<span key={i} className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium">{size}</span>))}
                   </div>
                 </div>
               ))}
@@ -106,7 +106,7 @@ const ShishaCharcoal = () => {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Create Your Own Brand</h2>
               <p className="text-xl text-slate-300 mb-8">We offer complete OEM services including custom packaging, logo design, and brand development.</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="/oem" className="bg-amber-500 hover:bg-amber-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors flex items-center gap-2">OEM Services <ChevronRight className="w-5 h-5" /></a>
+                <a href="/oem" className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-3 rounded-lg transition-colors flex items-center gap-2">OEM Services <ChevronRight className="w-5 h-5" /></a>
                 <a href="https://wa.me/62881024922133" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">Request Quote</a>
               </div>
             </div>
@@ -115,10 +115,10 @@ const ShishaCharcoal = () => {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl p-8 md:p-12 text-center text-white">
+            <div className="max-w-4xl mx-auto bg-gradient-to-br from-accent to-accent rounded-2xl p-8 md:p-12 text-center text-white">
               <h2 className="text-3xl font-bold mb-4">Get Free Sample</h2>
               <p className="text-white/90 text-lg mb-8">Order a 1kg sample to test our quality.</p>
-              <a href="https://wa.me/62881024922133" className="inline-block bg-white text-amber-600 font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Contact Us via WhatsApp</a>
+              <a href="https://wa.me/62881024922133" className="inline-block bg-white text-accent font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">Contact Us via WhatsApp</a>
             </div>
           </div>
         </section>

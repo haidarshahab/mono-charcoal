@@ -133,7 +133,7 @@ const AdminArticleEdit = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-500"></div>
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-accent"></div>
       </div>
     );
   }
@@ -171,7 +171,7 @@ const AdminArticleEdit = () => {
             <button
               type="submit"
               disabled={saving || !form.title}
-              className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-lg transition-colors disabled:opacity-50"
+              className="flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-4 py-2 rounded-lg transition-colors disabled:opacity-50"
             >
               {saving ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
@@ -195,7 +195,7 @@ const AdminArticleEdit = () => {
                 value={form.title}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 text-xl font-semibold"
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-accent text-xl font-semibold"
                 placeholder="Enter article title"
               />
             </div>
@@ -208,7 +208,7 @@ const AdminArticleEdit = () => {
                 name="slug"
                 value={form.slug}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-accent"
                 placeholder="article-url-slug"
               />
               <p className="text-slate-500 text-sm mt-2">
@@ -224,7 +224,7 @@ const AdminArticleEdit = () => {
                 value={form.excerpt}
                 onChange={handleChange}
                 rows={3}
-                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-accent"
                 placeholder="Brief description for article cards..."
               />
             </div>
@@ -237,7 +237,7 @@ const AdminArticleEdit = () => {
                 value={form.content}
                 onChange={handleChange}
                 rows={20}
-                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500 font-mono text-sm"
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-accent font-mono text-sm"
                 placeholder="Write your article content here...&#10;&#10;Use markdown for formatting:&#10;## Heading&#10;### Subheading&#10;- Bullet point&#10;| Table | Column |&#10;| --- | --- |"
               />
               <p className="text-slate-500 text-sm mt-2">
@@ -257,7 +257,7 @@ const AdminArticleEdit = () => {
                   name="published"
                   checked={form.published}
                   onChange={handleChange}
-                  className="w-5 h-5 rounded border-slate-600 bg-slate-900 text-amber-500 focus:ring-amber-500"
+                  className="w-5 h-5 rounded border-slate-600 bg-slate-900 text-accent focus:ring-accent"
                 />
                 <span className="text-white">Published</span>
               </label>
@@ -278,7 +278,7 @@ const AdminArticleEdit = () => {
                       console.error("Failed to publish:", error);
                     }
                   }}
-                  className="mt-3 flex items-center gap-2 text-amber-500 hover:text-amber-400 text-sm"
+                  className="mt-3 flex items-center gap-2 text-accent hover:text-accent/80 text-sm"
                 >
                   <Zap className="w-4 h-4" /> Publish immediately
                 </button>
@@ -294,7 +294,7 @@ const AdminArticleEdit = () => {
                 name="scheduled_publish"
                 value={form.scheduled_publish}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-amber-500"
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-accent"
               />
               <p className="text-slate-500 text-sm mt-2">
                 Leave empty for manual publishing. Set date/time to auto-publish.
@@ -308,7 +308,7 @@ const AdminArticleEdit = () => {
                 name="category"
                 value={form.category}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-amber-500"
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-accent"
               >
                 <option value="">Select category</option>
                 {categories.map(cat => (
@@ -325,7 +325,7 @@ const AdminArticleEdit = () => {
                 name="date"
                 value={form.date}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-amber-500"
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white focus:outline-none focus:border-accent"
               />
             </div>
 
@@ -337,7 +337,7 @@ const AdminArticleEdit = () => {
                 name="readTime"
                 value={form.readTime}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-accent"
                 placeholder="5 min read"
               />
             </div>
@@ -350,7 +350,7 @@ const AdminArticleEdit = () => {
                 name="keywords"
                 value={form.keywords}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-amber-500"
+                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-accent"
                 placeholder="keyword 1, keyword 2, keyword 3"
               />
               <p className="text-slate-500 text-sm mt-2">
