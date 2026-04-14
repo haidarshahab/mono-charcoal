@@ -4,6 +4,11 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { getArticles, Article } from "@/lib/supabase";
+import blogImage1 from "@/assets/mono-shisha-bbq-charcoal-blog-1.png";
+import blogImage2 from "@/assets/mono-shisha-bbq-charcoal-blog-2.png";
+import blogImage3 from "@/assets/mono-shisha-bbq-charcoal-blog-3.png";
+
+const blogImages = [blogImage1, blogImage2, blogImage3];
 
 const BlogSection = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -75,8 +80,14 @@ const BlogSection = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {displayPosts.map((post, index) => (
-              <Card key={index} className="border border-border bg-background group hover:shadow-md transition-shadow duration-300">
-                <div className="h-40 bg-gradient-to-br from-primary/8 to-primary/3" />
+              <Card key={index} className="border border-border bg-background group hover:shadow-md transition-shadow duration-300 overflow-hidden">
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={blogImages[index]} 
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
                 <CardHeader className="pb-2">
                   <p className="text-xs text-muted-foreground font-body">
                     {formatDate(post.date) || post.date}
