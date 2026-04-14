@@ -38,7 +38,7 @@ const Products = () => {
         <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white py-20 lg:py-28">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.products.heroTitle || "Premium Coconut Charcoal"} <span className="block text-amber-500">{t.pages.products}</span></h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.products.heroTitle} <span className="block text-amber-500">stake its reputation on.</span></h1>
               <p className="text-xl text-slate-300 mb-8">{t.products.heroDesc || "Every product we make is built around one idea — that when your customer lights the first piece, they shouldn't have to think twice. Clean burn, consistent heat, zero compromise. Whether you're sourcing for shisha lounges or BBQ brands, Mono delivers the kind of quality that keeps your customers coming back."}</p>
             </div>
           </div>

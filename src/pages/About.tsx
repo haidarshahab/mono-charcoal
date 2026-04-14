@@ -11,9 +11,9 @@ const About = () => {
 
   const stats = [
     { label: t.about.productionCapacity || "Production Capacity", value: "1,000+", suffix: "tons/month" },
-    { label: t.about.exportCountries || "Export Countries", value: "11", suffix: "countries" },
-    { label: t.about.yearsExp || "Years Experience", value: "6+", suffix: "years" },
-    { label: t.about.clients || "Clients Served", value: "100+", suffix: "brands" },
+    { label: t.about.exportCountries || "Export Countries", value: "15", suffix: "countries" },
+    { label: t.about.yearsExp || "Years Experience", value: "10+", suffix: "years" },
+    { label: t.about.clients || "Clients Served", value: "50+", suffix: "brands" },
   ];
 
   return (
