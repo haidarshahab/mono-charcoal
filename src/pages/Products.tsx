@@ -13,10 +13,10 @@ const Products = () => {
   const shishaFeatures = [
     t.products.shishaFeature1 || "2+ hours burning time",
     t.products.shishaFeature2 || "Ash content 1.6% - 2.5%",
-    t.products.shishaFeature3 || "650°C burning temperature",
+    t.products.shishaFeature3 || "500 - 650°C burning temperature",
     t.products.shishaFeature4 || "Odorless & chemical-free",
-    t.products.shishaFeature5 || "Multiple shapes available",
-    t.products.shishaFeature6 || "OEM packaging supported"
+    t.products.shishaFeature5 || "Perfect shape, no-crack",
+    t.products.shishaFeature6 || "Multi shapes available"
   ];
   const bbqFeatures = [
     t.products.bbqFeature1 || "High heat output",
@@ -39,7 +39,7 @@ const Products = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.products.heroTitle || "Premium Coconut Charcoal"} <span className="block text-amber-500">{t.pages.products}</span></h1>
-              <p className="text-xl text-slate-300 mb-8">{t.products.heroDesc || "High-quality coconut shell charcoal briquettes for shisha and BBQ."}</p>
+              <p className="text-xl text-slate-300 mb-8">{t.products.heroDesc || "Every product we make is built around one idea — that when your customer lights the first piece, they shouldn't have to think twice. Clean burn, consistent heat, zero compromise. Whether you're sourcing for shisha lounges or BBQ brands, Mono delivers the kind of quality that keeps your customers coming back."}</p>
             </div>
           </div>
         </section>
