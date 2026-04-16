@@ -121,7 +121,7 @@ const Products = () => {
                 </ul>
                 <Link to="/oem" className="inline-flex items-center gap-2 bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent/90 transition-colors font-medium">{t.common.learnMore} <ChevronRight className="w-5 h-5" /></Link>
               </div>
-              <img src="/assets/packaging.jpg" alt="OEM Packaging" className="w-full h-80 object-cover rounded-2xl" />
+              <img src="/assets/319139e3-a0e1-4698-b9cf-5b03b072d9a1.jpg" alt="OEM Packaging" className="w-full h-80 object-cover rounded-2xl" />
             </div>
           </div>
         </section>
