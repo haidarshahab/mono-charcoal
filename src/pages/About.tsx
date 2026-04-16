@@ -88,17 +88,17 @@ const About = () => {
             </div>
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
-                <img src={teamHaidar} alt="Haidar Ali" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-accent" />
+                <img src={teamHaidar} alt="Haidar Ali" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-secondary" />
                 <h3 className="text-xl font-bold text-slate-900">Haidar Ali</h3>
                 <p className="text-accent font-medium">Managing Director</p>
               </div>
               <div className="text-center">
-                <img src={teamAbdullah} alt="Abdullah Alatas" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-accent" />
+                <img src={teamAbdullah} alt="Abdullah Alatas" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-secondary" />
                 <h3 className="text-xl font-bold text-slate-900">Abdullah Alatas</h3>
                 <p className="text-accent font-medium">Director of Business Development</p>
               </div>
               <div className="text-center">
-                <img src={teamJoko} alt="Joko" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-accent" />
+                <img src={teamJoko} alt="Joko" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-secondary" />
                 <h3 className="text-xl font-bold text-slate-900">Joko</h3>
                 <p className="text-accent font-medium">Director of Operations</p>
               </div>
