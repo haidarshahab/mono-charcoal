@@ -30,7 +30,7 @@ export interface TranslationStrings {
 
 const translations: Record<Language, TranslationStrings> = {
   en: {
-    nav: { home: 'Home', products: 'Products', shisha: 'Shisha Charcoal', bbq: 'BBQ Charcoal', oem: 'OEM', quality: 'Quality', export: 'Export', about: 'About', blog: 'Blog', contact: 'Contact Us' },
+    nav: { home: 'Home', products: 'Products', shisha: 'Shisha Charcoal', bbq: 'BBQ Charcoal', oem: 'OEM', quality: 'Quality', export: 'Export', about: 'About', blog: 'Blog', contact: 'Contact' },
 hero: { title: "Indonesia's #1 coconut charcoal factory", subtitle: "The world's most trusted coconut charcoal briquettes factory", cta1: 'View Products', cta2: 'Get Free Sample' },
     aboutHero: { title: "Built in Indonesia.", subtitle: "Trusted by brand across the world." },
     common: { learnMore: 'Learn More', getSample: 'Get Free Sample', contactUs: 'Contact Us', viewSpecs: 'View Specifications', freeSample: 'Free Sample', wholesale: 'Wholesale', factory: 'Factory', manufacturer: 'Trusted by 50+ importers across 15+ countries — from the U.S. to Saudi Arabia, Germany to Australia — we supply consistent, export-ready coconut charcoal made from 100% natural coconut shell. No additives. No shortcuts. Just reliable quality, every order.', exporter: 'Exporter', seeMore: 'See More' },
