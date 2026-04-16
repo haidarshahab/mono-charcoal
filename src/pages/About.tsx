@@ -33,7 +33,7 @@ const About = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.hero.title} <span className="block text-accent">{t.hero.subtitle}</span></h1>
               <p className="text-xl text-slate-300 mb-8">{t.about.description}</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a href="/contact" className="bg-accent hover:bg-accent/90 text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">{t.common.getSample}</a>
+                <a href="/contact" className="bg-accent hover:bg-accent/90 font-semibold px-8 py-3 rounded-lg transition-colors text-white">{t.common.getSample}</a>
                 <a href="/products" className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold px-8 py-3 rounded-lg transition-colors">{t.nav.products}</a>
               </div>
             </div>
