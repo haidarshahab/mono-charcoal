@@ -38,6 +38,14 @@ const WhyChooseUsSection = () => {
             <p className="text-white/70 text-base md:text-lg leading-relaxed font-body max-w-lg">
               {t.whyChoose.description}
             </p>
+            <a 
+              href="/mono-charcoal-company-profile.pdf" 
+              download
+              className="inline-flex items-center gap-2 border-2 border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10 font-semibold px-6 py-3 rounded-lg transition-colors mt-6"
+            >
+              <Download size={18} />
+              {t.whyChoose.downloadProfile}
+            </a>
           </div>
 
           {/* Right — Solutions */}
@@ -64,16 +72,6 @@ const WhyChooseUsSection = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Company Profile CTA */}
-        <div className={`flex justify-center bg-[#F8F7F4] lg:bg-background transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"} py-[30px]`} style={{ transitionDelay: "900ms" }}>
-          <Button asChild variant="outline" className="gap-2 border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 text-base font-heading">
-            <a href="/mono-charcoal-company-profile.pdf" download>
-              <Download size={18} />
-              {t.whyChoose.downloadProfile}
-            </a>
-          </Button>
         </div>
       </div>
     </section>

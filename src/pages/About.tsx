@@ -30,7 +30,7 @@ const About = () => {
         <section className="relative bg-gradient-to-br from-[#1D3F30] via-[#143728] to-[#1D3F30] text-white py-20 lg:py-32">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.hero.title} <span className="block text-accent">{t.hero.subtitle}</span></h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{t.aboutHero?.title || t.hero.title} <span className="block text-accent">{t.aboutHero?.subtitle || t.hero.subtitle}</span></h1>
               <p className="text-xl text-slate-300 mb-8">{t.about.description}</p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="/contact" className="bg-accent hover:bg-accent/90 font-semibold px-8 py-3 rounded-lg transition-colors text-white">{t.common.getSample}</a>

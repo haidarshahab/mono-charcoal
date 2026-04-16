@@ -31,6 +31,7 @@ const translations: Record<Language, TranslationStrings> = {
   en: {
     nav: { home: 'Home', products: 'Products', shisha: 'Shisha Charcoal', bbq: 'BBQ Charcoal', oem: 'OEM', quality: 'Quality', export: 'Export', about: 'About', blog: 'Blog', contact: 'Contact Us' },
 hero: { title: "Built in Indonesia.", subtitle: "Trusted by brands across the world.", cta1: 'View Products', cta2: 'Get Free Sample' },
+    aboutHero: { title: "About PT. Mono Milik Nusantara", subtitle: "A decade of crafting charcoal the world relies on." },
     common: { learnMore: 'Learn More', getSample: 'Get Free Sample', contactUs: 'Contact Us', viewSpecs: 'View Specifications', freeSample: 'Free Sample', wholesale: 'Wholesale', factory: 'Factory', manufacturer: 'Trusted by 50+ importers across 15+ countries — from the U.S. to Saudi Arabia, Germany to Australia — we supply consistent, export-ready coconut charcoal made from 100% natural coconut shell. No additives. No shortcuts. Just reliable quality, every order.', exporter: 'Exporter', seeMore: 'See More' },
     footer: { description: "Indonesia's finest shisha & bbq coconut charcoal factory.", products: 'Products', company: 'Company', getInTouch: 'Get in Touch', shisha: 'Shisha Charcoal', bbq: 'BBQ Charcoal', oem: 'OEM Services', quality: 'Quality', export: 'Export Info', about: 'About Us', contact: 'Contact', allRights: 'All rights reserved.' },
     products: { 
@@ -57,6 +58,7 @@ hero: { title: "Built in Indonesia.", subtitle: "Trusted by brands across the wo
   ar: {
     nav: { home: 'الرئيسية', products: 'المنتجات', shisha: 'فحم الشيشة', bbq: 'فحم الشواء', oem: 'تصنيع', quality: 'الجودة', export: 'التصدير', about: 'عن الشركة', blog: 'المدونة', contact: 'اتصل بنا' },
     hero: { title: 'فحم قشر جوز الهند', subtitle: 'من إندونيسيا للعالم', cta1: 'شاهد المنتجات', cta2: 'احصل على عينة' },
+    aboutHero: { title: 'عن PT. Mono Milik Nusantara', subtitle: 'عقد من تصنيع الفحم للعالم' },
     common: { learnMore: 'اعرف المزيد', getSample: 'عينة مجانية', contactUs: 'اتصل بنا', viewSpecs: 'المواصفات', freeSample: 'عينة مجانية', wholesale: 'بالجملة', factory: 'مصنع', manufacturer: 'مصنّع', exporter: 'مصدّر', seeMore: 'المزيد' },
     footer: { description: 'أفضل مصنع فحم إندونيسيا', products: 'المنتجات', company: 'الشركة', getInTouch: 'تواصل معنا', shisha: 'فحم الشيشة', bbq: 'فحم الشواء', oem: 'التصنيع', quality: 'الجودة', export: 'التصدير', about: 'عن الشركة', contact: 'اتصل بنا', allRights: 'جميع الحقوق محفوظة' },
     products: { 
