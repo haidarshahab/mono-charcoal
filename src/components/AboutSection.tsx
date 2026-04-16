@@ -42,16 +42,16 @@ const AboutSection = () => {
   const t = getTranslation(currentLang);
 
   return (
-    <section id="about" className="py-20 bg-background md:py-[120px]">
+    <section id="about" className="py-16 md:py-24 bg-background">
       <div
         ref={ref}
         className={`container mx-auto px-4 lg:px-8 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
       >
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <p className="font-heading text-accent text-sm font-semibold uppercase tracking-widest mb-4">
+        <div className="max-w-3xl mx-auto text-center mb-10">
+          <p className="font-heading text-accent text-sm font-semibold uppercase tracking-widest mb-3">
             {t.about.title}
           </p>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
             {t.about.subtitle}
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed font-body">
@@ -60,17 +60,17 @@ const AboutSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
           {stats.map((stat) => (
-            <div key={stat.labelKey} className="text-center p-6">
+            <div key={stat.labelKey} className="text-center p-4">
               <AnimatedCounter target={stat.value} suffix={stat.suffix} isVisible={isVisible} />
-              <p className="text-muted-foreground text-sm font-medium mt-2 font-body">{t.about[stat.labelKey]}</p>
+              <p className="text-muted-foreground text-sm font-medium mt-1 font-body">{t.about[stat.labelKey]}</p>
             </div>
           ))}
         </div>
 
         {/* Trust badges */}
-        <div className="flex flex-wrap justify-center gap-6 mt-16">
+        <div className="flex flex-wrap justify-center gap-4 mt-10">
           {[t.about.iso, t.about.halal, t.about.eco, t.about.labTested].map((badge) => (
             <div
               key={badge}

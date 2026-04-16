@@ -8,26 +8,14 @@ const HeroSection = () => {
   const { t } = usePageTranslation();
   
   return (
-    <section className="relative min-h-screen flex items-center bg-primary overflow-hidden">
-      {/* Background YouTube video */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <iframe
-          src="https://www.youtube.com/embed/XSiE4uprEvg?autoplay=1&mute=1&loop=1&playlist=XSiE4uprEvg&controls=0&showinfo=0&modestbranding=1&rel=0&playsinline=1"
-          title="Background video"
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[180%] h-[180%] min-w-full min-h-full opacity-30"
-          style={{ border: 'none', aspectRatio: '16/9' }}
-          allow="autoplay; encrypted-media"
-        />
-      </div>
-      {/* Dark green overlay */}
-      <div className="absolute inset-0 bg-primary/70" />
-
-      <div className="container relative mx-auto px-4 lg:px-8 pt-24 pb-16">
-        <div className="max-w-3xl">
-          <p className="font-heading text-accent text-base font-semibold uppercase tracking-widest mb-4 animate-fade-in">
+    <section className="relative min-h-screen flex flex-col lg:flex-row bg-primary overflow-hidden">
+      {/* Left side - Content with dark green background */}
+      <div className="w-full lg:w-[40%] flex items-center order-1">
+        <div className="container px-4 lg:px-8 pt-24 pb-8 lg:py-24">
+          <p className="font-heading text-accent text-sm lg:text-base font-semibold uppercase tracking-widest mb-3 lg:mb-4 animate-fade-in">
             {t.hero.title}
           </p>
-          <h1 className="font-heading md:text-5xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in text-4xl lg:text-5xl" style={{ animationDelay: "0.1s" }}>
+          <h1 className="font-heading text-3xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-4 lg:mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
             {t.hero.subtitle}
           </h1>
           <p className="text-primary-foreground/70 text-lg max-w-xl mb-10 font-body animate-fade-in md:text-lg" style={{ animationDelay: "0.2s" }}>
@@ -58,9 +46,20 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent" />
-    </section>
+      {/* Right side - Video */}
+      <div className="w-full lg:w-[60%] h-[30vh] lg:h-screen order-2 relative overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      </section>
   );
 };
 
