@@ -58,7 +58,7 @@ const Contact = () => {
         <section className="py-16 bg-slate-50">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-white rounded-xl p-6 shadow-md text-center"><MapPin className="w-10 h-10 text-accent mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.factoryLocation || "Factory Location"}</h3><p className="text-slate-600 text-sm">Bekasi, West Java, Indonesia</p></div>
+              <div className="bg-white rounded-xl p-6 shadow-md text-center"><MapPin className="w-10 h-10 text-accent mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.factoryLocation || "Factory Location"}</h3><p className="text-slate-600 text-sm">Bekasi, West Java, Indonesia (one hour from Jakarta by car)</p></div>
               <div className="bg-white rounded-xl p-6 shadow-md text-center"><Phone className="w-10 h-10 text-accent mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.phone || "Phone"}</h3><p className="text-slate-600 text-sm">+62 881 0249 22133</p></div>
               <div className="bg-white rounded-xl p-6 shadow-md text-center"><Mail className="w-10 h-10 text-accent mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.email || "Email"}</h3><p className="text-slate-600 text-sm">admin@monocharcoal.com</p></div>
               <div className="bg-white rounded-xl p-6 shadow-md text-center"><Clock className="w-10 h-10 text-accent mx-auto mb-3" /><h3 className="font-semibold text-slate-900 mb-2">{t.contact.responseTime || "Response Time"}</h3><p className="text-slate-600 text-sm">{t.contact.within24 || "Within 24 hours"}</p></div>
