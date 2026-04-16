@@ -5,7 +5,7 @@ export interface TranslationStrings {
   hero: { title: string; subtitle: string; cta1: string; cta2: string; };
   aboutHero?: { title: string; subtitle: string; };
   common: { learnMore: string; getSample: string; contactUs: string; viewSpecs: string; freeSample: string; wholesale: string; factory: string; manufacturer: string; exporter: string; seeMore: string; };
-  footer: { description: string; products: string; company: string; getInTouch: string; shisha: string; bbq: string; oem: string; quality: string; export: string; about: string; contact: string; allRights: string; };
+  footer: { description: string; products: string; company: string; getInTouch: string; shisha: string; bbq: string; oem: string; quality: string; export: string; about: string; contact: string; allRights: string; factoryAddress: string; officeAddress: string; };
   products: { 
     title: string; subtitle: string; shishaName: string; shishaDesc: string; bbqName: string; bbqDesc: string; burnTime: string; ashContent: string; noOdor: string; heatValue: string;
     heroTitle: string; heroDesc: string;
