@@ -63,15 +63,15 @@ const About = () => {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <Factory className="w-6 h-6 text-accent mt-1" />
-                    <div><h3 className="font-semibold text-slate-900">{t.about.modernEquip || "Modern Equipment"}</h3><p className="text-slate-600 text-sm">{t.about.modernEquipDesc || "Industrial-grade machinery for precise production"}</p></div>
+                    <div><h3 className="font-semibold text-slate-900">{t.about.modernEquip || "Modern Equipment"}</h3><p className="text-slate-600 text-sm">{t.about.modernEquipDesc || "Industrial-grade machinery for high-volume, export-standard production. From pressing and drying to grading and packing — consistent output, every order."}</p></div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Award className="w-6 h-6 text-accent mt-1" />
-                    <div><h3 className="font-semibold text-slate-900">{t.about.qcCert || "Quality Certified"}</h3><p className="text-slate-600 text-sm">{t.about.qcCertDesc || "ISO 9001:2015 certified production process"}</p></div>
+                    <div><h3 className="font-semibold text-slate-900">{t.about.qcCert || "Quality Certified"}</h3><p className="text-slate-600 text-sm">{t.about.qcCertDesc || "Every batch documented, tested, and traceable. When your shipment arrives, you're not just trusting our word — you have the paperwork to back it up."}</p></div>
                   </div>
                   <div className="flex items-start gap-3">
                     <Globe className="w-6 h-6 text-accent mt-1" />
-                    <div><h3 className="font-semibold text-slate-900">{t.about.globalReady || "Global Export Ready"}</h3><p className="text-slate-600 text-sm">{t.about.globalReadyDesc || "Experienced in international shipping and logistics"}</p></div>
+                    <div><h3 className="font-semibold text-slate-900">{t.about.globalReady || "Global Export Ready"}</h3><p className="text-slate-600 text-sm">{t.about.globalReadyDesc || "Full export handling since day one — container loading, customs documentation, freight coordination. From our factory floor to your warehouse, without unnecessary friction."}</p></div>
                   </div>
                 </div>
               </div>
