@@ -2,12 +2,26 @@ import SEO, { organizationSchema } from "@/components/SEO";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useLanguage } from "@/hooks/useLanguage";
 import { getTranslation } from "@/hooks/translations";
-import { Globe, Truck, Ship, CreditCard, FileText, Clock, MapPin, Calendar } from "lucide-react";
+import { Truck, Ship, CreditCard, FileText, Clock, MapPin, Calendar } from "lucide-react";
 
 const Export = () => {
   const { ref } = useScrollReveal();
   const currentLang = useLanguage();
   const t = getTranslation(currentLang);
+
+  const countryFlags: Record<string, string> = {
+    Australia: "🇦🇺",
+    "New Zealand": "🇳🇿",
+    Turkey: "🇹🇷",
+    Canada: "🇨🇦",
+    Ukraine: "🇺🇦",
+    Russia: "🇷🇺",
+    Brazil: "🇧🇷",
+    Japan: "🇯🇵",
+    Jordan: "🇯🇴",
+    Iraq: "🇮🇶",
+    "Saudi Arabia": "🇸🇦",
+  };
 
   const shippingInfo = [
     { country: "Australia", port: "Sydney, Melbourne", time: "25-35 days" },
@@ -56,9 +70,9 @@ const Export = () => {
 
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">{t.export.countries}</h2></div>
+            <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Export Destinations</h2></div>
             <div className="flex flex-wrap justify-center gap-4">
-              {shippingInfo.map((item, index) => (<div key={index} className="bg-white rounded-lg px-6 py-4 shadow-md border border-slate-200"><Globe className="w-6 h-6 text-accent mb-2 mx-auto" /><h3 className="font-semibold text-slate-900 text-center">{item.country}</h3><p className="text-slate-500 text-sm text-center">{item.port}</p><p className="text-slate-600 text-sm text-center font-medium">{item.time}</p></div>))}
+              {shippingInfo.map((item, index) => (<div key={index} className="bg-white rounded-lg px-6 py-4 shadow-md border border-slate-200 w-40"><div className="text-3xl mb-2 text-center">{countryFlags[item.country]}</div><h3 className="font-semibold text-slate-900 text-center">{item.country}</h3><p className="text-slate-500 text-sm text-center">{item.port}</p><p className="text-slate-600 text-sm text-center font-medium">{item.time}</p></div>))}
             </div>
           </div>
         </section>
