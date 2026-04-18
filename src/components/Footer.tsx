@@ -57,6 +57,10 @@ const Footer = () => {
               </div>
               <div className="flex items-start gap-2 text-primary-foreground/60 text-sm">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5" />
+                <span>{t.footer.factoryAddress2}</span>
+              </div>
+              <div className="flex items-start gap-2 text-primary-foreground/60 text-sm">
+                <MapPin size={16} className="flex-shrink-0 mt-0.5" />
                 <span>{t.footer.officeAddress}</span>
               </div>
             </div>

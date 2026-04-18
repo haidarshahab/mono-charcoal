@@ -58,8 +58,8 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{t.about.factoryTitle || "Our Factory in Bekasi"}</h2>
-                <p className="text-lg text-slate-600 mb-6">{t.about.factoryDesc || "Located in Bekasi, West Java, our state-of-the-art manufacturing facility operates with a monthly production capacity of over 1,000 metric tons."}</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{t.about.factoryTitle || "Our Factory in Majalengka"}</h2>
+                <p className="text-lg text-slate-600 mb-6">{t.about.factoryDesc || "Located in Majalengka, West Java, our state-of-the-art manufacturing facility operates with a monthly production capacity of over 1,000 metric tons."}</p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <Factory className="w-6 h-6 text-accent mt-1" />
@@ -137,11 +137,11 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto bg-gradient-to-br from-accent to-accent rounded-2xl p-8 md:p-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{t.about.visitFactory || "Visit Our Factory"}</h2>
-              <p className="text-white/90 text-lg mb-8">{t.about.visitFactoryDesc || "We welcome wholesale buyers to visit our factory in Bekasi, Indonesia."}</p>
+              <p className="text-white/90 text-lg mb-8">{t.about.visitFactoryDesc || "We welcome wholesale buyers to visit our factories in Majalengka and Bekasi, Indonesia."}</p>
               <div className="grid md:grid-cols-3 gap-6 mb-8">
-                <div className="bg-white/20 rounded-lg p-4"><MapPin className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">Bekasi, West Java, Indonesia</p></div>
-                <div className="bg-white/20 rounded-lg p-4"><Phone className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">+62 (WhatsApp)</p></div>
-                <div className="bg-white/20 rounded-lg p-4"><Mail className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">admin@monocharcoal.com</p></div>
+                <div className="bg-white/20 rounded-lg p-4"><MapPin className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">Majalengka, West Java</p></div>
+                <div className="bg-white/20 rounded-lg p-4"><MapPin className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">Bekasi, West Java</p></div>
+                <div className="bg-white/20 rounded-lg p-4"><Phone className="w-6 h-6 text-white mx-auto mb-2" /><p className="text-white text-sm">+62 881 0249 22133</p></div>
               </div>
               <a href="https://wa.me/62881024922133" className="inline-block bg-white text-accent font-semibold px-8 py-3 rounded-lg hover:bg-slate-100 transition-colors">{t.contact.whatsapp}</a>
             </div>
