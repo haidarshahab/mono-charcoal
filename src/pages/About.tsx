@@ -1,6 +1,6 @@
 import SEO, { organizationSchema } from "@/components/SEO";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { Award, Factory, MapPin, Phone, Mail, Globe, User } from "lucide-react";
+import { Award, Factory, MapPin, Phone, Mail, Globe, User, Linkedin } from "lucide-react";
 import { useLanguage } from "@/hooks/useLanguage";
 import { getTranslation } from "@/hooks/translations";
 import teamHaidar from "@/assets/team-haidar-ali.png";
@@ -91,11 +91,17 @@ const About = () => {
                 <img src={teamHaidar} alt="Haidar Ali" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-secondary" />
                 <h3 className="text-xl font-bold text-slate-900">Haidar Ali</h3>
                 <p className="text-accent font-medium">Managing Director</p>
+                <a href="https://www.linkedin.com/in/haidar-ali-shahab/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-slate-500 hover:text-linkedin text-sm mt-1">
+                  <Linkedin size={14} /> LinkedIn
+                </a>
               </div>
               <div className="text-center">
                 <img src={teamAbdullah} alt="Abdullah Alatas" className="w-48 h-48 mx-auto rounded-full object-cover mb-4 border-4 border-secondary" />
                 <h3 className="text-xl font-bold text-slate-900">Abdullah Alatas</h3>
                 <p className="text-accent font-medium">Commissioner</p>
+                <a href="https://www.linkedin.com/in/abdullah-as1/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-slate-500 hover:text-linkedin text-sm mt-1">
+                  <Linkedin size={14} /> LinkedIn
+                </a>
               </div>
             </div>
           </div>

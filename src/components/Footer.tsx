@@ -1,4 +1,4 @@
-import { MessageCircle, Mail, MapPin } from "lucide-react";
+import { MessageCircle, Mail, MapPin, Instagram } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoWhite from "@/assets/logo-dark.png";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -47,6 +47,9 @@ const Footer = () => {
               </a>
               <a href="mailto:admin@monocharcoal.com" className="flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
                 <Mail size={16} /> admin@monocharcoal.com
+              </a>
+              <a href="https://www.instagram.com/mono.coal/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-foreground/60 hover:text-primary-foreground text-sm transition-colors">
+                <Instagram size={16} /> @mono.coal
               </a>
               <div className="flex items-start gap-2 text-primary-foreground/60 text-sm">
                 <MapPin size={16} className="flex-shrink-0 mt-0.5" />
