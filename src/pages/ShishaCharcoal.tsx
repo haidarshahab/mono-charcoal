@@ -1,18 +1,23 @@
 import SEO, { productSchema } from "@/components/SEO";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { CheckCircle, Package, Scale, Thermometer, Clock, ChevronRight } from "lucide-react";
+import shapeCube from "@/assets/shape-cube.webp";
+import shapeDome from "@/assets/shape-dome.webp";
+import shapeFinger from "@/assets/shape-finger.webp";
+import shapeFlat from "@/assets/shape-flat.webp";
+import shapeHexa from "@/assets/shape-hexa.webp";
 
 const ShishaCharcoal = () => {
   const { ref } = useScrollReveal();
 
   const shapes = [
-    { name: "Cube", sizes: ["20x20x20mm", "22x22x22mm", "25x25x25mm", "26x26x26mm", "28x28x28mm", "30x30x30mm"] },
-    { name: "Finger / Stix", sizes: ["40x8x8mm", "50x10x10mm", "60x12x12mm"] },
-    { name: "Hexagonal", sizes: ["25mm", "30mm", "35mm"] },
-    { name: "Octagonal", sizes: ["25mm", "30mm", "35mm"] },
-    { name: "Flat / Slab", sizes: ["50x25x15mm", "60x30x20mm"] },
-    { name: "Dome", sizes: ["25mm", "30mm"] },
-    { name: "Lotus / Cloud", sizes: ["2pcs", "3pcs", "4pcs"] },
+    { name: "Cube", image: shapeCube, sizes: ["20x20x20mm", "22x22x22mm", "25x25x25mm", "26x26x26mm", "28x28x28mm", "30x30x30mm"] },
+    { name: "Finger / Stix", image: shapeFinger, sizes: ["40x8x8mm", "50x10x10mm", "60x12x12mm"] },
+    { name: "Hexagonal", image: shapeHexa, sizes: ["25mm", "30mm", "35mm"] },
+    { name: "Octagonal", image: shapeHexa, sizes: ["25mm", "30mm", "35mm"] },
+    { name: "Flat / Slab", image: shapeFlat, sizes: ["50x25x15mm", "60x30x20mm"] },
+    { name: "Dome", image: shapeDome, sizes: ["25mm", "30mm"] },
+    { name: "Lotus / Cloud", image: shapeDome, sizes: ["2pcs", "3pcs", "4pcs"] },
   ];
 
   const specifications = [
@@ -63,10 +68,16 @@ const ShishaCharcoal = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Available Shapes & Sizes</h2>
               <p className="text-lg text-slate-600 max-w-2xl mx-auto">We produce various shapes to meet different customer preferences.</p>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {shapes.map((shape, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-slate-200">
-                  <div className="bg-slate-100 rounded-lg h-32 flex items-center justify-center mb-4"><span className="text-slate-400">Shape Image</span></div>
+                <div key={index} className="bg-white rounded-xl p-8 shadow-lg border border-slate-200">
+                  <div className="bg-slate-50 rounded-xl h-40 flex items-center justify-center mb-6">
+                    {shape.image ? (
+                      <img src={shape.image} alt={shape.name} className="max-h-36 max-w-full object-contain" />
+                    ) : (
+                      <span className="text-slate-400">Shape Image</span>
+                    )}
+                  </div>
                   <h3 className="text-xl font-semibold text-slate-900 mb-3">{shape.name}</h3>
                   <div className="flex flex-wrap gap-2">
                     {shape.sizes.map((size, i) => (<span key={i} className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium">{size}</span>))}
