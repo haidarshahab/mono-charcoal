@@ -42,7 +42,7 @@ const Export = () => {
     { type: "40ft HQ Container", capacity: "26-28 tons", dims: "12.03m x 2.35m x 2.69m" },
   ];
   const paymentTerms = [
-    { title: t.export.tt, description: t.export.ttDesc, details: [t.export.paymentDetails, "USD, EUR accepted"] },
+    { title: t.export.tt, description: "50% advance, 50% against copy of Bill of Lading (BL Draft) and Certificate of Origin (COO)", details: ["Currency: USD, IDR accepted"] },
     { title: t.export.lc, description: t.export.lcDesc, details: ["Subject to bank approval", "Extended terms possible"] },
   ];
   const documents = [t.export.doc1, t.export.doc2, t.export.doc3, t.export.doc4, t.export.doc5, t.export.doc6, t.export.doc7];
